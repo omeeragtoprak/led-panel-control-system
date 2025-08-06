@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ location.title() }} LED Ekran</title>
+    <style>
+        html,body{
+            margin:0;
+            padding:0;
+            width:100%;
+            height:100%;
+            background:black;
+            overflow:hidden;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        #screen-content{
+            width:100%;
+            height:100%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:black;
+        }
+        #screen-content img,#screen-content video{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            object-position:center;
+            border:none;
+        }
+        .no-content{
+            color:white;
+            text-align:center;
+            font-size:2rem;
+            opacity:0.7;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <div id="screen-content">
+        <div class="no-content">
+            <p>{{ location.title() }} LED Pano</p>
+            <p style="font-size:1rem;margin-top:10px;">Gösterim başlatılmayı bekliyor...</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const socket = io({ transports: ['websocket', 'polling'], timeout: 20000 });
+            const screenContent = document.getElementById('screen-content');
+            const currentLocation = '{{ location }}';
+
+            socket.on('connect', () => {
+                socket.emit('join_location', { location: currentLocation });
+            });
+
+            socket.on('display_status', (data) => {
+                if (data && data.location === currentLocation) {
+                    if (data.status === 'playing' && data.current_item) {
+                        const item = data.current_item;
+                        if (item.type === 'image') {
+                            screenContent.innerHTML = `<img src="/uploads/${currentLocation}/${item.filename}" alt="${item.filename}">`;
+                        } else if (item.type === 'video') {
+                            screenContent.innerHTML = `<video src="/uploads/${currentLocation}/${item.filename}" autoplay loop muted style="width:100%;height:100%;object-fit:cover;object-position:center;"></video>`;
+                        }
+                    } else {
+                        screenContent.innerHTML = `<div class=\"no-content\">\n<p>${currentLocation.charAt(0).toUpperCase() + currentLocation.slice(1)} LED Pano</p>\n<p style=\"font-size:1rem;margin-top:10px;\">Gösterim durduruldu</p>\n</div>`;
+                    }
+                }
+            });
+
+            socket.on('disconnect', () => {
+                screenContent.innerHTML = `<div class=\"no-content\">\n<p>${currentLocation.charAt(0).toUpperCase() + currentLocation.slice(1)} LED Pano</p>\n<p style=\"font-size:1rem;margin-top:10px;\">Bağlantı koptu...</p>\n</div>`;
+            });
+        });
+    </script>
+</body>
+</html>

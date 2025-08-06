@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='erzurum-buyuksehir-belediyesi-logo.png') }}" alt="Erzurum Büyükşehir Belediyesi Logo" class="logo">
+                <h1 class="header-title">{{ title }}</h1>
+                <div class="location-badge">
+                    <i class="fas fa-map-marker-alt"></i> {{ location_title }}
+                </div>
+            </div>
+            <div class="header-controls">
+                <a href="/" class="back-home-btn">
+                    <i class="fas fa-home"></i> Ana Sayfa
+                </a>
+                <a href="{{ url_for('logout') }}" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Çıkış Yap
+                </a>
+                <div class="connection-status">
+                    <span id="connection-status" class="status-badge offline">
+                        <i class="fas fa-circle"></i> Bağlantı Yok
+                    </span>
+                </div>
+                <div class="system-time">
+                    <span id="system-time" class="time-display">
+                        <i class="fas fa-clock"></i> <span id="current-time">--:--:--</span>
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <section id="control-panel-section">
+                <h2 class="section-title"><i class="fas fa-sliders-h"></i> {{ location_title }} Yönetim Paneli</h2>
+                <div class="control-buttons">
+                    <button id="start-display" class="button"><i class="fas fa-play"></i> Gösterimi Başlat</button>
+                    <button id="stop-display" class="button stop-btn"><i class="fas fa-stop"></i> Gösterimi Durdur</button>
+                    <button id="fullscreen-toggle" class="button"><i class="fas fa-expand"></i> Tam Ekran</button>
+                    <button id="clear-panel" class="button clear-btn"><i class="fas fa-eraser"></i> Paneli Temizle</button>
+                </div>
+                <div id="display-status-indicator" class="status-indicator stopped" style="margin-top: 20px;">
+                    <i class="fas fa-stop-circle"></i> Gösterim Durumu: DURDURULDU
+                </div>
+            </section>
+
+            <section id="current-display-section">
+                <h2 class="section-title"><i class="fas fa-tv"></i> Şu An Gösterilen İçerik</h2>
+                <div id="current-display-info" class="current-display-info">
+                    <div class="current-display-placeholder">
+                        <i class="fas fa-tv"></i>
+                        <p>Henüz gösterim başlatılmadı</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="content-management-section">
+                <h2 class="section-title"><i class="fas fa-photo-video"></i> {{ location_title }} İçerik Yönetimi</h2>
+                
+                <div class="content-management-layout">
+                    <!-- Upload Area -->
+                    <div class="upload-area">
+                        <div class="upload-header">
+                            <h3><i class="fas fa-cloud-upload-alt"></i> Dosya Yükle</h3>
+                            <div class="upload-info">
+                                <span><i class="fas fa-info-circle"></i> Desteklenen formatlar: JPG, PNG, MP4, AVI (Max: 100MB)</span>
+                            </div>
+                        </div>
+                        <div class="file-upload-container">
+                            <input type="file" id="file-input" accept=".jpg,.jpeg,.png,.gif,.bmp,.mp4,.avi,.mov,.mkv,.wmv" multiple>
+                            <label for="file-input" class="upload-label">
+                                <i class="fas fa-plus"></i>
+                                <span>Dosya Seç veya Sürükle</span>
+                            </label>
+                            
+                            <div class="duration-settings" id="duration-settings" style="display: none;">
+                                <div class="duration-input-group">
+                                    <label for="duration-slider">Gösterim Süresi:</label>
+                                    <div class="duration-controls">
+                                        <input type="range" id="duration-slider" min="1" max="120" value="7" class="duration-slider">
+                                        <input type="number" id="duration-input" min="1" max="120" value="7" class="duration-number">
+                                        <span class="duration-unit">saniye</span>
+                                    </div>
+                                    <div class="duration-presets">
+                                        <button type="button" class="preset-btn" data-duration="5">5s</button>
+                                        <button type="button" class="preset-btn" data-duration="7">7s</button>
+                                        <button type="button" class="preset-btn" data-duration="10">10s</button>
+                                        <button type="button" class="preset-btn" data-duration="15">15s</button>
+                                        <button type="button" class="preset-btn" data-duration="30">30s</button>
+                                        <button type="button" class="preset-btn" data-duration="60">60s</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button id="upload-btn" class="button upload-btn" disabled>
+                                <i class="fas fa-upload"></i> Yükle
+                            </button>
+                        </div>
+                        <div id="upload-progress" class="upload-progress" style="display: none;">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                            <span class="progress-text">Yükleniyor...</span>
+                        </div>
+                    </div>
+
+                    <!-- Content List -->
+                    <div class="content-list-container">
+                        <div class="list-header">
+                            <h3><i class="fas fa-list"></i> Yayın Akışı</h3>
+                            <div class="list-controls">
+                                <span id="content-count" class="content-count">0 içerik</span>
+                            </div>
+                        </div>
+                        <ul id="content-list" class="content-list">
+                            <!-- İçerik dinamik olarak buraya yüklenecek -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="system-info-section">
+                <h2 class="section-title"><i class="fas fa-server"></i> Sistem Bilgileri</h2>
+                <div class="system-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-microchip"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label">CPU Kullanımı</span>
+                            <span id="cpu-usage" class="stat-value">--%</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-memory"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label">RAM Kullanımı</span>
+                            <span id="memory-usage" class="stat-value">--%</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-hdd"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label">Disk Kullanımı</span>
+                            <span id="disk-usage" class="stat-value">--%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Erzurum Büyükşehir Belediyesi - {{ location_title }} LED Pano Kontrol Sistemi</p>
+                <div class="footer-links">
+                    <a href="/screen{{ location }}"><i class="fas fa-tv"></i> Canlı Ekran</a>
+                    <a href="/"><i class="fas fa-home"></i> Ana Sayfa</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script>
+        // Lokasyon bilgisini JavaScript'e aktar
+        window.CURRENT_LOCATION = '{{ location }}';
+        window.LOCATION_TITLE = '{{ location_title }}';
+    </script>
+    <script src="{{ url_for('static', filename='script_location.js') }}"></script>
+</body>
+</html>

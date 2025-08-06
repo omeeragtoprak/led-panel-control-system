@@ -1,0 +1,618 @@
+"""
+LED Panel Control System - Final Multi-Location Version
+Ana sayfa: lokasyon seçimi
+Her lokasyon: /belediye, /havuzbasi, /yenisehir, /gurcukapi - tam özellikli sayfalar
+"""
+
+import os, time, json, logging, threading, subprocess
+from datetime import datetime
+from flask import Flask, render_template, request, jsonify, send_from_directory, abort, redirect, url_for
+from flask_socketio import SocketIO, emit
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+from werkzeug.security import generate_password_hash, check_password_hash
+import cv2, psutil
+
+# ---------------------------------------------------------------------------
+# CONFIG
+# ---------------------------------------------------------------------------
+class Config:
+    BASE_UPLOAD = os.path.join(os.getcwd(), 'uploads')
+    PAGE_TITLE = "EBB LED Kontrol Sistemi"
+    HOST = '0.0.0.0'
+    PORT = 5000
+    SUPPORTED_FORMATS = {
+        'image': {'png','jpg','jpeg','gif','bmp'},
+        'video': {'mp4','avi','mov','mkv','wmv'}
+    }
+
+LOCATIONS = ['belediye', 'havuzbasi', 'yenisehir', 'gurcukapi']
+
+# Lokasyon isimleri mapping'i
+LOCATION_NAMES = {
+    'belediye': 'Belediye Binası LED Ekran',
+    'havuzbasi': 'Havuzbaşı Kent Meydanı LED Ekran',
+    'yenisehir': 'Yenişehir LED Ekran',
+    'gurcukapi': 'Gürcükapı LED Ekran'
+}
+
+# ---------------------------------------------------------------------------
+# FLASK & SOCKETIO SETUP
+# ---------------------------------------------------------------------------
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'led_panel_secret_key_2025'
+app.config['UPLOAD_FOLDER'] = Config.BASE_UPLOAD
+app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024  # 100MB
+
+# SocketIO with threading mode (safer for Windows)
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode='threading')
+
+# Flask-Login setup
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+
+# In-memory user store (single admin user)
+class User(UserMixin):
+    def __init__(self, id):
+        self.id = id
+
+# Hardcoded admin credentials (username: admin, password: admin123)
+USERS = {
+    'admin': generate_password_hash('admin123')
+}
+
+@login_manager.user_loader
+def load_user(user_id):
+    if user_id in USERS:
+        return User(user_id)
+    return None
+
+# ---------------------------------------------------------------------------
+# LOGGING SETUP
+# ---------------------------------------------------------------------------
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('logs/app.log', encoding='utf-8'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# GLOBAL STATE MANAGEMENT (per location)
+# ---------------------------------------------------------------------------
+state = {}
+
+def init_location_state():
+    """Her lokasyon için state başlatma"""
+    for location in LOCATIONS:
+        upload_dir = os.path.join(Config.BASE_UPLOAD, location)
+        os.makedirs(upload_dir, exist_ok=True)
+        
+        state[location] = {
+            'content': [],
+            'current_index': 0,
+            'is_running': False,
+            'display_thread': None,
+            'lock': threading.Lock(),
+            'upload_dir': upload_dir,
+            'content_file': os.path.join(upload_dir, 'content_list.json')
+        }
+        load_content_list(location)
+
+def load_content_list(location):
+    """Lokasyona özel içerik listesini yükle"""
+    st = state[location]
+    try:
+        if os.path.exists(st['content_file']):
+            with open(st['content_file'], 'r', encoding='utf-8') as f:
+                st['content'] = json.load(f)
+        logger.info(f"{LOCATION_NAMES[location]} içerik listesi yüklendi: {len(st['content'])} öğe")
+    except Exception as e:
+        logger.error(f"{location} içerik listesi yükleme hatası: {e}")
+        st['content'] = []
+
+def save_content_list(location):
+    """Lokasyona özel içerik listesini kaydet"""
+    st = state[location]
+    try:
+        with open(st['content_file'], 'w', encoding='utf-8') as f:
+            json.dump(st['content'], f, ensure_ascii=False, indent=2)
+        logger.debug(f"{location.title()} içerik listesi kaydedildi")
+    except Exception as e:
+        logger.error(f"{location} içerik listesi kaydetme hatası: {e}")
+
+def get_video_duration(path):
+    """Video süresini ffprobe ile al"""
+    try:
+        cmd = [
+            'ffprobe', '-v', 'error', '-show_entries', 'format=duration',
+            '-of', 'default=noprint_wrappers=1:nokey=1', path
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+        return float(result.stdout.strip())
+    except FileNotFoundError:
+        logger.error("ffprobe bulunamadı. Video süresi alınamıyor.")
+        return 15
+    except Exception as e:
+        logger.error(f"Video süresi alınırken hata: {e}")
+        return 15
+
+def allowed_file(filename):
+    """Dosya uzantısı kontrolü"""
+    if '.' not in filename:
+        return False, None
+    ext = filename.rsplit('.', 1)[1].lower()
+    for file_type, extensions in Config.SUPPORTED_FORMATS.items():
+        if ext in extensions:
+            return True, file_type
+    return False, None
+
+# ---------------------------------------------------------------------------
+# DISPLAY LOOP (per location)
+# ---------------------------------------------------------------------------
+def display_loop(location):
+    """Lokasyona özel gösterim döngüsü"""
+    st = state[location]
+    logger.info(f"{LOCATION_NAMES[location]} yayın döngüsü başlatıldı")
+    
+    while st['is_running']:
+        with st['lock']:
+            if not st['content']:
+                socketio.sleep(1)
+                continue
+            
+            # Mevcut öğeyi al
+            current_item = st['content'][st['current_index']]
+            filepath = os.path.join(st['upload_dir'], current_item['filename'])
+            
+            if not os.path.exists(filepath):
+                logger.warning(f"Dosya bulunamadı: {filepath}")
+                st['current_index'] = (st['current_index'] + 1) % len(st['content'])
+                continue
+            
+            logger.info(f"{LOCATION_NAMES[location]} yayında: {current_item['filename']} ({current_item['type']})")
+            
+            # Socket event gönder
+            socketio.emit('display_status', {
+                'status': 'playing',
+                'location': location,
+                'current_item': current_item
+            })
+            
+            # Süre hesapla - kullanıcı tanımlı veya varsayılan
+            duration = current_item.get('duration', 7 if current_item['type'] == 'image' else 15)
+            
+            # Sonraki öğeye geç
+            st['current_index'] = (st['current_index'] + 1) % len(st['content'])
+        
+        # Bekleme
+        socketio.sleep(duration)
+
+def start_display_thread(location):
+    """Lokasyona özel gösterim thread'i başlat"""
+    st = state[location]
+    with st['lock']:
+        if st['display_thread'] is not None:
+            logger.warning(f"{location} gösterim zaten çalışıyor")
+            return False
+        
+        if not st['content']:
+            logger.warning(f"{location} içerik listesi boş")
+            return False
+        
+        st['is_running'] = True
+        st['current_index'] = 0
+        st['display_thread'] = socketio.start_background_task(display_loop, location)
+        logger.info(f"{LOCATION_NAMES[location]} yayın thread'i başlatıldı")
+        return True
+
+def stop_display_thread(location):
+    """Lokasyona özel gösterim thread'i durdur"""
+    st = state[location]
+    with st['lock']:
+        if st['display_thread'] is None:
+            return False
+        
+        st['is_running'] = False
+        st['display_thread'] = None
+        logger.info(f"{LOCATION_NAMES[location]} yayın thread'i durduruldu")
+        
+        # Durdurma eventi gönder
+        socketio.emit('display_status', {
+            'status': 'stopped',
+            'location': location,
+            'current_item': None
+        })
+        return True
+
+# ---------------------------------------------------------------------------
+# AUTHENTICATION ROUTES
+# ---------------------------------------------------------------------------
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        if username in USERS and check_password_hash(USERS[username], password):
+            user = User(username)
+            login_user(user)
+            return redirect(url_for('index'))
+        else:
+            return render_template('login.html', error='Geçersiz kullanıcı adı veya şifre')
+    return render_template('login.html')
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
+
+# ---------------------------------------------------------------------------
+# ROUTES - ANA SAYFA (Lokasyon Seçimi)
+# ---------------------------------------------------------------------------
+@app.route('/')
+@login_required
+def index():
+    """Ana sayfa - sadece lokasyon seçimi"""
+    return render_template('index_selector.html', 
+                         title=Config.PAGE_TITLE,
+                         locations=LOCATIONS,
+                         location_names=LOCATION_NAMES)
+
+# ---------------------------------------------------------------------------
+# ROUTES - LOKASYON SAYFALARI
+# ---------------------------------------------------------------------------
+@app.route('/<location>')
+@login_required
+def location_page(location):
+    """Lokasyona özel tam özellikli sayfa"""
+    if location not in LOCATIONS:
+        abort(404)
+    
+    return render_template('index_location.html',
+                         title=f"{Config.PAGE_TITLE} - {LOCATION_NAMES[location]}",
+                         location=location,
+                         location_title=LOCATION_NAMES[location])
+
+@app.route('/screen<location>')
+def screen_location(location):
+    """Lokasyona özel tam ekran sayfa"""
+    if location not in LOCATIONS:
+        abort(404)
+    
+    return render_template('screen_location.html', location=location)
+
+# ---------------------------------------------------------------------------
+# API ROUTES (per location)
+# ---------------------------------------------------------------------------
+@app.route('/api/<location>/content')
+@login_required
+def api_get_content(location):
+    """Lokasyon içerik listesi"""
+    if location not in LOCATIONS:
+        abort(404)
+    
+    return jsonify({
+        'success': True,
+        'content': state[location]['content']
+    })
+
+@app.route('/api/<location>/content/upload', methods=['POST'])
+@login_required
+def api_upload_content(location):
+    """Lokasyona dosya yükleme"""
+    if location not in LOCATIONS:
+        abort(404)
+    
+    if 'file' not in request.files:
+        return jsonify({'success': False, 'error': 'Dosya seçilmedi'}), 400
+    
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'success': False, 'error': 'Dosya seçilmedi'}), 400
+    
+    is_valid, file_type = allowed_file(file.filename)
+    if not is_valid:
+        return jsonify({'success': False, 'error': 'Desteklenmeyen dosya formatı'}), 400
+    
+    st = state[location]
+    
+    with st['lock']:
+        # Dosyayı kaydet
+        filepath = os.path.join(st['upload_dir'], file.filename)
+        file.save(filepath)
+        
+        # Süre bilgisini al (form verisi veya varsayılan)
+        duration = request.form.get('duration', type=int)
+        if not duration or duration <= 0:
+            # Varsayılan süreler
+            duration = 7 if file_type == 'image' else 15
+        
+        # İçerik listesine ekle
+        new_item = {
+            'id': int(time.time() * 1000),
+            'filename': file.filename,
+            'type': file_type,
+            'order': len(st['content']),
+            'duration': duration
+        }
+        
+        st['content'].append(new_item)
+        save_content_list(location)
+        
+        logger.info(f"{LOCATION_NAMES[location]} yeni içerik: {file.filename}")
+        
+        # Socket event
+        socketio.emit('content_updated', {
+            'action': 'upload',
+            'location': location,
+            'content_list': st['content']
+        })
+    
+    return jsonify({'success': True, 'message': 'Dosya yüklendi'})
+
+@app.route('/api/<location>/content/<int:content_id>', methods=['DELETE'])
+@login_required
+def api_delete_content(location, content_id):
+    """İçerik silme"""
+    if location not in LOCATIONS:
+        abort(404)
+    
+    st = state[location]
+    
+    with st['lock']:
+        item = next((x for x in st['content'] if x['id'] == content_id), None)
+        if not item:
+            return jsonify({'success': False, 'error': 'İçerik bulunamadı'}), 404
+        
+        # Dosyayı sil
+        filepath = os.path.join(st['upload_dir'], item['filename'])
+        if os.path.exists(filepath):
+            os.remove(filepath)
+        
+        # Listeden çıkar
+        st['content'].remove(item)
+        
+        # Sıraları yeniden düzenle
+        for i, x in enumerate(st['content']):
+            x['order'] = i
+        
+        save_content_list(location)
+        logger.info(f"{LOCATION_NAMES[location]} içerik silindi: {item['filename']}")
+        
+        # Socket event
+        socketio.emit('content_updated', {
+            'action': 'delete',
+            'location': location,
+            'content_list': st['content']
+        })
+    
+    return jsonify({'success': True, 'message': 'İçerik silindi'})
+
+@app.route('/api/<location>/content/<int:content_id>/duration', methods=['PUT'])
+@login_required
+def api_update_duration(location, content_id):
+    """İçerik süresini güncelle"""
+    if location not in LOCATIONS:
+        abort(404)
+    
+    data = request.get_json()
+    if not data or 'duration' not in data:
+        return jsonify({'success': False, 'error': 'Süre bilgisi gerekli'}), 400
+    
+    duration = data['duration']
+    if not isinstance(duration, int) or duration <= 0:
+        return jsonify({'success': False, 'error': 'Geçerli bir süre girin (1+ saniye)'}), 400
+    
+    st = state[location]
+    
+    with st['lock']:
+        item = next((x for x in st['content'] if x['id'] == content_id), None)
+        if not item:
+            return jsonify({'success': False, 'error': 'İçerik bulunamadı'}), 404
+        
+        item['duration'] = duration
+        save_content_list(location)
+        logger.info(f"{LOCATION_NAMES[location]} içerik süresi güncellendi: {item['filename']} -> {duration}s")
+        
+        # Socket event
+        socketio.emit('content_updated', {
+            'action': 'duration_update',
+            'location': location,
+            'content_list': st['content']
+        })
+    
+    return jsonify({'success': True, 'message': 'Süre güncellendi'})
+
+@app.route('/api/<location>/content/order', methods=['POST'])
+@login_required
+def api_update_order(location):
+    """İçerik sırası güncelleme"""
+    if location not in LOCATIONS:
+        abort(404)
+    
+    data = request.get_json()
+    if not data or 'order' not in data:
+        return jsonify({'success': False, 'error': 'Geçersiz veri'}), 400
+    
+    st = state[location]
+    
+    with st['lock']:
+        # Yeni sıralamayı uygula
+        for item_data in data['order']:
+            content_id = int(item_data['id'])
+            new_order = int(item_data['order'])
+            
+            item = next((x for x in st['content'] if x['id'] == content_id), None)
+            if item:
+                item['order'] = new_order
+        
+        # Sıraya göre düzenle
+        st['content'].sort(key=lambda x: x['order'])
+        
+        # Sıra numaralarını yeniden düzenle
+        for i, item in enumerate(st['content']):
+            item['order'] = i
+        
+        save_content_list(location)
+        logger.info(f"{LOCATION_NAMES[location]} içerik sırası güncellendi")
+        
+        # Socket event
+        socketio.emit('content_updated', {
+            'action': 'reorder',
+            'location': location,
+            'content_list': st['content']
+        })
+    
+    return jsonify({'success': True, 'message': 'Sıra güncellendi'})
+
+@app.route('/api/<location>/display/start', methods=['POST'])
+@login_required
+def api_start_display(location):
+    """Gösterim başlat"""
+    if location not in LOCATIONS:
+        abort(404)
+    
+    if start_display_thread(location):
+        logger.info(f"{LOCATION_NAMES[location]} gösterim başlatıldı")
+        return jsonify({'success': True, 'message': 'Gösterim başlatıldı'})
+    else:
+        return jsonify({'success': False, 'error': 'Gösterim başlatılamadı'}), 400
+
+@app.route('/api/<location>/display/stop', methods=['POST'])
+@login_required
+def api_stop_display(location):
+    """Gösterim durdur"""
+    if location not in LOCATIONS:
+        abort(404)
+    
+    if stop_display_thread(location):
+        logger.info(f"{LOCATION_NAMES[location]} gösterim durduruldu")
+        return jsonify({'success': True, 'message': 'Gösterim durduruldu'})
+    else:
+        return jsonify({'success': False, 'error': 'Gösterim durdurulamadı'}), 400
+
+@app.route('/api/<location>/display/status')
+@login_required
+def api_display_status(location):
+    """Gösterim durumu"""
+    if location not in LOCATIONS:
+        abort(404)
+    
+    st = state[location]
+    current_item = None
+    
+    if st['is_running'] and st['content']:
+        current_item = st['content'][st['current_index']]
+    
+    return jsonify({
+        'success': True,
+        'status': 'playing' if st['is_running'] else 'stopped',
+        'location': location,
+        'current_item': current_item
+    })
+
+@app.route('/api/system/info')
+@login_required
+def api_system_info():
+    """Sistem bilgileri"""
+    try:
+        cpu_percent = psutil.cpu_percent(interval=1)
+        memory = psutil.virtual_memory()
+        disk = psutil.disk_usage('/')
+        
+        return jsonify({
+            'success': True,
+            'cpu': round(cpu_percent, 1),
+            'memory': round(memory.percent, 1),
+            'disk': round(disk.percent, 1),
+            'timestamp': datetime.now().strftime('%H:%M:%S')
+        })
+    except Exception as e:
+        logger.error(f"Sistem bilgisi hatası: {e}")
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+# ---------------------------------------------------------------------------
+# STATIC FILE ROUTES
+# ---------------------------------------------------------------------------
+@app.route('/uploads/<location>/<filename>')
+@login_required
+def uploaded_file(location, filename):
+    """Lokasyona özel dosya servisi"""
+    if location not in LOCATIONS:
+        abort(404)
+    
+    return send_from_directory(state[location]['upload_dir'], filename)
+
+# ---------------------------------------------------------------------------
+# SOCKETIO EVENTS
+# ---------------------------------------------------------------------------
+@socketio.on('connect')
+def handle_connect():
+    """Client bağlantısı"""
+    logger.info(f"Client bağlandı: {request.sid}")
+
+@socketio.on('disconnect')
+def handle_disconnect():
+    """Client bağlantısı koptu"""
+    logger.info(f"Client ayrıldı: {request.sid}")
+
+@socketio.on('join_location')
+def handle_join_location(data):
+    """Lokasyona özel odaya katıl"""
+    location = data.get('location')
+    if location in LOCATIONS:
+        # İlk bağlantıda mevcut durumu gönder
+        st = state[location]
+        emit('content_updated', {
+            'action': 'sync',
+            'location': location,
+            'content_list': st['content']
+        })
+        
+        # Gösterim durumunu gönder
+        current_item = None
+        if st['is_running'] and st['content']:
+            current_item = st['content'][st['current_index']]
+        
+        emit('display_status', {
+            'status': 'playing' if st['is_running'] else 'stopped',
+            'location': location,
+            'current_item': current_item
+        })
+
+# ---------------------------------------------------------------------------
+# APPLICATION STARTUP
+# ---------------------------------------------------------------------------
+def create_directories():
+    """Gerekli klasörleri oluştur"""
+    os.makedirs('logs', exist_ok=True)
+    os.makedirs(Config.BASE_UPLOAD, exist_ok=True)
+
+if __name__ == '__main__':
+    try:
+        create_directories()
+        init_location_state()
+        
+        print(f"\nMulti-Location LED Panel Control System başlatılıyor...")
+        print(f"Ana sayfa: http://{Config.HOST}:{Config.PORT}/")
+        print(f"Lokasyonlar: {', '.join([f'http://{Config.HOST}:{Config.PORT}/{loc} ({LOCATION_NAMES[loc]})' for loc in LOCATIONS])}")
+        print(f"Upload klasörleri: {Config.BASE_UPLOAD}")
+        print()
+        
+        socketio.run(app, 
+                    host=Config.HOST, 
+                    port=Config.PORT,
+                    allow_unsafe_werkzeug=True)
+                    
+    except KeyboardInterrupt:
+        logger.info("Uygulama kapatılıyor...")
+        # Tüm lokasyonların thread'lerini durdur
+        for location in LOCATIONS:
+            stop_display_thread(location)
+    except Exception as e:
+        logger.error(f"Uygulama hatası: {e}")
+        raise

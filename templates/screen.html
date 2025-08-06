@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>LED Pano Ekran</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html,body{
+            margin:0;
+            padding:0;
+            width:100%;
+            height:100%;
+            background:black;
+            overflow:hidden;
+        }
+        #viewer{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:black;
+        }
+        img,video{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            object-position:center;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <div id="viewer"></div>
+
+<script>
+(function(){
+    const viewer=document.getElementById('viewer');
+    const socket=io({transports:['websocket','polling'],timeout:20000});
+
+    function render(item){
+        if(!item)return;
+        viewer.innerHTML='';
+        if(item.type==='image'){
+            const img=document.createElement('img');
+            img.src=`/uploads/{{ location }}/${item.filename}`;
+            viewer.appendChild(img);
+        }else{
+            const video=document.createElement('video');
+            video.src=`/uploads/{{ location }}/${item.filename}#t=0.1`;
+            video.autoplay=true;
+            video.muted=true;
+            video.controls=false;
+            video.style.width='100%';
+            video.style.height='100%';
+            video.style.objectFit='cover';
+            video.style.objectPosition='center';
+            viewer.appendChild(video);
+        }
+    }
+
+    socket.on('display_status',data=>{
+        if(data && data.current_item && data.location==='{{ location }}'){render(data.current_item);} });
+})();
+</script>
+</body>
+</html>

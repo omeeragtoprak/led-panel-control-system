@@ -1,0 +1,30 @@
+2025-08-05 14:39:51,100 - INFO - Multi-location server starting...
+2025-08-05 14:39:52,431 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.122:5000
+2025-08-05 14:39:52,432 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-05 14:39:59,536 - INFO - 127.0.0.1 - - [05/Aug/2025 14:39:59] "GET / HTTP/1.1" 200 -
+2025-08-05 14:39:59,700 - INFO - 127.0.0.1 - - [05/Aug/2025 14:39:59] "GET /static/style.css HTTP/1.1" 200 -
+2025-08-05 14:39:59,735 - INFO - 127.0.0.1 - - [05/Aug/2025 14:39:59] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-05 14:39:59,738 - INFO - 127.0.0.1 - - [05/Aug/2025 14:39:59] "GET /static/script.js HTTP/1.1" 200 -
+2025-08-05 14:40:00,113 - INFO - 127.0.0.1 - - [05/Aug/2025 14:40:00] "GET /api/content/yakutiye HTTP/1.1" 200 -
+2025-08-05 14:40:00,635 - INFO - 127.0.0.1 - - [05/Aug/2025 14:40:00] "GET /api/display/status/yakutiye HTTP/1.1" 200 -
+2025-08-05 14:41:14,313 - INFO - 127.0.0.1 - - [05/Aug/2025 14:41:14] "POST /api/content/upload/yakutiye HTTP/1.1" 200 -
+2025-08-05 14:41:40,999 - INFO - 127.0.0.1 - - [05/Aug/2025 14:41:40] "[35m[1mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 500 -
+2025-08-05 14:41:41,037 - ERROR - Error on request:
+Traceback (most recent call last):
+  File "C:\Users\aaaom\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 363, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\aaaom\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 329, in execute
+    write(b"")
+  File "C:\Users\aaaom\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 254, in write
+    assert status_set is not None, "write() before start_response"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: write() before start_response
+2025-08-05 14:41:41,038 - INFO - 127.0.0.1 - - [05/Aug/2025 14:41:41] "GET / HTTP/1.1" 200 -
+2025-08-05 14:41:41,142 - INFO - 127.0.0.1 - - [05/Aug/2025 14:41:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-05 14:41:41,207 - INFO - 127.0.0.1 - - [05/Aug/2025 14:41:41] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-05 14:41:41,255 - INFO - 127.0.0.1 - - [05/Aug/2025 14:41:41] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-08-05 14:41:41,910 - INFO - 127.0.0.1 - - [05/Aug/2025 14:41:41] "GET /api/content/yakutiye HTTP/1.1" 200 -
+2025-08-05 14:41:42,451 - INFO - 127.0.0.1 - - [05/Aug/2025 14:41:42] "GET /api/display/status/yakutiye HTTP/1.1" 200 -

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED Pano Kontrol Sistemi - Giriş</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_selector.css') }}">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: var(--background-gradient);
+            margin: 0;
+            padding: 0;
+        }
+        .login-card {
+            background: var(--card-background);
+            padding: 40px 60px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            max-width: 400px;
+            width: 100%;
+        }
+        .login-card h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .login-card h2 img {
+            height: 40px;
+            width: auto;
+        }
+        .login-card label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        .login-card input[type="text"], .login-card input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .login-card input:focus {
+            border-color: var(--primary-color);
+        }
+        .login-card button {
+            width: 100%;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .login-card button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3);
+        }
+        .error-message {
+            color: var(--danger-color);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+            .login-card h2 {
+                font-size: 1.5rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .login-card h2 img {
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form class="login-card" method="POST" action="{{ url_for('login') }}">
+        <h2>
+            <img src="{{ url_for('static', filename='erzurum-buyuksehir-belediyesi-logo.png') }}" alt="EBB Logo">
+            Yönetici Girişi
+        </h2>
+        {% if error %}
+        <div class="error-message">{{ error }}</div>
+        {% endif %}
+        <label for="username">Kullanıcı Adı</label>
+        <input type="text" id="username" name="username" required autofocus>
+        <label for="password">Şifre</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Giriş Yap</button>
+    </form>
+</body>
+</html>

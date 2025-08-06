@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_selector.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='erzurum-buyuksehir-belediyesi-logo.png') }}" alt="EBB Logo">
+                </div>
+                <div class="header-title-section">
+                    <h1>{{ title }}</h1>
+                    <div class="header-subtitle">
+                        <p>Lokasyon Seçimi</p>
+                    </div>
+                </div>
+                <div class="header-controls">
+                    <a href="{{ url_for('logout') }}" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Çıkış Yap
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="location-selector">
+                <h2>Yayın Lokasyonu Seçiniz</h2>
+                <div class="location-grid">
+                    {% for location in locations %}
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                        <h3>{{ location_names[location] }}</h3>
+                        <p>{{ location_names[location] }} Yönetimi</p>
+                        <a href="/{{ location }}" class="btn-primary">
+                            <i class="fas fa-arrow-right"></i>
+                            Yönetim Paneli
+                        </a>
+                        <a href="/screen{{ location }}" class="btn-secondary" target="_blank">
+                            <i class="fas fa-expand"></i>
+                            Canlı Ekran
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="info-section">
+                <div class="info-card">
+                    <h3><i class="fas fa-info-circle"></i> Sistem Bilgileri</h3>
+                    <ul>
+                        <li>Her lokasyon bağımsız yayın akışına sahiptir</li>
+                        <li>Resimler 7 saniye, videolar tam süre oynar</li>
+                        <li>Desteklenen formatlar: JPG, PNG, MP4, AVI, MOV</li>
+                        <li>Maksimum dosya boyutu: 100MB</li>
+                    </ul>
+                </div>
+                
+                <div class="system-status" id="system-status">
+                    <h3><i class="fas fa-server"></i> Sistem Durumu</h3>
+                    <div class="status-item">
+                        <span>CPU Kullanımı:</span>
+                        <span id="cpu-usage">--%</span>
+                    </div>
+                    <div class="status-item">
+                        <span>RAM Kullanımı:</span>
+                        <span id="memory-usage">--%</span>
+                    </div>
+                    <div class="status-item">
+                        <span>Disk Kullanımı:</span>
+                        <span id="disk-usage">--%</span>
+                    </div>
+                    <div class="status-item">
+                        <span>Son Güncelleme:</span>
+                        <span id="last-update">--:--:--</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Erzurum Büyükşehir Belediyesi - LED Pano Kontrol Sistemi</p>
+        </footer>
+    </div>
+
+    <script>
+        // Sistem bilgilerini güncelle
+        function updateSystemInfo() {
+            fetch('/api/system/info')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('cpu-usage').textContent = data.cpu + '%';
+                        document.getElementById('memory-usage').textContent = data.memory + '%';
+                        document.getElementById('disk-usage').textContent = data.disk + '%';
+                        document.getElementById('last-update').textContent = data.timestamp;
+                    }
+                })
+                .catch(error => console.error('Sistem bilgisi alınamadı:', error));
+        }
+
+        // Sayfa yüklendiğinde ve her 10 saniyede bir güncelle
+        updateSystemInfo();
+        setInterval(updateSystemInfo, 10000);
+    </script>
+</body>
+</html>

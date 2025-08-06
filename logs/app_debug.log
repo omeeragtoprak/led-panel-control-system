@@ -1,0 +1,1382 @@
+2025-08-04 16:12:41,605 - __main__ - DEBUG - Initial content_list length: 2, current index: 0
+2025-08-04 16:12:41,607 - __main__ - INFO - G�sterim ba�lat�ld� (Windows test modu)
+2025-08-04 16:12:41,608 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:12:41,608 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:12:51,613 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:12:51,613 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:12:51,614 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:13:01,618 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:13:01,618 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:13:01,618 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:13:11,622 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:13:11,622 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:13:11,622 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:13:21,625 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:13:21,625 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:13:21,626 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:13:31,649 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:13:31,650 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:13:31,650 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:13:41,653 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:13:41,654 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:13:41,654 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:13:51,661 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:13:51,681 - __main__ - INFO - G�sterim durduruldu
+2025-08-04 16:13:51,700 - __main__ - INFO - ��erik s�ralamas� g�ncellendi
+2025-08-04 16:13:51,707 - __main__ - INFO - ��erik s�ralamas� g�ncellendi
+2025-08-04 16:13:51,717 - __main__ - INFO - ��erik s�ralamas� g�ncellendi
+2025-08-04 16:13:52,125 - __main__ - DEBUG - Initial content_list length: 2, current index: 1
+2025-08-04 16:13:52,127 - __main__ - INFO - G�sterim ba�lat�ld� (Windows test modu)
+2025-08-04 16:13:52,128 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:13:52,128 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:14:02,131 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:14:02,131 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:14:02,131 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:14:12,138 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:14:12,138 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:14:12,139 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:14:22,141 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:14:22,141 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:14:22,142 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:14:32,146 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:14:32,146 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:14:32,146 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:14:42,150 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:14:42,150 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:14:42,151 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:14:52,155 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:14:52,158 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:14:52,160 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:15:02,181 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:15:02,181 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:15:02,181 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:15:12,185 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:15:12,185 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:15:12,186 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:15:22,190 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:15:22,190 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:15:22,191 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:15:32,194 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:15:49,851 - __main__ - INFO - 📁 2 içerik yüklendi
+2025-08-04 16:15:49,852 - __main__ - INFO - 🚀 LED Pano Kontrol Sistemi başlatıldı (DEBUG modu)
+2025-08-04 16:15:49,852 - __main__ - INFO - 🌐 Sunucu başlatılıyor: 0.0.0.0:5000 (DEBUG modu)
+2025-08-04 16:15:51,212 - __main__ - INFO - Client bağlandı: SNCqCNr9jhzim3HuAAAB
+2025-08-04 16:15:54,499 - __main__ - INFO - Client bağlantısı kesildi: SNCqCNr9jhzim3HuAAAB
+2025-08-04 16:15:59,237 - __main__ - INFO - Client bağlandı: DxnI5cP37ACE1vCOAAAD
+2025-08-04 16:16:05,397 - __main__ - INFO - Yayın döngüsü başlatıldı
+2025-08-04 16:16:05,398 - __main__ - INFO - Yayın thread'i başlatıldı
+2025-08-04 16:16:05,398 - __main__ - DEBUG - Initial content_list length: 2, current index: 0
+2025-08-04 16:16:05,398 - __main__ - INFO - Gösterim başlatıldı (Windows test modu)
+2025-08-04 16:16:05,398 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:16:05,400 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:16:05,400 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:16:15,402 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:16:15,402 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:16:15,403 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:16:15,403 - __main__ - WARNING - Dosya bulunamadı: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-04 16:16:25,404 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:16:25,404 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:16:25,405 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:16:25,405 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:16:33,801 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-04 16:16:33,802 - __main__ - INFO - İçerik silindi: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-04 16:16:35,407 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:16:35,407 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 1
+2025-08-04 16:16:35,407 - __main__ - DEBUG - Sorted content length: 1
+2025-08-04 16:16:35,407 - __main__ - DEBUG - Index reset to 0 (was out of bounds)
+2025-08-04 16:16:35,407 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:16:44,905 - __main__ - INFO - Client bağlantısı kesildi: DxnI5cP37ACE1vCOAAAD
+2025-08-04 16:16:45,409 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:16:45,409 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 1
+2025-08-04 16:16:45,410 - __main__ - DEBUG - Sorted content length: 1
+2025-08-04 16:16:45,410 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:16:46,211 - __main__ - INFO - Client bağlandı: qQHHmvrh__4IarU9AAAF
+2025-08-04 16:16:55,411 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:16:55,411 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 1
+2025-08-04 16:16:55,411 - __main__ - DEBUG - Sorted content length: 1
+2025-08-04 16:16:55,412 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:17:05,413 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:17:05,413 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 1
+2025-08-04 16:17:05,413 - __main__ - DEBUG - Sorted content length: 1
+2025-08-04 16:17:05,414 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:17:12,513 - __main__ - INFO - ⏹️ Kullanıcı tarafından durduruldu
+2025-08-04 16:17:12,513 - __main__ - INFO - 🔄 Uygulama kapatılıyor...
+2025-08-04 16:17:15,415 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:17:15,415 - __main__ - INFO - Yayın döngüsü durduruldu
+2025-08-04 16:22:01,894 - __main__ - INFO - 📁 1 içerik yüklendi
+2025-08-04 16:22:01,896 - __main__ - INFO - LED Pano Kontrol Sistemi başlatıldı (DEBUG modu)
+2025-08-04 16:22:01,896 - __main__ - INFO - Sunucu başlatılıyor: 0.0.0.0:5000 (DEBUG modu)
+2025-08-04 16:22:05,915 - __main__ - INFO - Client bağlandı: B7_mvzQGCaet4b95AAAB
+2025-08-04 16:22:08,782 - __main__ - INFO - Yayın döngüsü başlatıldı
+2025-08-04 16:22:08,782 - __main__ - INFO - Yayın thread'i başlatıldı
+2025-08-04 16:22:08,782 - __main__ - DEBUG - Initial content_list length: 1, current index: 0
+2025-08-04 16:22:08,782 - __main__ - INFO - Gösterim başlatıldı (Windows test modu)
+2025-08-04 16:22:08,782 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 1
+2025-08-04 16:22:08,783 - __main__ - DEBUG - Sorted content length: 1
+2025-08-04 16:22:08,785 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:22:15,589 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-04 16:22:15,590 - __main__ - INFO - Yeni içerik yüklendi: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:22:18,787 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:22:18,787 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:22:18,787 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:22:18,788 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:22:27,784 - __main__ - INFO - Yayın thread'i durduruldu
+2025-08-04 16:22:27,784 - __main__ - INFO - Gösterim durduruldu
+2025-08-04 16:22:28,789 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:22:28,789 - __main__ - INFO - Yayın döngüsü durduruldu
+2025-08-04 16:22:32,910 - __main__ - INFO - Client bağlandı: HL0RVA4ZxZ35OJ-gAAAD
+2025-08-04 16:22:34,770 - __main__ - INFO - Yayın döngüsü başlatıldı
+2025-08-04 16:22:34,770 - __main__ - INFO - Yayın thread'i başlatıldı
+2025-08-04 16:22:34,771 - __main__ - DEBUG - Initial content_list length: 2, current index: 1
+2025-08-04 16:22:34,771 - __main__ - INFO - Gösterim başlatıldı (Windows test modu)
+2025-08-04 16:22:34,771 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:22:34,772 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:22:34,773 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:22:44,774 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:22:44,775 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:22:44,775 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:22:44,775 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:22:53,797 - __main__ - INFO - Client bağlantısı kesildi: B7_mvzQGCaet4b95AAAB
+2025-08-04 16:22:54,776 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:22:54,777 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:22:54,777 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:22:54,778 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:23:04,779 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:23:04,781 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:23:04,781 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:23:04,781 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:23:11,652 - __main__ - INFO - Yayın thread'i durduruldu
+2025-08-04 16:23:11,653 - __main__ - INFO - Gösterim durduruldu
+2025-08-04 16:23:12,048 - __main__ - INFO - Client bağlandı: Na_kCRyfzd-VbhWIAAAF
+2025-08-04 16:23:14,492 - __main__ - WARNING - Yayın thread'i zaten çalışıyor
+2025-08-04 16:23:14,783 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:23:14,783 - __main__ - INFO - Yayın döngüsü durduruldu
+2025-08-04 16:23:16,003 - __main__ - INFO - Yayın döngüsü başlatıldı
+2025-08-04 16:23:16,003 - __main__ - INFO - Yayın thread'i başlatıldı
+2025-08-04 16:23:16,003 - __main__ - DEBUG - Initial content_list length: 2, current index: 1
+2025-08-04 16:23:16,004 - __main__ - INFO - Gösterim başlatıldı (Windows test modu)
+2025-08-04 16:23:16,004 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:23:16,004 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:23:16,005 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:23:19,779 - __main__ - INFO - Client bağlantısı kesildi: HL0RVA4ZxZ35OJ-gAAAD
+2025-08-04 16:23:26,006 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:23:26,007 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:23:26,007 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:23:26,007 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:23:36,008 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:23:36,008 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:23:36,008 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:23:36,008 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:23:46,009 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:23:46,009 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:23:46,009 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:23:46,009 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:23:56,010 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:23:56,011 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:23:56,011 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:23:56,012 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:23:56,905 - __main__ - INFO - Client bağlantısı kesildi: Na_kCRyfzd-VbhWIAAAF
+2025-08-04 16:24:00,207 - __main__ - INFO - Client bağlandı: 2v8kGVHLP3-wgz15AAAH
+2025-08-04 16:24:06,013 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:24:06,014 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:24:06,014 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:24:06,014 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:24:16,017 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:24:16,020 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:24:16,030 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:24:16,034 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:24:20,830 - __main__ - INFO - Client bağlandı: tS0gWmcfdPfMcSrjAAAJ
+2025-08-04 16:24:26,036 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:24:26,036 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:24:26,037 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:24:26,037 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:24:29,289 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-04 16:24:29,289 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-04 16:24:36,038 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:24:36,039 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:24:36,039 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:24:36,039 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:24:46,041 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:24:46,049 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:24:46,053 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:24:46,054 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:24:46,055 - __main__ - INFO - Client bağlantısı kesildi: 2v8kGVHLP3-wgz15AAAH
+2025-08-04 16:24:51,888 - __main__ - INFO - Kullanıcı tarafından durduruldu
+2025-08-04 16:24:51,889 - __main__ - INFO - Uygulama kapatılıyor...
+2025-08-04 16:24:56,057 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:24:56,057 - __main__ - INFO - Yayın döngüsü durduruldu
+2025-08-04 16:27:01,439 - __main__ - INFO - 📁 2 içerik yüklendi
+2025-08-04 16:27:01,440 - __main__ - INFO - LED Pano Kontrol Sistemi başlatıldı (DEBUG modu)
+2025-08-04 16:27:01,440 - __main__ - INFO - Sunucu başlatılıyor: 0.0.0.0:5000 (DEBUG modu)
+2025-08-04 16:27:07,187 - __main__ - INFO - Client bağlandı: mRhhhpAYNNoRdKieAAAB
+2025-08-04 16:27:13,538 - __main__ - INFO - Yayın döngüsü başlatıldı
+2025-08-04 16:27:13,538 - __main__ - INFO - Yayın thread'i başlatıldı
+2025-08-04 16:27:13,539 - __main__ - DEBUG - Initial content_list length: 2, current index: 0
+2025-08-04 16:27:13,539 - __main__ - INFO - Gösterim başlatıldı (Windows test modu)
+2025-08-04 16:27:13,539 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:27:13,540 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:27:13,540 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:27:13,541 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:27:23,543 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:27:23,543 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:27:23,543 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:27:23,544 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:27:23,544 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:27:33,544 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:27:33,545 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:27:33,546 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:27:33,546 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:27:33,546 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:27:43,547 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:27:43,548 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:27:43,548 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:27:43,548 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:27:43,549 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:27:51,893 - __main__ - INFO - Client bağlantısı kesildi: mRhhhpAYNNoRdKieAAAB
+2025-08-04 16:27:53,550 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:27:53,551 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:27:53,551 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:27:53,551 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:27:53,551 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:27:55,213 - __main__ - INFO - Client bağlandı: I9yH3sW6kzNdBlp9AAAD
+2025-08-04 16:28:03,552 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:28:03,552 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:28:03,552 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:28:03,554 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:28:03,554 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:28:13,555 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:28:13,555 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:28:13,555 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:28:13,555 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:28:13,556 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:28:23,557 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:28:23,557 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:28:23,557 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:28:23,557 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:28:23,557 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:28:33,558 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:28:33,559 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:28:33,559 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:28:33,559 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:28:33,560 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:28:42,203 - __main__ - INFO - Client bağlandı: op89ExPlClOC5pzEAAAF
+2025-08-04 16:28:43,561 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:28:43,561 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:28:43,562 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:28:43,562 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:28:43,563 - __main__ - INFO - Client bağlantısı kesildi: I9yH3sW6kzNdBlp9AAAD
+2025-08-04 16:28:43,563 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:28:53,564 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:28:53,564 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:28:53,564 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:28:53,564 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:28:53,565 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:29:03,566 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:29:03,566 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:29:03,566 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:29:03,566 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:29:03,567 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:29:13,568 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:29:13,569 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:29:13,569 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:29:13,569 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:29:13,569 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:29:23,570 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:29:23,570 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:29:23,570 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:29:23,571 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:29:23,571 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:29:27,502 - __main__ - INFO - Client bağlantısı kesildi: op89ExPlClOC5pzEAAAF
+2025-08-04 16:29:28,392 - __main__ - INFO - Client bağlandı: WIm-jiozarRBDo_VAAAH
+2025-08-04 16:29:33,572 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:29:33,573 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:29:33,573 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:29:33,573 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:29:33,574 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:29:43,575 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:29:43,575 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:29:43,576 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:29:43,576 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:29:43,577 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:29:53,578 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:29:53,578 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:29:53,578 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:29:53,579 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:29:53,579 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:30:03,580 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:30:03,580 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:30:03,580 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:30:03,580 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:30:03,581 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:30:13,582 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:30:13,582 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:30:13,583 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:30:13,583 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:30:13,583 - __main__ - INFO - Client bağlantısı kesildi: WIm-jiozarRBDo_VAAAH
+2025-08-04 16:30:13,583 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:30:15,895 - __main__ - INFO - Client bağlandı: 2sG3VQh7cCtv3JJZAAAJ
+2025-08-04 16:30:23,584 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:30:23,584 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:30:23,584 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:30:23,584 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:30:23,585 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:30:33,586 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:30:33,586 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:30:33,587 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:30:33,587 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:30:33,588 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:30:43,589 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:30:43,589 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:30:43,590 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:30:43,590 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:30:43,591 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:30:53,592 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:30:53,592 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:30:53,593 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:30:53,593 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:30:53,594 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:31:03,595 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:31:03,595 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:31:03,596 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:31:03,596 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:31:03,596 - __main__ - INFO - Client bağlantısı kesildi: 2sG3VQh7cCtv3JJZAAAJ
+2025-08-04 16:31:03,597 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:31:03,902 - __main__ - INFO - Client bağlandı: FMkEW9AbD9XgCt13AAAL
+2025-08-04 16:31:13,598 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:31:13,598 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:31:13,598 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:31:13,598 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:31:13,599 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:31:23,600 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:31:23,600 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:31:23,600 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:31:23,600 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:31:23,601 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:31:33,601 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:31:33,601 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:31:33,601 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:31:33,601 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:31:33,602 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:31:43,603 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:31:43,603 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:31:43,604 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:31:43,604 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:31:43,605 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:31:50,907 - __main__ - INFO - Client bağlandı: F96Pjh0FxKvQZAc0AAAN
+2025-08-04 16:31:51,910 - __main__ - INFO - Client bağlantısı kesildi: FMkEW9AbD9XgCt13AAAL
+2025-08-04 16:31:53,606 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:31:53,607 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:31:53,607 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:31:53,607 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:31:53,607 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:32:03,608 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:32:03,608 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:32:03,608 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:32:03,608 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:32:03,610 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:32:13,610 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:32:13,611 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:32:13,611 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:32:13,611 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:32:13,611 - __main__ - DEBUG - SocketIO events sent for: a.jpeg
+2025-08-04 16:32:23,612 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:32:23,612 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:32:23,612 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:32:23,613 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:32:23,615 - __main__ - DEBUG - SocketIO events sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:32:27,152 - __main__ - INFO - Kullanıcı tarafından durduruldu
+2025-08-04 16:32:27,152 - __main__ - INFO - Uygulama kapatılıyor...
+2025-08-04 16:34:13,332 - __main__ - INFO - 📁 2 içerik yüklendi
+2025-08-04 16:34:13,332 - __main__ - INFO - LED Pano Kontrol Sistemi başlatıldı (DEBUG modu)
+2025-08-04 16:34:13,332 - __main__ - INFO - Sunucu başlatılıyor: 0.0.0.0:5000 (DEBUG modu)
+2025-08-04 16:34:19,411 - __main__ - INFO - Client bağlandı: RVelmnxWxM0diFGEAAAB
+2025-08-04 16:34:26,274 - __main__ - INFO - Yayın döngüsü başlatıldı
+2025-08-04 16:34:26,274 - __main__ - INFO - Yayın thread'i başlatıldı
+2025-08-04 16:34:26,274 - __main__ - DEBUG - Initial content_list length: 2, current index: 0
+2025-08-04 16:34:26,274 - __main__ - INFO - Gösterim başlatıldı (Windows test modu)
+2025-08-04 16:34:26,274 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:34:26,275 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:34:26,276 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:34:26,276 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-04 16:34:36,277 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:34:36,278 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:34:36,278 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:34:36,278 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:34:36,279 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:34:46,279 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:34:46,279 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:34:46,280 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:34:46,280 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:34:46,280 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-04 16:34:56,281 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:34:56,282 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:34:56,282 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:34:56,283 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:34:56,283 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:35:04,163 - __main__ - INFO - Client bağlantısı kesildi: RVelmnxWxM0diFGEAAAB
+2025-08-04 16:35:05,176 - __main__ - INFO - Client bağlandı: vDhhtYWnALEnZwBvAAAD
+2025-08-04 16:35:06,284 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:35:06,284 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:35:06,285 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:35:06,285 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:35:06,285 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-04 16:35:16,286 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:35:16,287 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:35:16,287 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:35:16,287 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:35:16,288 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:35:19,899 - __main__ - INFO - Kullanıcı tarafından durduruldu
+2025-08-04 16:35:19,900 - __main__ - INFO - Uygulama kapatılıyor...
+2025-08-04 16:42:14,124 - __main__ - INFO - 📁 2 içerik yüklendi
+2025-08-04 16:42:14,124 - __main__ - INFO - LED Pano Kontrol Sistemi başlatıldı (DEBUG modu)
+2025-08-04 16:42:14,125 - __main__ - INFO - Sunucu başlatılıyor: 0.0.0.0:5000 (DEBUG modu)
+2025-08-04 16:42:17,486 - __main__ - INFO - 📁 2 içerik yüklendi
+2025-08-04 16:42:17,487 - __main__ - INFO - LED Pano Kontrol Sistemi başlatıldı (DEBUG modu)
+2025-08-04 16:42:17,487 - __main__ - INFO - Sunucu başlatılıyor: 0.0.0.0:5000 (DEBUG modu)
+2025-08-04 16:42:17,488 - __main__ - ERROR - Uygulama başlatma hatası: [WinError 10048] Normal olarak her yuva adresi (iletişim kuralı/ağ adresi/bağlantı noktası) için yalnızca bir kullanıma izin veriliyor
+2025-08-04 16:42:17,489 - __main__ - INFO - Uygulama kapatılıyor...
+2025-08-04 16:42:59,957 - __main__ - INFO - Client bağlandı: jztyif93mqXiGjLLAAAB
+2025-08-04 16:43:06,043 - __main__ - INFO - Yayın döngüsü başlatıldı
+2025-08-04 16:43:06,043 - __main__ - INFO - Yayın thread'i başlatıldı
+2025-08-04 16:43:06,044 - __main__ - DEBUG - Initial content_list length: 2, current index: 0
+2025-08-04 16:43:06,044 - __main__ - INFO - Gösterim başlatıldı (Windows test modu)
+2025-08-04 16:43:06,044 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:43:06,046 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:43:06,046 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:43:06,047 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-04 16:43:16,049 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:43:16,049 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:43:16,049 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:43:16,050 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:43:16,050 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:43:26,051 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:43:26,051 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:43:26,051 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:43:26,051 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:43:26,052 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-04 16:43:36,053 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:43:36,053 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:43:36,053 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:43:36,053 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:43:36,054 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:43:44,906 - __main__ - INFO - Client bağlantısı kesildi: jztyif93mqXiGjLLAAAB
+2025-08-04 16:43:46,055 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:43:46,055 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:43:46,055 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:43:46,055 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:43:46,056 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-04 16:43:51,870 - __main__ - INFO - 📁 2 içerik yüklendi
+2025-08-04 16:43:51,870 - __main__ - INFO - LED Pano Kontrol Sistemi başlatıldı (DEBUG modu)
+2025-08-04 16:43:51,871 - __main__ - INFO - Sunucu başlatılıyor: 0.0.0.0:5000 (DEBUG modu)
+2025-08-04 16:43:53,204 - __main__ - INFO - Client bağlandı: q1rBMDjKKqrMbjA1AAAB
+2025-08-04 16:43:59,923 - __main__ - INFO - Client bağlantısı kesildi: q1rBMDjKKqrMbjA1AAAB
+2025-08-04 16:44:05,013 - __main__ - INFO - Client bağlandı: _k4dqcgTOtgZtZ8lAAAD
+2025-08-04 16:44:05,993 - __main__ - INFO - Client bağlandı: GGkgba_LRSfnr4FsAAAF
+2025-08-04 16:44:07,836 - __main__ - INFO - Client bağlantısı kesildi: _k4dqcgTOtgZtZ8lAAAD
+2025-08-04 16:44:14,122 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-04 16:44:14,122 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-04 16:44:18,772 - __main__ - INFO - Yayın döngüsü başlatıldı
+2025-08-04 16:44:18,772 - __main__ - INFO - Yayın thread'i başlatıldı
+2025-08-04 16:44:18,773 - __main__ - DEBUG - Initial content_list length: 2, current index: 0
+2025-08-04 16:44:18,773 - __main__ - INFO - Gösterim başlatıldı (Windows test modu)
+2025-08-04 16:44:18,773 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:44:18,774 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:44:18,774 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:44:18,774 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-04 16:44:28,775 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:44:28,775 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:44:28,776 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:44:28,776 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:44:28,776 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:44:38,778 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:44:38,778 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:44:38,778 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:44:38,778 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:44:38,779 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-04 16:44:48,780 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:44:48,780 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:44:48,780 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:44:48,780 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:44:48,781 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:44:50,895 - __main__ - INFO - Client bağlantısı kesildi: GGkgba_LRSfnr4FsAAAF
+2025-08-04 16:44:54,211 - __main__ - INFO - Client bağlandı: s_3PqhObFzQ5weJMAAAH
+2025-08-04 16:44:58,781 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:44:58,781 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:44:58,781 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:44:58,782 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:44:58,782 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-04 16:45:08,783 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:45:08,784 - __main__ - INFO - Yayın döngüsü durduruldu
+2025-08-04 16:45:08,784 - __main__ - INFO - Yayın thread'i durduruldu
+2025-08-04 16:45:08,793 - __main__ - INFO - Gösterim durduruldu
+2025-08-04 16:45:40,895 - __main__ - INFO - Client bağlantısı kesildi: s_3PqhObFzQ5weJMAAAH
+2025-08-04 16:45:42,208 - __main__ - INFO - Client bağlandı: 4SMA3L5Hut50bX5GAAAJ
+2025-08-04 16:46:05,900 - __main__ - INFO - Client bağlantısı kesildi: 4SMA3L5Hut50bX5GAAAJ
+2025-08-04 16:46:05,901 - __main__ - INFO - Uygulama kapatılıyor...
+2025-08-04 16:48:04,339 - __main__ - INFO - 📁 2 içerik yüklendi
+2025-08-04 16:48:04,340 - __main__ - INFO - LED Pano Kontrol Sistemi başlatıldı (DEBUG modu)
+2025-08-04 16:48:04,340 - __main__ - INFO - Sunucu başlatılıyor: 0.0.0.0:5000 (DEBUG modu)
+2025-08-04 16:48:27,779 - __main__ - INFO - Client bağlandı: R_TiW3W5N8b9AxOIAAAB
+2025-08-04 16:48:29,542 - __main__ - INFO - Yayın döngüsü başlatıldı
+2025-08-04 16:48:29,543 - __main__ - INFO - Yayın thread'i başlatıldı
+2025-08-04 16:48:29,544 - __main__ - DEBUG - Initial content_list length: 2, current index: 0
+2025-08-04 16:48:29,544 - __main__ - INFO - Gösterim başlatıldı (Windows test modu)
+2025-08-04 16:48:29,545 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:48:29,546 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:48:29,547 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:48:29,548 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-04 16:48:39,549 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:48:39,550 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:48:39,550 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:48:39,551 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:48:39,551 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:48:49,552 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:48:49,552 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-04 16:48:49,552 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:48:49,552 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-04 16:48:49,553 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-04 16:48:59,554 - __main__ - DEBUG - Next item index: 1
+2025-08-04 16:48:59,555 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-04 16:48:59,555 - __main__ - DEBUG - Sorted content length: 2
+2025-08-04 16:48:59,557 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-04 16:48:59,558 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-04 16:49:09,568 - __main__ - DEBUG - Next item index: 0
+2025-08-04 16:49:09,569 - __main__ - INFO - Yayın döngüsü durduruldu
+2025-08-04 16:49:09,574 - __main__ - INFO - Yayın thread'i durduruldu
+2025-08-04 16:49:09,575 - __main__ - INFO - Gösterim durduruldu
+2025-08-04 16:49:14,367 - __main__ - INFO - Client bağlandı: X32o4CluoTBXgsiHAAAD
+2025-08-04 16:49:14,565 - __main__ - INFO - Client bağlantısı kesildi: R_TiW3W5N8b9AxOIAAAB
+2025-08-04 16:50:18,053 - __main__ - INFO - Client bağlantısı kesildi: X32o4CluoTBXgsiHAAAD
+2025-08-04 16:50:22,426 - __main__ - INFO - Uygulama kapatılıyor...
+2025-08-05 08:55:29,365 - __main__ - INFO - 📁 2 içerik yüklendi
+2025-08-05 08:55:29,365 - __main__ - INFO - LED Pano Kontrol Sistemi başlatıldı (DEBUG modu)
+2025-08-05 08:55:29,366 - __main__ - INFO - Sunucu başlatılıyor: 0.0.0.0:5000 (DEBUG modu)
+2025-08-05 08:55:35,681 - __main__ - INFO - Client bağlandı: 0ZLSzITwE_yPGyMvAAAB
+2025-08-05 08:55:48,622 - __main__ - INFO - Yayın döngüsü başlatıldı
+2025-08-05 08:55:48,622 - __main__ - INFO - Yayın thread'i başlatıldı
+2025-08-05 08:55:48,622 - __main__ - DEBUG - Initial content_list length: 2, current index: 0
+2025-08-05 08:55:48,623 - __main__ - INFO - Gösterim başlatıldı (Windows test modu)
+2025-08-05 08:55:48,623 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 08:55:48,624 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 08:55:48,625 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-05 08:55:48,625 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-05 08:55:58,627 - __main__ - DEBUG - Next item index: 1
+2025-08-05 08:55:58,627 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 08:55:58,627 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 08:55:58,627 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 08:55:58,629 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 08:56:08,629 - __main__ - DEBUG - Next item index: 0
+2025-08-05 08:56:08,629 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 08:56:08,629 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 08:56:08,631 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-05 08:56:08,631 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-05 08:56:18,632 - __main__ - DEBUG - Next item index: 1
+2025-08-05 08:56:18,632 - __main__ - INFO - Yayın döngüsü durduruldu
+2025-08-05 08:56:18,633 - __main__ - INFO - Yayın thread'i durduruldu
+2025-08-05 08:56:18,640 - __main__ - INFO - Gösterim durduruldu
+2025-08-05 08:56:22,487 - __main__ - INFO - Client bağlandı: V0bdW4KRh2ktlFfyAAAD
+2025-08-05 08:56:33,634 - __main__ - INFO - Client bağlantısı kesildi: 0ZLSzITwE_yPGyMvAAAB
+2025-08-05 08:58:23,622 - __main__ - INFO - 📁 2 içerik yüklendi
+2025-08-05 08:58:23,622 - __main__ - INFO - LED Pano Kontrol Sistemi başlatıldı (DEBUG modu)
+2025-08-05 08:58:23,623 - __main__ - INFO - Sunucu başlatılıyor: 0.0.0.0:5000 (DEBUG modu)
+2025-08-05 08:58:31,001 - __main__ - INFO - Client bağlandı: B-5fKkshGWcVapujAAAB
+2025-08-05 08:58:35,091 - __main__ - INFO - Yayın döngüsü başlatıldı
+2025-08-05 08:58:35,091 - __main__ - INFO - Yayın thread'i başlatıldı
+2025-08-05 08:58:35,092 - __main__ - DEBUG - Initial content_list length: 2, current index: 0
+2025-08-05 08:58:35,092 - __main__ - INFO - Gösterim başlatıldı (Windows test modu)
+2025-08-05 08:58:35,092 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 08:58:35,093 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 08:58:35,094 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-05 08:58:35,094 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'a.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-04T15:19:00.328157', 'size': 77730}}
+2025-08-05 08:58:35,095 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-05 08:58:45,095 - __main__ - DEBUG - Next item index: 1
+2025-08-05 08:58:45,096 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 08:58:45,096 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 08:58:45,096 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 08:58:45,097 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-04T16:22:15.587745', 'size': 77421}}
+2025-08-05 08:58:45,097 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 08:58:55,098 - __main__ - DEBUG - Next item index: 0
+2025-08-05 08:58:55,099 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 08:58:55,099 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 08:58:55,099 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-05 08:58:55,100 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'a.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-04T15:19:00.328157', 'size': 77730}}
+2025-08-05 08:58:55,100 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-05 08:58:57,043 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 08:58:57,044 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-05 08:59:05,100 - __main__ - DEBUG - Next item index: 1
+2025-08-05 08:59:05,101 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 08:59:05,101 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 08:59:05,101 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 08:59:05,102 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-04T16:22:15.587745', 'size': 77421}}
+2025-08-05 08:59:05,102 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 08:59:15,102 - __main__ - DEBUG - Next item index: 0
+2025-08-05 08:59:15,103 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 08:59:15,103 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 08:59:15,104 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-05 08:59:15,104 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'a.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-04T15:19:00.328157', 'size': 77730}}
+2025-08-05 08:59:15,104 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-05 08:59:19,127 - __main__ - INFO - Client bağlandı: jgFNqqbkpcZivVXzAAAD
+2025-08-05 08:59:20,105 - __main__ - INFO - Client bağlantısı kesildi: B-5fKkshGWcVapujAAAB
+2025-08-05 08:59:25,106 - __main__ - DEBUG - Next item index: 1
+2025-08-05 08:59:25,106 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 08:59:25,106 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 08:59:25,107 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 08:59:25,107 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-04T16:22:15.587745', 'size': 77421}}
+2025-08-05 08:59:25,108 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 08:59:35,109 - __main__ - DEBUG - Next item index: 0
+2025-08-05 08:59:35,109 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 08:59:35,109 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 08:59:35,110 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-05 08:59:35,111 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'a.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-04T15:19:00.328157', 'size': 77730}}
+2025-08-05 08:59:35,111 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-05 08:59:45,112 - __main__ - DEBUG - Next item index: 1
+2025-08-05 08:59:45,112 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 08:59:45,112 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 08:59:45,113 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 08:59:45,113 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-04T16:22:15.587745', 'size': 77421}}
+2025-08-05 08:59:45,114 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 08:59:55,115 - __main__ - DEBUG - Next item index: 0
+2025-08-05 08:59:55,115 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 08:59:55,115 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 08:59:55,116 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-05 08:59:55,116 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'a.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-04T15:19:00.328157', 'size': 77730}}
+2025-08-05 08:59:55,117 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-05 09:00:05,118 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:00:05,119 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:00:05,119 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:00:05,120 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:00:05,122 - __main__ - INFO - Client bağlantısı kesildi: jgFNqqbkpcZivVXzAAAD
+2025-08-05 09:00:05,122 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-04T16:22:15.587745', 'size': 77421}}
+2025-08-05 09:00:05,123 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:00:07,135 - __main__ - INFO - Client bağlandı: QbmpNKXH9uQ3iyahAAAF
+2025-08-05 09:00:15,124 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:00:15,124 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:00:15,125 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:00:15,125 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-05 09:00:15,126 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'a.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-04T15:19:00.328157', 'size': 77730}}
+2025-08-05 09:00:15,126 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-05 09:00:25,127 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:00:25,127 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:00:25,128 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:00:25,128 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:00:25,129 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-04T16:22:15.587745', 'size': 77421}}
+2025-08-05 09:00:25,129 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:00:35,130 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:00:35,130 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:00:35,131 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:00:35,131 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-05 09:00:35,131 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'a.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-04T15:19:00.328157', 'size': 77730}}
+2025-08-05 09:00:35,131 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-05 09:00:45,133 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:00:45,133 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:00:45,133 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:00:45,134 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:00:45,135 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-04T16:22:15.587745', 'size': 77421}}
+2025-08-05 09:00:45,135 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:00:54,132 - __main__ - INFO - Client bağlandı: qsB6VcmPIPAifN1DAAAH
+2025-08-05 09:00:55,136 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:00:55,136 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:00:55,136 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:00:55,137 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-05 09:00:55,137 - __main__ - INFO - Client bağlantısı kesildi: QbmpNKXH9uQ3iyahAAAF
+2025-08-05 09:00:55,138 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'a.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-04T15:19:00.328157', 'size': 77730}}
+2025-08-05 09:00:55,138 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-05 09:01:05,140 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:01:05,140 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:01:05,141 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:01:05,142 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:01:05,144 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-04T16:22:15.587745', 'size': 77421}}
+2025-08-05 09:01:05,145 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:01:15,146 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:01:15,147 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:01:15,147 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:01:15,148 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-05 09:01:15,148 - __main__ - DEBUG - SocketIO display_status event sent: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'a.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-04T15:19:00.328157', 'size': 77730}}
+2025-08-05 09:01:15,148 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-05 09:01:28,694 - __main__ - INFO - 📁 2 içerik yüklendi
+2025-08-05 09:01:28,696 - __main__ - INFO - LED Pano Kontrol Sistemi başlatıldı (DEBUG modu)
+2025-08-05 09:01:28,697 - __main__ - INFO - Sunucu başlatılıyor: 0.0.0.0:5000 (DEBUG modu)
+2025-08-05 09:01:39,027 - __main__ - INFO - Client bağlandı: NiBB_4Sdkdw3yL-6AAAB
+2025-08-05 09:01:43,824 - __main__ - INFO - Yayın döngüsü başlatıldı
+2025-08-05 09:01:43,824 - __main__ - INFO - Yayın thread'i başlatıldı
+2025-08-05 09:01:43,824 - __main__ - DEBUG - Initial content_list length: 2, current index: 0
+2025-08-05 09:01:43,825 - __main__ - INFO - Gösterim başlatıldı (Windows test modu)
+2025-08-05 09:01:43,825 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:01:43,826 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:01:43,826 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-05 09:01:43,827 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'a.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-04T15:19:00.328157', 'size': 77730}}
+2025-08-05 09:01:43,827 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:01:43,827 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-05 09:01:53,829 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:01:53,829 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:01:53,830 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:01:53,830 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:01:53,830 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-04T16:22:15.587745', 'size': 77421}}
+2025-08-05 09:01:53,831 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:01:53,831 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:02:03,832 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:02:03,833 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:02:03,833 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:02:03,833 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-05 09:02:03,833 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'a.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-04T15:19:00.328157', 'size': 77730}}
+2025-08-05 09:02:03,834 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:02:03,834 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-05 09:02:13,835 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:02:13,835 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:02:13,835 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:02:13,835 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:02:13,837 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-04T16:22:15.587745', 'size': 77421}}
+2025-08-05 09:02:13,837 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:02:13,838 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:02:23,838 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:02:23,838 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:02:23,838 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:02:23,838 - __main__ - INFO - Yayında: a.jpeg (image)
+2025-08-05 09:02:23,840 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'a.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-04T15:19:00.328157', 'size': 77730}}
+2025-08-05 09:02:23,840 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:02:23,840 - __main__ - DEBUG - SocketIO display_status event sent for: a.jpeg
+2025-08-05 09:02:25,538 - __main__ - INFO - Client bağlandı: huZ3lyvkQushtoEkAAAD
+2025-08-05 09:02:28,835 - __main__ - INFO - Client bağlantısı kesildi: NiBB_4Sdkdw3yL-6AAAB
+2025-08-05 09:02:33,840 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:02:33,840 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:02:33,840 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:02:33,840 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:02:33,841 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-04T16:22:15.587745', 'size': 77421}}
+2025-08-05 09:02:33,841 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:02:33,841 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:02:36,834 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:02:36,835 - __main__ - INFO - İçerik silindi: a.jpeg
+2025-08-05 09:02:39,982 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:02:39,983 - __main__ - INFO - İçerik silindi: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:02:43,843 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:02:43,843 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 0
+2025-08-05 09:02:44,844 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 0
+2025-08-05 09:02:45,845 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 0
+2025-08-05 09:02:46,847 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 0
+2025-08-05 09:02:47,847 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 0
+2025-08-05 09:02:48,848 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 0
+2025-08-05 09:02:49,856 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 0
+2025-08-05 09:02:50,858 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 0
+2025-08-05 09:02:51,858 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 0
+2025-08-05 09:02:52,859 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 0
+2025-08-05 09:02:53,861 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 0
+2025-08-05 09:02:54,862 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 0
+2025-08-05 09:02:55,862 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 0
+2025-08-05 09:02:56,419 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:02:56,420 - __main__ - INFO - Yeni içerik yüklendi: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:02:56,440 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:02:56,440 - __main__ - INFO - Yeni içerik yüklendi: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:02:56,863 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:02:56,863 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:02:56,864 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:02:56,864 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:02:56,865 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:02:56,866 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:03:06,867 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:03:06,868 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:03:06,868 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:03:06,869 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:03:06,869 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:03:06,870 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:03:06,870 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:03:11,831 - __main__ - INFO - Client bağlandı: ug5DZNmQbc9HcbZwAAAF
+2025-08-05 09:03:16,871 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:03:16,872 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:03:16,872 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:03:16,872 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:03:16,873 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:03:16,873 - __main__ - INFO - Client bağlantısı kesildi: huZ3lyvkQushtoEkAAAD
+2025-08-05 09:03:16,874 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:03:16,874 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:03:26,875 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:03:26,876 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:03:26,876 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:03:26,877 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:03:26,877 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:03:26,878 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:03:26,878 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:03:36,879 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:03:36,880 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:03:36,880 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:03:36,881 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:03:36,881 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:03:36,882 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:03:36,882 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:03:46,884 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:03:46,884 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:03:46,884 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:03:46,885 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:03:46,885 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:03:46,885 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:03:46,886 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:03:56,887 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:03:56,887 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:03:56,887 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:03:56,888 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:03:56,888 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:03:56,889 - __main__ - INFO - Client bağlantısı kesildi: ug5DZNmQbc9HcbZwAAAF
+2025-08-05 09:03:56,889 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:03:56,890 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:03:58,127 - __main__ - INFO - Client bağlandı: zBed73ovQFUH3Hz8AAAH
+2025-08-05 09:04:06,890 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:04:06,891 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:04:06,891 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:04:06,891 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:04:06,891 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:04:06,892 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:04:06,892 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:04:16,893 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:04:16,893 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:04:16,894 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:04:16,894 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:04:16,895 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:04:16,895 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:04:16,895 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:04:26,113 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:04:26,113 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-05 09:04:26,896 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:04:26,896 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:04:26,896 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:04:26,897 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:04:26,897 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:04:26,897 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:04:26,897 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:04:34,519 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:04:34,519 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-05 09:04:36,899 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:04:36,899 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:04:36,900 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:04:36,900 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:04:36,900 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:04:36,901 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:04:36,901 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:04:44,616 - __main__ - INFO - Client bağlandı: 18UjYIDy6lNpeN1DAAAJ
+2025-08-05 09:04:46,901 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:04:46,902 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:04:46,902 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:04:46,903 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:04:46,903 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:04:46,904 - __main__ - INFO - Client bağlantısı kesildi: zBed73ovQFUH3Hz8AAAH
+2025-08-05 09:04:46,905 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:04:46,905 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:04:56,907 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:04:56,907 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:04:56,907 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:04:56,908 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:04:56,908 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:04:56,909 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:04:56,909 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:05:06,911 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:05:06,911 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:05:06,912 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:05:06,912 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:05:06,912 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:05:06,913 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:05:06,913 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:05:16,914 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:05:16,914 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:05:16,914 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:05:16,915 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:05:16,915 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:05:16,916 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:05:16,916 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:05:26,917 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:05:26,917 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:05:26,917 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:05:26,918 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:05:26,918 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:05:26,918 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:05:26,919 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:05:29,618 - __main__ - INFO - Client bağlantısı kesildi: 18UjYIDy6lNpeN1DAAAJ
+2025-08-05 09:05:31,127 - __main__ - INFO - Client bağlandı: TCEQ011opjEHzXWsAAAL
+2025-08-05 09:05:36,920 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:05:36,920 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:05:36,920 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:05:36,921 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:05:36,921 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:05:36,921 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:05:36,923 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:05:46,923 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:05:46,923 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:05:46,924 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:05:46,925 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:05:46,925 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:05:46,926 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:05:46,926 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:05:52,126 - __main__ - INFO - Client bağlandı: FyBbyuaAg8BsBrRtAAAN
+2025-08-05 09:05:56,928 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:05:56,928 - __main__ - INFO - Yayın döngüsü durduruldu
+2025-08-05 09:05:56,928 - __main__ - INFO - Yayın thread'i durduruldu
+2025-08-05 09:05:56,937 - __main__ - INFO - Gösterim durduruldu
+2025-08-05 09:05:58,930 - __main__ - INFO - Yayın döngüsü başlatıldı
+2025-08-05 09:05:58,931 - __main__ - INFO - Yayın thread'i başlatıldı
+2025-08-05 09:05:58,931 - __main__ - DEBUG - Initial content_list length: 2, current index: 0
+2025-08-05 09:05:58,933 - __main__ - INFO - Gösterim başlatıldı (Windows test modu)
+2025-08-05 09:05:58,934 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:05:58,953 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:05:58,967 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:05:58,970 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:05:58,978 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:05:58,995 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:06:09,010 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:06:09,010 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:06:09,010 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:06:09,011 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:06:09,011 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:06:09,012 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:06:09,012 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:06:18,814 - __main__ - INFO - Client bağlantısı kesildi: TCEQ011opjEHzXWsAAAL
+2025-08-05 09:06:19,013 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:06:19,013 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:06:19,013 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:06:19,015 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:06:19,015 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:06:19,015 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:06:19,015 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:06:19,111 - __main__ - INFO - Client bağlandı: qIw0i7zAkvmD_BS0AAAP
+2025-08-05 09:06:29,016 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:06:29,016 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:06:29,017 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:06:29,017 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:06:29,018 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:06:29,018 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:06:29,019 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:06:39,020 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:06:39,020 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:06:39,020 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:06:39,020 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:06:39,021 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:06:39,021 - __main__ - INFO - Client bağlantısı kesildi: FyBbyuaAg8BsBrRtAAAN
+2025-08-05 09:06:39,022 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:06:39,022 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:06:49,023 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:06:49,023 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:06:49,023 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:06:49,023 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:06:49,024 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:06:49,024 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:06:49,024 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:06:59,025 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:06:59,025 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:06:59,026 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:06:59,026 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:06:59,027 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:06:59,027 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:06:59,027 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:07:03,832 - __main__ - INFO - Client bağlantısı kesildi: qIw0i7zAkvmD_BS0AAAP
+2025-08-05 09:07:06,139 - __main__ - INFO - Client bağlandı: 70v1guxhM3kjogp8AAAR
+2025-08-05 09:07:09,028 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:07:09,028 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:07:09,029 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:07:09,029 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:07:09,029 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:07:09,030 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:07:09,030 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:07:16,758 - __main__ - INFO - Client bağlandı: kyiem4CEhxJXLXw1AAAT
+2025-08-05 09:07:19,031 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:07:19,031 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:07:19,032 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:07:19,032 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:07:19,032 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:07:19,033 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:07:19,033 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:07:29,034 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:07:29,034 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:07:29,034 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:07:29,035 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:07:29,035 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:07:29,036 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:07:29,036 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:07:39,037 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:07:39,037 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:07:39,037 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:07:39,038 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:07:39,038 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:07:39,038 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:07:39,039 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:07:49,040 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:07:49,040 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:07:49,041 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:07:49,041 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:07:49,041 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:07:49,042 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:07:49,042 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:07:53,825 - __main__ - INFO - Client bağlantısı kesildi: 70v1guxhM3kjogp8AAAR
+2025-08-05 09:07:59,042 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:07:59,043 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:07:59,044 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:07:59,044 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:07:59,045 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:07:59,046 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:07:59,046 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:08:01,821 - __main__ - INFO - Client bağlantısı kesildi: kyiem4CEhxJXLXw1AAAT
+2025-08-05 09:08:03,126 - __main__ - INFO - Client bağlandı: j0d9lKY6EOQkRr0cAAAV
+2025-08-05 09:08:06,804 - __main__ - INFO - Client bağlantısı kesildi: j0d9lKY6EOQkRr0cAAAV
+2025-08-05 09:08:07,723 - __main__ - INFO - Client bağlandı: ex0-1yU4i5moTz89AAAX
+2025-08-05 09:08:09,047 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:08:09,047 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:08:09,047 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:08:09,049 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:08:09,049 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:08:09,049 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:08:09,050 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:08:11,756 - __main__ - INFO - Client bağlandı: q6FLYllPbj47jM9HAAAZ
+2025-08-05 09:08:12,555 - __main__ - INFO - Client bağlantısı kesildi: q6FLYllPbj47jM9HAAAZ
+2025-08-05 09:08:13,018 - __main__ - INFO - Client bağlandı: -9O_ETYAUOyBbYZvAAAb
+2025-08-05 09:08:15,055 - __main__ - INFO - Client bağlantısı kesildi: -9O_ETYAUOyBbYZvAAAb
+2025-08-05 09:08:15,595 - __main__ - INFO - Client bağlandı: jzrrKfhfzbgEIVg0AAAd
+2025-08-05 09:08:16,496 - __main__ - INFO - Client bağlantısı kesildi: jzrrKfhfzbgEIVg0AAAd
+2025-08-05 09:08:16,958 - __main__ - INFO - Client bağlandı: 73OUYRY-sxtD8m5-AAAf
+2025-08-05 09:08:19,050 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:08:19,050 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:08:19,050 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:08:19,051 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:08:19,051 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:08:19,052 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:08:19,052 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:08:20,790 - __main__ - INFO - Client bağlandı: _EOqVSQ--vS8wlPJAAAh
+2025-08-05 09:08:29,054 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:08:29,054 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:08:29,055 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:08:29,055 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:08:29,056 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:08:29,056 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:08:29,056 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:08:39,057 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:08:39,057 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:08:39,058 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:08:39,058 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:08:39,059 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:08:39,059 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:08:39,059 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:08:48,089 - __main__ - INFO - Client bağlandı: mfnR_ObNeebJYKSgAAAj
+2025-08-05 09:08:49,060 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:08:49,061 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:08:49,061 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:08:49,062 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:08:49,062 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:08:49,062 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:08:49,063 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:08:52,735 - __main__ - INFO - Client bağlantısı kesildi: ex0-1yU4i5moTz89AAAX
+2025-08-05 09:08:59,063 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:08:59,063 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:08:59,063 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:08:59,063 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:08:59,064 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:08:59,064 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:08:59,065 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:08:59,747 - __main__ - INFO - Client bağlandı: hyPiFJm-Mo-yJTF-AAAl
+2025-08-05 09:09:01,973 - __main__ - INFO - Client bağlantısı kesildi: 73OUYRY-sxtD8m5-AAAf
+2025-08-05 09:09:03,914 - __main__ - INFO - Client bağlantısı kesildi: hyPiFJm-Mo-yJTF-AAAl
+2025-08-05 09:09:04,529 - __main__ - INFO - Client bağlandı: PfFrgdRNjgPKs_bqAAAn
+2025-08-05 09:09:05,847 - __main__ - INFO - Client bağlantısı kesildi: _EOqVSQ--vS8wlPJAAAh
+2025-08-05 09:09:06,222 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:09:06,223 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-05 09:09:06,513 - __main__ - INFO - Client bağlantısı kesildi: PfFrgdRNjgPKs_bqAAAn
+2025-08-05 09:09:06,956 - __main__ - INFO - Client bağlandı: HmPZzlXqlPvgEvNpAAAp
+2025-08-05 09:09:08,399 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:09:08,399 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-05 09:09:08,870 - __main__ - INFO - Client bağlantısı kesildi: HmPZzlXqlPvgEvNpAAAp
+2025-08-05 09:09:09,066 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:09:09,067 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:09:09,068 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:09:09,069 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:09:09,070 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:09:09,071 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:09:09,072 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:09:09,326 - __main__ - INFO - Client bağlandı: 4dYGp0urH1X7JTSiAAAr
+2025-08-05 09:09:13,808 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:09:13,808 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-05 09:09:14,216 - __main__ - INFO - Client bağlantısı kesildi: 4dYGp0urH1X7JTSiAAAr
+2025-08-05 09:09:14,744 - __main__ - INFO - Client bağlandı: pSH5T4-mbOGi6lzaAAAt
+2025-08-05 09:09:15,182 - __main__ - INFO - Client bağlantısı kesildi: pSH5T4-mbOGi6lzaAAAt
+2025-08-05 09:09:15,859 - __main__ - INFO - Client bağlandı: DkQHRWRl0KMmx_e6AAAv
+2025-08-05 09:09:16,193 - __main__ - INFO - Client bağlantısı kesildi: DkQHRWRl0KMmx_e6AAAv
+2025-08-05 09:09:16,772 - __main__ - INFO - Client bağlandı: KjMCbIbWzvCWYIG3AAAx
+2025-08-05 09:09:17,166 - __main__ - INFO - Client bağlantısı kesildi: KjMCbIbWzvCWYIG3AAAx
+2025-08-05 09:09:17,817 - __main__ - INFO - Client bağlandı: g2XXDGQMmqrYrhLzAAAz
+2025-08-05 09:09:19,074 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:09:19,074 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:09:19,074 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:09:19,074 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:09:19,075 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:09:19,075 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:09:19,075 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:09:20,409 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:09:20,409 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-05 09:09:21,873 - __main__ - INFO - Client bağlandı: -i_qObAncpghjKXoAAA1
+2025-08-05 09:09:23,296 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:09:23,297 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-05 09:09:23,813 - __main__ - INFO - Client bağlantısı kesildi: -i_qObAncpghjKXoAAA1
+2025-08-05 09:09:24,222 - __main__ - INFO - Client bağlandı: BvbJDIz0SQ2GyJv1AAA3
+2025-08-05 09:09:29,076 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:09:29,077 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:09:29,077 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:09:29,077 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:09:29,078 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:09:29,078 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:09:29,079 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:09:32,353 - __main__ - INFO - Client bağlandı: xbj3NAihDefEE18wAAA5
+2025-08-05 09:09:33,115 - __main__ - INFO - Client bağlantısı kesildi: mfnR_ObNeebJYKSgAAAj
+2025-08-05 09:09:38,044 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:09:38,045 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-05 09:09:39,080 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:09:39,080 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:09:39,080 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:09:39,080 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:09:39,081 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:09:39,081 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:09:39,081 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:09:41,281 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:09:41,281 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-05 09:09:41,602 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:09:41,603 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-05 09:09:48,843 - __main__ - INFO - Client bağlandı: myb8asYRSJEKngiRAAA7
+2025-08-05 09:09:49,082 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:09:49,083 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:09:49,083 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:09:49,083 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:09:49,084 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:09:49,085 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:09:49,086 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:09:59,087 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:09:59,088 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:09:59,088 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:09:59,088 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:09:59,089 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:09:59,089 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:09:59,089 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:10:02,870 - __main__ - INFO - Client bağlantısı kesildi: g2XXDGQMmqrYrhLzAAAz
+2025-08-05 09:10:09,090 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:10:09,091 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:10:09,091 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:10:09,091 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:10:09,091 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:10:09,092 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:10:09,092 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:10:09,246 - __main__ - INFO - Client bağlantısı kesildi: BvbJDIz0SQ2GyJv1AAA3
+2025-08-05 09:10:19,092 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:10:19,093 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:10:19,093 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:10:19,093 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:10:19,093 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:10:19,094 - __main__ - INFO - Client bağlantısı kesildi: xbj3NAihDefEE18wAAA5
+2025-08-05 09:10:19,094 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:10:19,094 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:10:24,117 - __main__ - INFO - Client bağlandı: LmnRnMBDarxuCH_PAAA9
+2025-08-05 09:10:27,162 - __main__ - INFO - Client bağlantısı kesildi: LmnRnMBDarxuCH_PAAA9
+2025-08-05 09:10:29,095 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:10:29,095 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:10:29,096 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:10:29,096 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:10:29,096 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:10:29,097 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:10:29,097 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:10:33,918 - __main__ - INFO - Client bağlantısı kesildi: myb8asYRSJEKngiRAAA7
+2025-08-05 09:10:39,098 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:10:39,098 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:10:39,098 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:10:39,098 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:10:39,099 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:10:39,099 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:10:39,099 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:10:39,233 - __main__ - INFO - Kullanıcı tarafından durduruldu
+2025-08-05 09:10:39,234 - __main__ - INFO - Uygulama kapatılıyor...
+2025-08-05 09:10:44,240 - __main__ - INFO - Yayın thread'i durduruldu
+2025-08-05 09:14:03,628 - __main__ - INFO - 📁 2 içerik yüklendi
+2025-08-05 09:14:03,629 - __main__ - INFO - LED Pano Kontrol Sistemi başlatıldı (DEBUG modu)
+2025-08-05 09:14:03,629 - __main__ - INFO - Sunucu başlatılıyor: 0.0.0.0:5000 (DEBUG modu)
+2025-08-05 09:14:10,753 - __main__ - INFO - Client bağlandı: zyWtnM0SKpHHHN-6AAAB
+2025-08-05 09:14:14,505 - __main__ - INFO - Yayın döngüsü başlatıldı
+2025-08-05 09:14:14,505 - __main__ - INFO - Yayın thread'i başlatıldı
+2025-08-05 09:14:14,505 - __main__ - DEBUG - Initial content_list length: 2, current index: 0
+2025-08-05 09:14:14,505 - __main__ - INFO - Gösterim başlatıldı (Windows test modu)
+2025-08-05 09:14:14,505 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:14:14,507 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:14:14,507 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:14:14,508 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:14:14,508 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:14:14,508 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:14:24,509 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:14:24,509 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:14:24,510 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:14:24,510 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:14:24,510 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:14:24,511 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:14:24,511 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:14:32,394 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:14:32,395 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-05 09:14:34,089 - __main__ - INFO - Client bağlandı: dPXewJF3D2mBk1W5AAAD
+2025-08-05 09:14:34,511 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:14:34,513 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:14:34,513 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:14:34,513 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:14:34,513 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:14:34,513 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:14:34,515 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:14:44,515 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:14:44,515 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:14:44,515 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:14:44,516 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:14:44,516 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:14:44,517 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:14:44,517 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:14:54,518 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:14:54,519 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:14:54,519 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:14:54,519 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:14:54,520 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:14:54,520 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:14:54,520 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:14:59,523 - __main__ - INFO - Client bağlantısı kesildi: zyWtnM0SKpHHHN-6AAAB
+2025-08-05 09:15:04,521 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:15:04,521 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:15:04,522 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:15:04,522 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:15:04,522 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:15:04,523 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:15:04,523 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:15:14,524 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:15:14,524 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:15:14,525 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:15:14,525 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:15:14,525 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:15:14,526 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:15:14,527 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:15:19,121 - __main__ - INFO - Client bağlantısı kesildi: dPXewJF3D2mBk1W5AAAD
+2025-08-05 09:15:20,368 - __main__ - INFO - Client bağlandı: WdJKOMqAb7iIa6-nAAAF
+2025-08-05 09:15:23,140 - __main__ - INFO - Client bağlantısı kesildi: WdJKOMqAb7iIa6-nAAAF
+2025-08-05 09:15:23,916 - __main__ - INFO - Client bağlandı: Py5dkI0YSOIReMwWAAAH
+2025-08-05 09:15:24,527 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:15:24,527 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:15:24,527 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:15:24,528 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:15:24,528 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:15:24,529 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:15:24,529 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:15:28,665 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:15:28,665 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-05 09:15:34,530 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:15:34,531 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:15:34,531 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:15:34,532 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:15:34,532 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:15:34,532 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:15:34,532 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:15:44,533 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:15:44,533 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:15:44,535 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:15:44,536 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:15:44,537 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:15:44,538 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:15:44,538 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:15:54,539 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:15:54,539 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:15:54,539 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:15:54,540 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:15:54,540 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:15:54,540 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:15:54,541 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:16:04,541 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:16:04,542 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:16:04,542 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:16:04,542 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:16:04,543 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:16:04,543 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:16:04,543 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:16:08,940 - __main__ - INFO - Client bağlantısı kesildi: Py5dkI0YSOIReMwWAAAH
+2025-08-05 09:16:10,422 - __main__ - INFO - Client bağlandı: MQJ1GsdNhiiTYSqoAAAJ
+2025-08-05 09:16:14,544 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:16:14,544 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:16:14,544 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:16:14,545 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:16:14,545 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:16:14,545 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:16:14,545 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:16:17,064 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:16:17,064 - __main__ - INFO - Yeni içerik yüklendi: Ekran_Kayd_2025-06-01_001715.mp4
+2025-08-05 09:16:20,135 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:16:20,135 - __main__ - INFO - İçerik sıralaması güncellendi
+2025-08-05 09:16:20,886 - __main__ - INFO - Client bağlandı: JPDEIvW8ukCC7mTBAAAL
+2025-08-05 09:16:24,547 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:16:24,547 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 3
+2025-08-05 09:16:24,547 - __main__ - DEBUG - Sorted content length: 3
+2025-08-05 09:16:24,547 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:16:24,548 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:16:24,548 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:16:24,548 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:16:33,981 - __main__ - DEBUG - 💾 İçerik listesi kaydedildi
+2025-08-05 09:16:33,981 - __main__ - INFO - İçerik silindi: Ekran_Kayd_2025-06-01_001715.mp4
+2025-08-05 09:16:34,549 - __main__ - DEBUG - Next item index: 2
+2025-08-05 09:16:34,549 - __main__ - DEBUG - Loop start - Index: 2, Content list length: 2
+2025-08-05 09:16:34,549 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:16:34,549 - __main__ - DEBUG - Index reset to 0 due to content list change
+2025-08-05 09:16:34,549 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:16:34,550 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:16:34,550 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:16:34,550 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:16:35,280 - __main__ - INFO - Client bağlandı: 7ziwGer5W2th-1C4AAAN
+2025-08-05 09:16:35,738 - __main__ - INFO - Client bağlantısı kesildi: 7ziwGer5W2th-1C4AAAN
+2025-08-05 09:16:36,150 - __main__ - INFO - Client bağlandı: sHFiMcwpJuqqRw6MAAAP
+2025-08-05 09:16:36,455 - __main__ - INFO - Client bağlantısı kesildi: sHFiMcwpJuqqRw6MAAAP
+2025-08-05 09:16:37,151 - __main__ - INFO - Client bağlandı: urNWcMBCIgtMzkosAAAR
+2025-08-05 09:16:37,198 - __main__ - INFO - Client bağlantısı kesildi: urNWcMBCIgtMzkosAAAR
+2025-08-05 09:16:37,714 - __main__ - INFO - Client bağlandı: DgxVftRWqy99bCEXAAAT
+2025-08-05 09:16:44,551 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:16:44,551 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:16:44,552 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:16:44,552 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:16:44,552 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:16:44,553 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:16:44,553 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:16:54,554 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:16:54,554 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:16:54,555 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:16:54,555 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:16:54,555 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:16:54,555 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:16:54,555 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:16:58,612 - __main__ - INFO - Client bağlantısı kesildi: MQJ1GsdNhiiTYSqoAAAJ
+2025-08-05 09:17:04,557 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:17:04,557 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:17:04,557 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:17:04,558 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:17:04,558 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:17:04,559 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:17:04,559 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:17:05,916 - __main__ - INFO - Client bağlantısı kesildi: JPDEIvW8ukCC7mTBAAAL
+2025-08-05 09:17:14,560 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:17:14,560 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:17:14,561 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:17:14,561 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:17:14,561 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:17:14,562 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:17:14,562 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:17:23,860 - __main__ - INFO - Client bağlandı: agUWbmAWGrYxUoX-AAAV
+2025-08-05 09:17:24,563 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:17:24,563 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:17:24,563 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:17:24,564 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:17:24,564 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:17:24,565 - __main__ - INFO - Client bağlantısı kesildi: DgxVftRWqy99bCEXAAAT
+2025-08-05 09:17:24,565 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:17:24,566 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:17:25,398 - __main__ - INFO - Client bağlandı: NaDgoOmFQZqRt0nTAAAX
+2025-08-05 09:17:34,567 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:17:34,568 - __main__ - DEBUG - Loop start - Index: 0, Content list length: 2
+2025-08-05 09:17:34,568 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:17:34,568 - __main__ - INFO - Yayında: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg (image)
+2025-08-05 09:17:34,569 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 1, 'filename': 'WhatsApp_Image_2025-07-31_at_08.39.16.jpeg', 'type': 'image', 'order': 0, 'upload_time': '2025-08-05T09:02:56.417425', 'size': 77421}}
+2025-08-05 09:17:34,569 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:17:34,570 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-07-31_at_08.39.16.jpeg
+2025-08-05 09:17:44,571 - __main__ - DEBUG - Next item index: 1
+2025-08-05 09:17:44,571 - __main__ - DEBUG - Loop start - Index: 1, Content list length: 2
+2025-08-05 09:17:44,571 - __main__ - DEBUG - Sorted content length: 2
+2025-08-05 09:17:44,571 - __main__ - INFO - Yayında: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg (image)
+2025-08-05 09:17:44,571 - __main__ - DEBUG - Sending SocketIO display_status event: {'status': 'playing', 'current_item': {'id': 2, 'filename': 'WhatsApp_Image_2025-08-04_at_10.16.36.jpeg', 'type': 'image', 'order': 1, 'upload_time': '2025-08-05T09:02:56.438525', 'size': 635865}}
+2025-08-05 09:17:44,572 - __main__ - DEBUG - SocketIO display_status event sent successfully
+2025-08-05 09:17:44,572 - __main__ - DEBUG - SocketIO display_status event sent for: WhatsApp_Image_2025-08-04_at_10.16.36.jpeg
+2025-08-05 09:17:51,089 - __main__ - INFO - Kullanıcı tarafından durduruldu
+2025-08-05 09:17:51,090 - __main__ - INFO - Uygulama kapatılıyor...
+2025-08-05 09:17:54,574 - __main__ - DEBUG - Next item index: 0
+2025-08-05 09:17:54,574 - __main__ - INFO - Yayın döngüsü durduruldu
