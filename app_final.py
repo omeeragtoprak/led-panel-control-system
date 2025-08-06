@@ -44,7 +44,13 @@ app.config['UPLOAD_FOLDER'] = Config.BASE_UPLOAD
 app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024  # 100MB
 
 # SocketIO with threading mode (safer for Windows)
-socketio = SocketIO(app, cors_allowed_origins="*", async_mode='threading')
+socketio = SocketIO(app, 
+                   cors_allowed_origins="*", 
+                   async_mode='threading',
+                   logger=True,
+                   engineio_logger=True,
+                   ping_timeout=60,
+                   ping_interval=25)
 
 # Flask-Login setup
 login_manager = LoginManager(app)
@@ -329,7 +335,17 @@ def api_upload_content(location):
         duration = request.form.get('duration', type=int)
         if not duration or duration <= 0:
             # Varsayılan süreler
-            duration = 7 if file_type == 'image' else 15
+            if file_type == 'image':
+                duration = 7
+            elif file_type == 'video':
+                # Video süresini dosyadan al
+                try:
+                    video_duration = get_video_duration(filepath)
+                    duration = int(video_duration) if video_duration > 0 else 15
+                except:
+                    duration = 15
+            else:
+                duration = 7
         
         # İçerik listesine ekle
         new_item = {
@@ -343,7 +359,7 @@ def api_upload_content(location):
         st['content'].append(new_item)
         save_content_list(location)
         
-        logger.info(f"{LOCATION_NAMES[location]} yeni içerik: {file.filename}")
+        logger.info(f"{LOCATION_NAMES[location]} yeni içerik: {file.filename} (süre: {duration}s)")
         
         # Socket event
         socketio.emit('content_updated', {
@@ -352,7 +368,7 @@ def api_upload_content(location):
             'content_list': st['content']
         })
     
-    return jsonify({'success': True, 'message': 'Dosya yüklendi'})
+    return jsonify({'success': True, 'content': new_item, 'message': 'Dosya yüklendi'})
 
 @app.route('/api/<location>/content/<int:content_id>', methods=['DELETE'])
 @login_required
@@ -553,36 +569,46 @@ def uploaded_file(location, filename):
 @socketio.on('connect')
 def handle_connect():
     """Client bağlantısı"""
-    logger.info(f"Client bağlandı: {request.sid}")
+    try:
+        logger.info(f"Client bağlandı: {request.sid}")
+    except Exception as e:
+        logger.error(f"Connect error: {e}")
 
 @socketio.on('disconnect')
 def handle_disconnect():
     """Client bağlantısı koptu"""
-    logger.info(f"Client ayrıldı: {request.sid}")
+    try:
+        logger.info(f"Client ayrıldı: {request.sid}")
+    except Exception as e:
+        logger.error(f"Disconnect error: {e}")
 
 @socketio.on('join_location')
 def handle_join_location(data):
     """Lokasyona özel odaya katıl"""
-    location = data.get('location')
-    if location in LOCATIONS:
-        # İlk bağlantıda mevcut durumu gönder
-        st = state[location]
-        emit('content_updated', {
-            'action': 'sync',
-            'location': location,
-            'content_list': st['content']
-        })
-        
-        # Gösterim durumunu gönder
-        current_item = None
-        if st['is_running'] and st['content']:
-            current_item = st['content'][st['current_index']]
-        
-        emit('display_status', {
-            'status': 'playing' if st['is_running'] else 'stopped',
-            'location': location,
-            'current_item': current_item
-        })
+    try:
+        location = data.get('location')
+        if location in LOCATIONS:
+            # İlk bağlantıda mevcut durumu gönder
+            st = state[location]
+            emit('content_updated', {
+                'action': 'sync',
+                'location': location,
+                'content_list': st['content']
+            })
+            
+            # Gösterim durumunu gönder
+            current_item = None
+            if st['is_running'] and st['content']:
+                current_item = st['content'][st['current_index']]
+            
+            emit('display_status', {
+                'status': 'playing' if st['is_running'] else 'stopped',
+                'location': location,
+                'current_item': current_item
+            })
+    except Exception as e:
+        logger.error(f"Join location error: {e}")
+        emit('error', {'message': 'Bağlantı hatası'})
 
 # ---------------------------------------------------------------------------
 # APPLICATION STARTUP
@@ -606,7 +632,9 @@ if __name__ == '__main__':
         socketio.run(app, 
                     host=Config.HOST, 
                     port=Config.PORT,
-                    allow_unsafe_werkzeug=True)
+                    allow_unsafe_werkzeug=True,
+                    debug=False,
+                    use_reloader=False)
                     
     except KeyboardInterrupt:
         logger.info("Uygulama kapatılıyor...")

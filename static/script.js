@@ -80,6 +80,43 @@ document.addEventListener('DOMContentLoaded', function() {
     
     uploadArea.addEventListener('click', () => fileInput.click());
     fileInput.addEventListener('change', (e) => handleFiles(e.target.files));
+
+    const uploadBtn = document.getElementById('upload-btn');
+    if (uploadBtn) {
+        uploadBtn.addEventListener('click', function() {
+            if (selectedFile) {
+                uploadFile(selectedFile);
+                selectedFile = null;
+                uploadBtn.disabled = true;
+            }
+        });
+    }
+    
+    // Duration controls event listeners
+    const durationSlider = document.getElementById('duration-slider');
+    const durationInput = document.getElementById('duration-input');
+    const presetBtns = document.querySelectorAll('.preset-btn');
+    
+    if (durationSlider && durationInput) {
+        durationSlider.addEventListener('input', function() {
+            durationInput.value = this.value;
+            updatePresetButtons(parseInt(this.value));
+        });
+        
+        durationInput.addEventListener('input', function() {
+            durationSlider.value = this.value;
+            updatePresetButtons(parseInt(this.value));
+        });
+    }
+    
+    presetBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const duration = parseInt(this.dataset.duration);
+            durationSlider.value = duration;
+            durationInput.value = duration;
+            updatePresetButtons(duration);
+        });
+    });
     
     setupDragDrop();
 
@@ -121,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Start button clicked');
         startBtn.disabled = true;
         
-        fetch(`/api/display/start/${currentLocation}`, { method: 'POST' })
+        fetch(`/api/${currentLocation}/display/start`, { method: 'POST' })
             .then(response => response.json())
             .then(data => {
                 console.log('Start response:', data);
@@ -145,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Stop button clicked');
         stopBtn.disabled = true;
         
-        fetch(`/api/display/stop/${currentLocation}`, { method: 'POST' })
+        fetch(`/api/${currentLocation}/display/stop`, { method: 'POST' })
             .then(response => response.json())
             .then(data => {
                 console.log('Stop response:', data);
@@ -215,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateContentOrder(order) {
-        fetch(`/api/content/order/${currentLocation}`, {
+        fetch(`/api/${currentLocation}/content/order`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ order: order })
@@ -343,18 +380,90 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     window.deleteContent = function(id) {
-        if(confirm('Bu içeriği silmek istediğinizden emin misiniz?')) {
-            fetch(`/api/content/${currentLocation}/${id}`, { method: 'DELETE' })
-                .then(res => res.json())
-                .then(data => {
-                    showToast(data.message || 'İçerik silindi.', 'success');
-                })
-                .catch(error => {
-                    console.error('Delete error:', error);
-                    showToast('İçerik silinirken hata oluştu.', 'error');
-                });
+        // İçerik bilgisini bul
+        const item = contentList.find(item => item.id == id);
+        if (!item) {
+            showToast('İçerik bulunamadı.', 'error');
+            return;
         }
+        
+        // Modal'ı göster
+        showDeleteDialog(item);
     }
+
+    // Modal dialog fonksiyonları
+    let itemToDelete = null;
+
+    function showDeleteDialog(item) {
+        itemToDelete = item;
+        const modal = document.getElementById('delete-dialog');
+        const itemInfo = document.getElementById('modal-item-info');
+        
+        // İçerik bilgisini göster
+        const fileType = item.type === 'video' ? 'Video' : 'Resim';
+        const duration = item.duration ? `${item.duration} saniye` : 'Süre belirtilmemiş';
+        itemInfo.innerHTML = `
+            <strong>${fileType}:</strong> ${item.filename}<br>
+            <strong>Süre:</strong> ${duration}<br>
+            <strong>Boyut:</strong> ${formatFileSize(item.size || 0)}
+        `;
+        
+        modal.style.display = 'flex';
+    }
+
+    function closeDeleteDialog() {
+        const modal = document.getElementById('delete-dialog');
+        modal.style.display = 'none';
+        itemToDelete = null;
+    }
+
+    function confirmDelete() {
+        if (!itemToDelete) {
+            showToast('Silinecek içerik bulunamadı.', 'error');
+            return;
+        }
+
+        fetch(`/api/${currentLocation}/content/${itemToDelete.id}`, { method: 'DELETE' })
+            .then(res => res.json())
+            .then(data => {
+                showToast(data.message || 'İçerik silindi.', 'success');
+                closeDeleteDialog();
+                // İçerik listesini güncelle
+                fetchContentList();
+            })
+            .catch(error => {
+                console.error('Delete error:', error);
+                showToast('İçerik silinirken hata oluştu.', 'error');
+                closeDeleteDialog();
+            });
+    }
+
+    function formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    // Modal dışına tıklandığında kapatma
+    document.addEventListener('click', function(event) {
+        const modal = document.getElementById('delete-dialog');
+        if (event.target === modal) {
+            closeDeleteDialog();
+        }
+    });
+
+    // ESC tuşu ile modal kapatma
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeDeleteDialog();
+        }
+    });
+
+    // Global fonksiyonları window objesine ekle
+    window.closeDeleteDialog = closeDeleteDialog;
+    window.confirmDelete = confirmDelete;
 
     function updateConnectionStatus(isConnected) {
         if (isConnected) {
@@ -420,36 +529,47 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function handleFiles(files) {
-        ([...files]).forEach(uploadFile);
-    }
-
-    function uploadFile(file) {
-        let formData = new FormData();
-        formData.append('file', file);
-
-        // Video süresini al
+        if (!files || files.length === 0) return;
+        const file = files[0];
+        selectedFile = file;
         if (file.type.startsWith('video/')) {
             const video = document.createElement('video');
             video.preload = 'metadata';
-            
             video.onloadedmetadata = function() {
                 const duration = Math.round(video.duration);
-                formData.append('duration', duration);
-                performUpload(formData, file.name);
+                console.log('Video süresi:', duration);
+                updateDurationUI(duration);
             };
-            
             video.onerror = function() {
-                // Video süresi alınamazsa varsayılan süre kullan
-                formData.append('duration', 10);
-                performUpload(formData, file.name);
+                updateDurationUI(10);
             };
-            
             video.src = URL.createObjectURL(file);
         } else {
-            // Resim dosyaları için varsayılan süre
-            formData.append('duration', 7);
-            performUpload(formData, file.name);
+            updateDurationUI(7);
         }
+        uploadBtn.disabled = false;
+    }
+
+    function updateDurationUI(duration) {
+        const durationSettings = document.getElementById('duration-settings');
+        if (durationSettings) durationSettings.style.display = 'block';
+        const durationSlider = document.getElementById('duration-slider');
+        const durationInput = document.getElementById('duration-input');
+        if (durationSlider && durationInput) {
+            durationSlider.value = duration;
+            durationInput.value = duration;
+            updatePresetButtons(duration);
+        }
+    }
+
+    function updatePresetButtons(duration) {
+        const presetBtns = document.querySelectorAll('.preset-btn');
+        presetBtns.forEach(btn => {
+            btn.classList.remove('active');
+            if (parseInt(btn.dataset.duration) === duration) {
+                btn.classList.add('active');
+            }
+        });
     }
 
     function performUpload(formData, fileName) {
@@ -469,7 +589,7 @@ document.addEventListener('DOMContentLoaded', function() {
             progressFill.style.width = progress + '%';
         }, 200);
 
-        fetch(`/api/content/upload/${currentLocation}`, {
+        fetch(`/api/${currentLocation}/content/upload`, {
             method: 'POST',
             body: formData
         })
@@ -488,6 +608,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 showToast(`Hata: ${data.error}`, 'error');
             } else {
                 showToast(`'${data.content.filename}' başarıyla yüklendi.`, 'success');
+                // Content listesini güncelle
+                contentList.push(data.content);
+                renderContentList(contentList);
             }
         })
         .catch(error => {
@@ -506,7 +629,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Başlangıçta içerik listesini yükle
     console.log('Initializing application...');
-    fetch(`/api/content/${currentLocation}`)
+    fetch(`/api/${currentLocation}/content`)
         .then(response => response.json())
         .then(data => {
             contentList = data.content || [];
@@ -515,7 +638,7 @@ document.addEventListener('DOMContentLoaded', function() {
             updateControlButtons();
             
             // Mevcut durumu al
-            return fetch(`/api/display/status/${currentLocation}`);
+            return fetch(`/api/${currentLocation}/display/status`);
         })
         .then(response => response.json())
         .then(data => {

@@ -150,21 +150,36 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function clearPanel() {
-        if (confirm('Tüm içerikleri silmek istediğinizden emin misiniz?')) {
-            const deletePromises = contentList.map(item => 
-                fetch(`/api/${currentLocation}/content/${item.id}`, { method: 'DELETE' })
-            );
-            
-            Promise.all(deletePromises)
-                .then(() => {
-                    showToast('Tüm içerikler silindi', 'success');
+        showClearPanelDialog();
+    }
+
+    function showClearPanelDialog() {
+        const modal = document.getElementById('clear-panel-dialog');
+        modal.style.display = 'flex';
+    }
+
+    function closeClearPanelDialog() {
+        const modal = document.getElementById('clear-panel-dialog');
+        modal.style.display = 'none';
+    }
+
+    function confirmClearPanel() {
+        fetch(`/api/${currentLocation}/content/clear`, { method: 'DELETE' })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showToast('Panel temizlendi', 'success');
                     fetchContentList();
-                })
-                .catch(error => {
-                    console.error('Temizleme hatası:', error);
-                    showToast('Bazı içerikler silinemedi', 'error');
-                });
-        }
+                } else {
+                    showToast(data.error || 'Temizleme hatası', 'error');
+                }
+                closeClearPanelDialog();
+            })
+            .catch(error => {
+                console.error('Temizleme hatası:', error);
+                showToast('Temizleme başarısız', 'error');
+                closeClearPanelDialog();
+            });
     }
 
     function openFullscreen() {
@@ -273,22 +288,101 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function deleteContent(id) {
-        if (confirm('Bu içeriği silmek istediğinizden emin misiniz?')) {
-            fetch(`/api/${currentLocation}/content/${id}`, { method: 'DELETE' })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        showToast('İçerik silindi', 'success');
-                    } else {
-                        showToast(data.error || 'Silme hatası', 'error');
-                    }
-                })
-                .catch(error => {
-                    console.error('Silme hatası:', error);
-                    showToast('Silme başarısız', 'error');
-                });
+        // İçerik bilgisini bul
+        const item = contentList.find(item => item.id == id);
+        if (!item) {
+            showToast('İçerik bulunamadı.', 'error');
+            return;
         }
+        
+        // Modal'ı göster
+        showDeleteDialog(item);
     }
+
+    // Modal dialog fonksiyonları
+    let itemToDelete = null;
+
+    function showDeleteDialog(item) {
+        itemToDelete = item;
+        const modal = document.getElementById('delete-dialog');
+        const itemInfo = document.getElementById('modal-item-info');
+        
+        // İçerik bilgisini göster
+        const fileType = item.type === 'video' ? 'Video' : 'Resim';
+        const duration = item.duration ? `${item.duration} saniye` : 'Süre belirtilmemiş';
+        itemInfo.innerHTML = `
+            <strong>${fileType}:</strong> ${item.filename}<br>
+            <strong>Süre:</strong> ${duration}<br>
+            <strong>Boyut:</strong> ${formatFileSize(item.size || 0)}
+        `;
+        
+        modal.style.display = 'flex';
+    }
+
+    function closeDeleteDialog() {
+        const modal = document.getElementById('delete-dialog');
+        modal.style.display = 'none';
+        itemToDelete = null;
+    }
+
+    function confirmDelete() {
+        if (!itemToDelete) {
+            showToast('Silinecek içerik bulunamadı.', 'error');
+            return;
+        }
+
+        fetch(`/api/${currentLocation}/content/${itemToDelete.id}`, { method: 'DELETE' })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showToast('İçerik silindi', 'success');
+                } else {
+                    showToast(data.error || 'Silme hatası', 'error');
+                }
+                closeDeleteDialog();
+                // İçerik listesini güncelle
+                fetchContentList();
+            })
+            .catch(error => {
+                console.error('Silme hatası:', error);
+                showToast('Silme başarısız', 'error');
+                closeDeleteDialog();
+            });
+    }
+
+    function formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    // Modal dışına tıklandığında kapatma
+    document.addEventListener('click', function(event) {
+        const deleteModal = document.getElementById('delete-dialog');
+        const clearModal = document.getElementById('clear-panel-dialog');
+        if (event.target === deleteModal) {
+            closeDeleteDialog();
+        }
+        if (event.target === clearModal) {
+            closeClearPanelDialog();
+        }
+    });
+
+    // ESC tuşu ile modal kapatma
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeDeleteDialog();
+            closeClearPanelDialog();
+        }
+    });
+
+    // Global fonksiyonları window objesine ekle
+    window.closeDeleteDialog = closeDeleteDialog;
+    window.confirmDelete = confirmDelete;
+    window.closeClearPanelDialog = closeClearPanelDialog;
+    window.confirmClearPanel = confirmClearPanel;
 
     function renderContentList() {
         contentListEl.innerHTML = '';
