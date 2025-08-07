@@ -12393,3 +12393,31 @@ AssertionError: write() before start_response
 2025-08-07 11:55:23,025 - INFO - u4uzyNo-u-v9R_VbAAAA: Sending packet PING data None
 2025-08-07 11:55:23,027 - INFO - u4uzyNo-u-v9R_VbAAAA: Received packet PONG data 
 2025-08-07 11:55:29,329 - INFO - 192.168.250.122 - - [07/Aug/2025 11:55:29] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 13:18:47,452 - INFO - Belediye Binası LED Ekran içerik listesi yüklendi: 4 öğe
+2025-08-07 13:18:47,454 - INFO - Havuzbaşı Kent Meydanı LED Ekran içerik listesi yüklendi: 5 öğe
+2025-08-07 13:18:47,455 - INFO - Yenişehir LED Ekran içerik listesi yüklendi: 2 öğe
+2025-08-07 13:18:47,455 - INFO - Gürcükapı LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-07 13:18:47,480 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.122:5000
+2025-08-07 13:18:47,480 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 13:18:50,693 - INFO - 127.0.0.1 - - [07/Aug/2025 13:18:50] "[32mGET /api/system/info HTTP/1.1[0m" 302 -
+2025-08-07 13:18:50,707 - INFO - 127.0.0.1 - - [07/Aug/2025 13:18:50] "GET /login?next=/api/system/info HTTP/1.1" 200 -
+2025-08-07 13:18:59,829 - INFO - 192.168.250.122 - - [07/Aug/2025 13:18:59] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-07 13:18:59,845 - INFO - 192.168.250.122 - - [07/Aug/2025 13:18:59] "GET /login?next=/ HTTP/1.1" 200 -
+2025-08-07 13:19:00,021 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:00] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-07 13:19:00,025 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:00] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-07 13:19:00,360 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:00] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-08-07 13:19:00,371 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:00] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2025-08-07 13:19:02,300 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:02] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-07 13:19:02,309 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:02] "GET / HTTP/1.1" 200 -
+2025-08-07 13:19:02,347 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:02] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-07 13:19:02,357 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:02] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-07 13:19:02,575 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-07 13:19:03,372 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:03] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 13:19:08,218 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:08] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-07 13:19:08,223 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:08] "GET / HTTP/1.1" 200 -
+2025-08-07 13:19:08,261 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:08] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-07 13:19:08,264 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:08] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-07 13:19:09,289 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:09] "GET /api/system/info HTTP/1.1" 200 -

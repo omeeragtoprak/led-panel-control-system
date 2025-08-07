@@ -24,6 +24,18 @@ class Config:
         'image': {'png','jpg','jpeg','gif','bmp'},
         'video': {'mp4','avi','mov','mkv','wmv'}
     }
+    
+    # Lokasyon bazlı çalışma için
+    CURRENT_LOCATION = os.environ.get('LED_LOCATION', 'belediye')  # Varsayılan: belediye
+    STANDALONE_MODE = os.environ.get('STANDALONE_MODE', 'false').lower() == 'true'
+    
+    # Her lokasyon için static IP'ler
+    LOCATION_IPS = {
+        'belediye': '192.168.1.10',
+        'havuzbasi': '192.168.1.11', 
+        'yenisehir': '192.168.1.12',
+        'gurcukapi': '192.168.1.13'
+    }
 
 LOCATIONS = ['belediye', 'havuzbasi', 'yenisehir', 'gurcukapi']
 
@@ -300,11 +312,16 @@ def logout():
 @app.route('/')
 @login_required
 def index():
-    """Ana sayfa - sadece lokasyon seçimi"""
-    return render_template('index_selector.html', 
-                         title=Config.PAGE_TITLE,
-                         locations=LOCATIONS,
-                         location_names=LOCATION_NAMES)
+    """Ana sayfa - standalone modda sadece mevcut lokasyon, normal modda tüm lokasyonlar"""
+    if Config.STANDALONE_MODE:
+        # Standalone modda sadece mevcut lokasyona yönlendir
+        return redirect(url_for('location_page', location=Config.CURRENT_LOCATION))
+    else:
+        # Normal modda lokasyon seçimi
+        return render_template('index_selector.html', 
+                             title=Config.PAGE_TITLE,
+                             locations=LOCATIONS,
+                             location_names=LOCATION_NAMES)
 
 # ---------------------------------------------------------------------------
 # ROUTES - LOKASYON SAYFALARI
@@ -760,9 +777,17 @@ if __name__ == '__main__':
         create_directories()
         init_location_state()
         
-        print(f"\nMulti-Location LED Panel Control System başlatılıyor...")
-        print(f"Ana sayfa: http://{Config.HOST}:{Config.PORT}/")
-        print(f"Lokasyonlar: {', '.join([f'http://{Config.HOST}:{Config.PORT}/{loc} ({LOCATION_NAMES[loc]})' for loc in LOCATIONS])}")
+        if Config.STANDALONE_MODE:
+            print(f"\n=== STANDALONE MOD - {Config.CURRENT_LOCATION.upper()} ===")
+            print(f"Lokasyon: {LOCATION_NAMES[Config.CURRENT_LOCATION]}")
+            print(f"Static IP: {Config.LOCATION_IPS[Config.CURRENT_LOCATION]}")
+            print(f"Web arayüzü: http://{Config.LOCATION_IPS[Config.CURRENT_LOCATION]}:{Config.PORT}/")
+            print(f"Tam ekran: http://{Config.LOCATION_IPS[Config.CURRENT_LOCATION]}:{Config.PORT}/screen{Config.CURRENT_LOCATION}")
+        else:
+            print(f"\nMulti-Location LED Panel Control System başlatılıyor...")
+            print(f"Ana sayfa: http://{Config.HOST}:{Config.PORT}/")
+            print(f"Lokasyonlar: {', '.join([f'http://{Config.HOST}:{Config.PORT}/{loc} ({LOCATION_NAMES[loc]})' for loc in LOCATIONS])}")
+        
         print(f"Upload klasörleri: {Config.BASE_UPLOAD}")
         print()
         
