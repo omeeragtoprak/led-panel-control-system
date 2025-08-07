@@ -4,13 +4,20 @@
     "filename": "kah1.jpg",
     "type": "image",
     "order": 0,
-    "duration": 7
+    "duration": 5
   },
   {
     "id": 1754479585211,
     "filename": "kah2 (1).jpg",
     "type": "image",
     "order": 1,
-    "duration": 7
+    "duration": 5
+  },
+  {
+    "id": 1754545462700,
+    "filename": "videoplayback.mp4",
+    "type": "video",
+    "order": 2,
+    "duration": 183
   }
 ]

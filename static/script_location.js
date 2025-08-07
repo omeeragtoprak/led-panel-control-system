@@ -192,7 +192,20 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (files.length > 0) {
             uploadBtn.textContent = `${files.length} dosya yükle`;
-            durationSettings.style.display = 'block';
+            
+            // Dosya türüne göre süre ayarlarını göster/gizle
+            const file = files[0];
+            console.log('Dosya seçildi:', file.name, 'Tür:', file.type);
+            
+            if (file.type.startsWith('video/')) {
+                // Video dosyaları için süre ayarlarını gizle
+                durationSettings.style.display = 'none';
+                console.log('Video dosyası seçildi, süre ayarları gizlendi');
+            } else {
+                // Resim dosyaları için süre ayarlarını göster
+                durationSettings.style.display = 'block';
+                console.log('Resim dosyası seçildi, süre ayarları gösterildi');
+            }
         } else {
             uploadBtn.textContent = 'Yükle';
             durationSettings.style.display = 'none';
@@ -204,40 +217,88 @@ document.addEventListener('DOMContentLoaded', function() {
         if (files.length === 0) return;
 
         const formData = new FormData();
-        files.forEach(file => formData.append('file', file));
         
-        // Süre bilgisini ekle
-        const duration = parseInt(durationInput.value) || 7;
-        formData.append('duration', duration);
+        // Dosya türüne göre süre bilgisini ekle
+        files.forEach(file => {
+            formData.append('file', file);
+        });
+        
+        // Sadece resim dosyaları için süre bilgisini ekle
+        const hasImageFile = files.some(file => !file.type.startsWith('video/'));
+        if (hasImageFile) {
+            const duration = parseInt(durationInput.value) || 7;
+            formData.append('duration', duration);
+        }
 
+        // Progress bar'ı hazırla
         uploadProgress.style.display = 'block';
+        const progressFill = uploadProgress.querySelector('.progress-fill');
+        const progressText = uploadProgress.querySelector('.progress-text');
+        progressFill.style.width = '0%';
+        progressText.textContent = 'Yükleniyor... 0%';
         uploadBtn.disabled = true;
 
-        fetch(`/api/${currentLocation}/content/upload`, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            uploadProgress.style.display = 'none';
-            uploadBtn.disabled = false;
-            
-            if (data.success) {
-                showToast('Dosya(lar) başarıyla yüklendi', 'success');
-                fileInput.value = '';
-                uploadBtn.textContent = 'Yükle';
-                uploadBtn.disabled = true;
-                durationSettings.style.display = 'none';
-            } else {
-                showToast(data.error || 'Yükleme hatası', 'error');
+        // XMLHttpRequest ile gerçek zamanlı progress
+        const xhr = new XMLHttpRequest();
+        
+        xhr.upload.addEventListener('progress', function(e) {
+            if (e.lengthComputable) {
+                const percentComplete = (e.loaded / e.total) * 100;
+                progressFill.style.width = percentComplete + '%';
+                progressText.textContent = `Yükleniyor... ${Math.round(percentComplete)}%`;
             }
-        })
-        .catch(error => {
-            console.error('Yükleme hatası:', error);
+        });
+
+        xhr.addEventListener('load', function() {
+            if (xhr.status === 200) {
+                try {
+                    const data = JSON.parse(xhr.responseText);
+                    if (data.success) {
+                        progressFill.style.width = '100%';
+                        progressText.textContent = 'Yükleme tamamlandı!';
+                        progressText.classList.add('completed');
+                        
+                        setTimeout(() => {
+                            uploadProgress.style.display = 'none';
+                            uploadBtn.disabled = false;
+                            progressText.classList.remove('completed');
+                            showToast('Dosya(lar) başarıyla yüklendi', 'success');
+                            fileInput.value = '';
+                            uploadBtn.textContent = 'Yükle';
+                            uploadBtn.disabled = true;
+                            durationSettings.style.display = 'none';
+                        }, 1000);
+                    } else {
+                        uploadProgress.style.display = 'none';
+                        uploadBtn.disabled = false;
+                        showToast(data.error || 'Yükleme hatası', 'error');
+                    }
+                } catch (e) {
+                    uploadProgress.style.display = 'none';
+                    uploadBtn.disabled = false;
+                    showToast('Yanıt işlenirken hata oluştu', 'error');
+                }
+            } else {
+                uploadProgress.style.display = 'none';
+                uploadBtn.disabled = false;
+                showToast('Yükleme başarısız', 'error');
+            }
+        });
+
+        xhr.addEventListener('error', function() {
             uploadProgress.style.display = 'none';
             uploadBtn.disabled = false;
-            showToast('Yükleme başarısız', 'error');
+            showToast('Bağlantı hatası', 'error');
         });
+
+        xhr.addEventListener('abort', function() {
+            uploadProgress.style.display = 'none';
+            uploadBtn.disabled = false;
+            showToast('Yükleme iptal edildi', 'error');
+        });
+
+        xhr.open('POST', `/api/${currentLocation}/content/upload`);
+        xhr.send(formData);
     }
 
     function fetchContentList() {
@@ -383,6 +444,87 @@ document.addEventListener('DOMContentLoaded', function() {
     window.confirmDelete = confirmDelete;
     window.closeClearPanelDialog = closeClearPanelDialog;
     window.confirmClearPanel = confirmClearPanel;
+    window.previewContent = previewContent;
+
+    
+    function previewContent(filename, type) {
+        // Önizleme modal'ını göster
+        const modal = document.createElement('div');
+        modal.className = 'preview-modal';
+        modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        `;
+        
+        const content = document.createElement('div');
+        content.style.cssText = `
+            max-width: 80%;
+            max-height: 80%;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        `;
+        
+        const closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '×';
+        closeBtn.style.cssText = `
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 1001;
+        `;
+        closeBtn.onclick = () => document.body.removeChild(modal);
+        
+        if (type === 'image') {
+            const img = document.createElement('img');
+            img.src = `/uploads/${currentLocation}/${filename}`;
+            img.style.cssText = 'max-width: 100%; max-height: 100%; display: block;';
+            content.appendChild(img);
+        } else {
+            const video = document.createElement('video');
+            video.src = `/uploads/${currentLocation}/${filename}`;
+            video.controls = true;
+            video.style.cssText = 'max-width: 100%; max-height: 100%; display: block;';
+            content.appendChild(video);
+        }
+        
+        content.appendChild(closeBtn);
+        modal.appendChild(content);
+        document.body.appendChild(modal);
+        
+        // Modal dışına tıklandığında kapatma
+        modal.onclick = (e) => {
+            if (e.target === modal) {
+                document.body.removeChild(modal);
+            }
+        };
+        
+        // ESC tuşu ile kapatma
+        const escHandler = (e) => {
+            if (e.key === 'Escape') {
+                document.body.removeChild(modal);
+                document.removeEventListener('keydown', escHandler);
+            }
+        };
+        document.addEventListener('keydown', escHandler);
+    }
 
     function renderContentList() {
         contentListEl.innerHTML = '';
@@ -402,7 +544,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const iconClass = item.type === 'image' ? 'fa-file-image' : 'fa-file-video';
             const duration = item.duration || (item.type === 'image' ? 7 : 15);
-            const typeText = `${item.type === 'image' ? 'Resim' : 'Video'} (${duration}s)`;
+            const typeText = item.type === 'image' ? `Resim (${duration}s)` : `Video (${duration}s)`;
+            const durationText = item.type === 'image' ? `${duration}s` : `${duration}s`;
+            
+                        // Tüm dosya türleri için süre düzenleme butonu göster
+            const durationButton = `<button class=\"action-btn duration-btn\" onclick=\"editDuration(${item.id}, ${duration}, '${item.filename}')\">
+                      <i class=\"fas fa-clock\"></i>
+                    </button>`;
             
             li.innerHTML = `
                 <div class=\"item-info\">
@@ -414,12 +562,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span class=\"item-type\">${typeText}</span>
                     </div>
                 </div>
-                <div class=\"item-duration\">${duration}s</div>
+                <div class=\"item-duration\">${durationText}</div>
                 <div class=\"item-order\">${index + 1}</div>
                 <div class=\"item-actions\">
-                    <button class=\"action-btn duration-btn\" onclick=\"editDuration(${item.id}, ${duration}, '${item.filename}')\">
-                        <i class=\"fas fa-clock\"></i>
-                    </button>
+                    ${durationButton}
                     <button class=\"action-btn preview-btn\" onclick=\"previewContent('${item.filename}', '${item.type}')\">
                         <i class=\"fas fa-eye\"></i>
                     </button>

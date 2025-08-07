@@ -130,19 +130,55 @@ def save_content_list(location):
         logger.error(f"{location} içerik listesi kaydetme hatası: {e}")
 
 def get_video_duration(path):
-    """Video süresini ffprobe ile al"""
+    """Video süresini al - ffprobe, OpenCV ve moviepy ile"""
     try:
+        # Önce ffprobe ile dene
         cmd = [
             'ffprobe', '-v', 'error', '-show_entries', 'format=duration',
             '-of', 'default=noprint_wrappers=1:nokey=1', path
         ]
         result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-        return float(result.stdout.strip())
+        duration = float(result.stdout.strip())
+        logger.info(f"ffprobe ile video süresi alındı: {duration}s")
+        return duration
     except FileNotFoundError:
-        logger.error("ffprobe bulunamadı. Video süresi alınamıyor.")
-        return 15
+        logger.warning("ffprobe bulunamadı, OpenCV ile deneniyor...")
     except Exception as e:
-        logger.error(f"Video süresi alınırken hata: {e}")
+        logger.warning(f"ffprobe hatası: {e}, OpenCV ile deneniyor...")
+    
+    try:
+        # OpenCV ile dene
+        import cv2
+        cap = cv2.VideoCapture(path)
+        if not cap.isOpened():
+            logger.error(f"OpenCV ile video açılamadı: {path}")
+            return 15
+        
+        # FPS ve frame sayısını al
+        fps = cap.get(cv2.CAP_PROP_FPS)
+        frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        cap.release()
+        
+        if fps > 0 and frame_count > 0:
+            duration = frame_count / fps
+            logger.info(f"OpenCV ile video süresi alındı: {duration}s (FPS: {fps}, Frames: {frame_count})")
+            return duration
+        else:
+            logger.error(f"OpenCV ile geçerli FPS veya frame sayısı alınamadı")
+            return 15
+    except Exception as e:
+        logger.error(f"OpenCV ile video süresi alınırken hata: {e}")
+    
+    try:
+        # MoviePy ile dene
+        from moviepy.editor import VideoFileClip
+        clip = VideoFileClip(path)
+        duration = clip.duration
+        clip.close()
+        logger.info(f"MoviePy ile video süresi alındı: {duration}s")
+        return duration
+    except Exception as e:
+        logger.error(f"MoviePy ile video süresi alınırken hata: {e}")
         return 15
 
 def allowed_file(filename):
@@ -180,15 +216,15 @@ def display_loop(location):
             
             logger.info(f"{LOCATION_NAMES[location]} yayında: {current_item['filename']} ({current_item['type']})")
             
-            # Socket event gönder
+            # Süre hesapla - kullanıcı tanımlı veya varsayılan
+            duration = current_item.get('duration', 7 if current_item['type'] == 'image' else 15)
+            
+            # Socket event gönder (current_item ile birlikte)
             socketio.emit('display_status', {
                 'status': 'playing',
                 'location': location,
                 'current_item': current_item
             })
-            
-            # Süre hesapla - kullanıcı tanımlı veya varsayılan
-            duration = current_item.get('duration', 7 if current_item['type'] == 'image' else 15)
             
             # Sonraki öğeye geç
             st['current_index'] = (st['current_index'] + 1) % len(st['content'])
@@ -341,8 +377,11 @@ def api_upload_content(location):
                 # Video süresini dosyadan al
                 try:
                     video_duration = get_video_duration(filepath)
+                    logger.info(f"Video dosyası {file.filename} için süre hesaplandı: {video_duration}s")
                     duration = int(video_duration) if video_duration > 0 else 15
-                except:
+                    logger.info(f"Video süresi {duration}s olarak ayarlandı")
+                except Exception as e:
+                    logger.error(f"Video süresi alınırken hata: {e}")
                     duration = 15
             else:
                 duration = 7
@@ -442,6 +481,48 @@ def api_update_duration(location, content_id):
         })
     
     return jsonify({'success': True, 'message': 'Süre güncellendi'})
+
+@app.route('/api/<location>/content/fix-video-durations', methods=['POST'])
+@login_required
+def api_fix_video_durations(location):
+    """Video dosyalarının sürelerini düzelt"""
+    if location not in LOCATIONS:
+        abort(404)
+    
+    st = state[location]
+    fixed_count = 0
+    
+    with st['lock']:
+        for item in st['content']:
+            if item['type'] == 'video':
+                filepath = os.path.join(st['upload_dir'], item['filename'])
+                if os.path.exists(filepath):
+                    try:
+                        video_duration = get_video_duration(filepath)
+                        new_duration = int(video_duration) if video_duration > 0 else 15
+                        old_duration = item['duration']
+                        item['duration'] = new_duration
+                        fixed_count += 1
+                        logger.info(f"Video süresi düzeltildi: {item['filename']} {old_duration}s -> {new_duration}s")
+                    except Exception as e:
+                        logger.error(f"Video süresi düzeltilirken hata: {item['filename']} - {e}")
+        
+        if fixed_count > 0:
+            save_content_list(location)
+            logger.info(f"{LOCATION_NAMES[location]} {fixed_count} video süresi düzeltildi")
+            
+            # Socket event
+            socketio.emit('content_updated', {
+                'action': 'duration_fix',
+                'location': location,
+                'content_list': st['content']
+            })
+    
+    return jsonify({
+        'success': True, 
+        'message': f'{fixed_count} video süresi düzeltildi',
+        'fixed_count': fixed_count
+    })
 
 @app.route('/api/<location>/content/order', methods=['POST'])
 @login_required
