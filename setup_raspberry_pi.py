@@ -59,45 +59,6 @@ static domain_name_servers=8.8.8.8 8.8.4.4
         print(f"❌ Static IP ayarlama hatası: {e}")
         return False
 
-def install_dependencies():
-    """Gerekli paketleri yükle"""
-    packages = [
-        'python3-pip',
-        'python3-opencv',
-        'ffmpeg',
-        'python3-venv',
-        'git'
-    ]
-    
-    for package in packages:
-        if not run_command(f"sudo apt-get install -y {package}", f"{package} yükleniyor..."):
-            return False
-    return True
-
-def setup_python_environment():
-    """Python sanal ortam kur"""
-    if not run_command("python3 -m venv led_env", "Python sanal ortam oluşturuluyor..."):
-        return False
-    
-    if not run_command("source led_env/bin/activate && pip install --upgrade pip", "Pip güncelleniyor..."):
-        return False
-    
-    requirements = [
-        'flask',
-        'flask-socketio',
-        'flask-login',
-        'werkzeug',
-        'opencv-python',
-        'psutil',
-        'python-socketio'
-    ]
-    
-    for req in requirements:
-        if not run_command(f"source led_env/bin/activate && pip install {req}", f"{req} yükleniyor..."):
-            return False
-    
-    return True
-
 def create_startup_script(location):
     """Otomatik başlatma scripti oluştur"""
     script_content = f"""#!/bin/bash
@@ -154,18 +115,7 @@ def main():
         sys.exit(1)
     
     print(f"=== Raspberry Pi LED Panel Kurulumu - {location.upper()} ===")
-    
-    # Sistem güncellemesi
-    if not run_command("sudo apt-get update", "Sistem güncelleniyor..."):
-        sys.exit(1)
-    
-    # Paket yükleme
-    if not install_dependencies():
-        sys.exit(1)
-    
-    # Python ortamı
-    if not setup_python_environment():
-        sys.exit(1)
+    print("Not: Sanal ortam ve paketler zaten kurulmuş varsayılıyor.")
     
     # Static IP
     if not setup_static_ip(location):
