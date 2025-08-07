@@ -4,13 +4,15 @@
     "filename": "Dam4.jpg",
     "type": "image",
     "order": 0,
-    "duration": 7
+    "duration": 5,
+    "is_active": true
   },
   {
     "id": 1754479571577,
     "filename": "Dam16.jpg",
     "type": "image",
     "order": 1,
-    "duration": 7
+    "duration": 5,
+    "is_active": true
   }
 ]

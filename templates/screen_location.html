@@ -53,29 +53,87 @@
             const socket = io({ transports: ['websocket', 'polling'], timeout: 20000 });
             const screenContent = document.getElementById('screen-content');
             const currentLocation = '{{ location }}';
+            let activeContentList = [];
+            let currentIndex = 0;
+            let isPlaying = false;
+            let playTimer = null;
 
+            // Aktif içerikleri filtrele
+            function filterActive(contentList) {
+                return contentList.filter(item => item.is_active !== false);
+            }
+
+            // İçerik oynatıcı
+            function playLoop() {
+                if (!isPlaying || activeContentList.length === 0) {
+                    showNoContent('Gösterim durduruldu veya içerik yok');
+                    return;
+                }
+                const item = activeContentList[currentIndex % activeContentList.length];
+                if (item.type === 'image') {
+                    screenContent.innerHTML = `<img src="/uploads/${currentLocation}/${item.filename}" alt="${item.filename}">`;
+                } else if (item.type === 'video') {
+                    screenContent.innerHTML = `<video src="/uploads/${currentLocation}/${item.filename}" autoplay loop muted style="width:100%;height:100%;object-fit:cover;object-position:center;"></video>`;
+                }
+                // Sonraki içeriğe geçiş
+                clearTimeout(playTimer);
+                playTimer = setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % activeContentList.length;
+                    playLoop();
+                }, (item.duration || 7) * 1000);
+            }
+
+            function showNoContent(msg) {
+                screenContent.innerHTML = `<div class="no-content"><p>${currentLocation.charAt(0).toUpperCase() + currentLocation.slice(1)} LED Pano</p><p style="font-size:1rem;margin-top:10px;">${msg}</p></div>`;
+            }
+
+            // SocketIO events
             socket.on('connect', () => {
                 socket.emit('join_location', { location: currentLocation });
             });
 
+            socket.on('content_updated', (data) => {
+                if (data && data.location === currentLocation && data.content_list) {
+                    activeContentList = filterActive(data.content_list);
+                    currentIndex = 0;
+                    if (isPlaying && activeContentList.length > 0) {
+                        playLoop();
+                    } else {
+                        showNoContent('Gösterim durduruldu veya içerik yok');
+                    }
+                }
+            });
+
             socket.on('display_status', (data) => {
                 if (data && data.location === currentLocation) {
-                    if (data.status === 'playing' && data.current_item) {
-                        const item = data.current_item;
-                        if (item.type === 'image') {
-                            screenContent.innerHTML = `<img src="/uploads/${currentLocation}/${item.filename}" alt="${item.filename}">`;
-                        } else if (item.type === 'video') {
-                            screenContent.innerHTML = `<video src="/uploads/${currentLocation}/${item.filename}" autoplay loop muted style="width:100%;height:100%;object-fit:cover;object-position:center;"></video>`;
-                        }
+                    isPlaying = data.status === 'playing';
+                    // Sadece aktif içerikler
+                    if (data.current_item && data.current_item.is_active !== false) {
+                        // Aktif içerik oynatılıyor
+                        const idx = activeContentList.findIndex(x => x.id === data.current_item.id);
+                        if (idx !== -1) currentIndex = idx;
+                    }
+                    if (isPlaying && activeContentList.length > 0) {
+                        playLoop();
                     } else {
-                        screenContent.innerHTML = `<div class=\"no-content\">\n<p>${currentLocation.charAt(0).toUpperCase() + currentLocation.slice(1)} LED Pano</p>\n<p style=\"font-size:1rem;margin-top:10px;\">Gösterim durduruldu</p>\n</div>`;
+                        showNoContent('Gösterim durduruldu veya içerik yok');
                     }
                 }
             });
 
             socket.on('disconnect', () => {
-                screenContent.innerHTML = `<div class=\"no-content\">\n<p>${currentLocation.charAt(0).toUpperCase() + currentLocation.slice(1)} LED Pano</p>\n<p style=\"font-size:1rem;margin-top:10px;\">Bağlantı koptu...</p>\n</div>`;
+                showNoContent('Bağlantı koptu...');
             });
+
+            // İlk yüklemede aktif içerikleri çek
+            fetch(`/api/${currentLocation}/content`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success && Array.isArray(data.content)) {
+                        activeContentList = filterActive(data.content);
+                        currentIndex = 0;
+                    }
+                });
         });
     </script>
 </body>

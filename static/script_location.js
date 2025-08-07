@@ -543,6 +543,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const li = document.createElement('li');
             li.className = 'content-item';
             li.dataset.id = item.id;
+            if (item.is_active === false) {
+                li.classList.add('inactive');
+            }
             
             const iconClass = item.type === 'image' ? 'fa-file-image' : 'fa-file-video';
             const duration = item.duration || (item.type === 'image' ? 7 : 15);
@@ -553,6 +556,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const durationButton = `<button class=\"action-btn duration-btn\" onclick=\"editDuration(${item.id}, ${duration}, '${item.filename}')\">
                       <i class=\"fas fa-clock\"></i>
                     </button>`;
+            
+            // Aktif/pasif toggle
+            const activeToggle = `<label class="switch"><input type="checkbox" class="active-toggle" data-id="${item.id}" ${item.is_active !== false ? 'checked' : ''}><span class="slider"></span></label>`;
             
             li.innerHTML = `
                 <div class=\"item-info\">
@@ -567,6 +573,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class=\"item-duration\">${durationText}</div>
                 <div class=\"item-order\">${index + 1}</div>
                 <div class=\"item-actions\">
+                    ${activeToggle}
                     ${durationButton}
                     <button class=\"action-btn preview-btn\" onclick=\"previewContent('${item.filename}', '${item.type}')\">
                         <i class=\"fas fa-eye\"></i>
@@ -579,7 +586,14 @@ document.addEventListener('DOMContentLoaded', function() {
             
             contentListEl.appendChild(li);
         });
-
+        // Aktif/pasif toggle eventleri
+        document.querySelectorAll('.active-toggle').forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                const id = this.dataset.id;
+                const isActive = this.checked;
+                updateContentActive(id, isActive);
+            });
+        });
         highlightCurrentItem();
     }
 
@@ -830,6 +844,27 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('Süre güncelleme hatası:', error);
+            showToast('Güncelleme başarısız', 'error');
+        });
+    }
+
+    function updateContentActive(contentId, isActive) {
+        fetch(`/api/${currentLocation}/content/${contentId}/active`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ is_active: isActive })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showToast('Durum güncellendi', 'success');
+                fetchContentList();
+            } else {
+                showToast(data.error || 'Durum güncellenemedi', 'error');
+            }
+        })
+        .catch(error => {
+            console.error('Durum güncelleme hatası:', error);
             showToast('Güncelleme başarısız', 'error');
         });
     }

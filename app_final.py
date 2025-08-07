@@ -201,17 +201,19 @@ def display_loop(location):
     
     while st['is_running']:
         with st['lock']:
-            if not st['content']:
+            # Sadece aktif içerikleri sıraya al
+            active_content = [item for item in st['content'] if item.get('is_active', True)]
+            if not active_content:
                 socketio.sleep(1)
                 continue
             
             # Mevcut öğeyi al
-            current_item = st['content'][st['current_index']]
+            current_item = active_content[st['current_index'] % len(active_content)]
             filepath = os.path.join(st['upload_dir'], current_item['filename'])
             
             if not os.path.exists(filepath):
                 logger.warning(f"Dosya bulunamadı: {filepath}")
-                st['current_index'] = (st['current_index'] + 1) % len(st['content'])
+                st['current_index'] = (st['current_index'] + 1) % len(active_content)
                 continue
             
             logger.info(f"{LOCATION_NAMES[location]} yayında: {current_item['filename']} ({current_item['type']})")
@@ -227,7 +229,7 @@ def display_loop(location):
             })
             
             # Sonraki öğeye geç
-            st['current_index'] = (st['current_index'] + 1) % len(st['content'])
+            st['current_index'] = (st['current_index'] + 1) % len(active_content)
         
         # Bekleme
         socketio.sleep(duration)
@@ -392,7 +394,8 @@ def api_upload_content(location):
             'filename': file.filename,
             'type': file_type,
             'order': len(st['content']),
-            'duration': duration
+            'duration': duration,
+            'is_active': True
         }
         
         st['content'].append(new_item)
@@ -583,6 +586,32 @@ def api_update_order(location):
         })
     
     return jsonify({'success': True, 'message': 'Sıra güncellendi'})
+
+@app.route('/api/<location>/content/<int:content_id>/active', methods=['PUT'])
+@login_required
+def api_update_active(location, content_id):
+    """İçeriği aktif/pasif yap"""
+    if location not in LOCATIONS:
+        abort(404)
+    data = request.get_json()
+    if not data or 'is_active' not in data:
+        return jsonify({'success': False, 'error': 'Durum bilgisi gerekli'}), 400
+    is_active = bool(data['is_active'])
+    st = state[location]
+    with st['lock']:
+        item = next((x for x in st['content'] if x['id'] == content_id), None)
+        if not item:
+            return jsonify({'success': False, 'error': 'İçerik bulunamadı'}), 404
+        item['is_active'] = is_active
+        save_content_list(location)
+        logger.info(f"{LOCATION_NAMES[location]} içerik aktiflik güncellendi: {item['filename']} -> {is_active}")
+        # Socket event
+        socketio.emit('content_updated', {
+            'action': 'active_update',
+            'location': location,
+            'content_list': st['content']
+        })
+    return jsonify({'success': True, 'message': 'Durum güncellendi'})
 
 @app.route('/api/<location>/display/start', methods=['POST'])
 @login_required

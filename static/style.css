@@ -1494,3 +1494,51 @@ body.fullscreen .current-display-preview,body.fullscreen .current-display-previe
         justify-content: center;
     }
 }
+
+/* Pasif içerik için stil */
+.content-item.inactive {
+    opacity: 0.5;
+    text-decoration: line-through;
+    background: #f5f5f5;
+}
+/* Toggle switch stil */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+  margin-right: 8px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 22px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #43a047;
+}
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
