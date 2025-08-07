@@ -9693,3 +9693,268 @@ AssertionError: write() before start_response
 2025-08-07 08:59:20,339 - INFO - Belediye Binası LED Ekran gösterim durduruldu
 2025-08-07 08:59:20,339 - INFO - 192.168.250.122 - - [07/Aug/2025 08:59:20] "POST /api/belediye/display/stop HTTP/1.1" 200 -
 2025-08-07 08:59:24,321 - INFO - 192.168.250.122 - - [07/Aug/2025 08:59:24] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:02:35,243 - INFO - Belediye Binası LED Ekran içerik listesi yüklendi: 4 öğe
+2025-08-07 09:02:35,244 - INFO - Havuzbaşı Kent Meydanı LED Ekran içerik listesi yüklendi: 4 öğe
+2025-08-07 09:02:35,245 - INFO - Yenişehir LED Ekran içerik listesi yüklendi: 2 öğe
+2025-08-07 09:02:35,245 - INFO - Gürcükapı LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-07 09:02:36,538 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.122:5000
+2025-08-07 09:02:36,539 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 09:02:36,910 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:36] "GET /screenbelediye HTTP/1.1" 200 -
+2025-08-07 09:02:37,916 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:37] "GET /belediye HTTP/1.1" 200 -
+2025-08-07 09:02:38,146 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-07 09:02:38,157 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:38] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-07 09:02:38,161 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:38] "GET /static/script_location.js HTTP/1.1" 200 -
+2025-08-07 09:02:38,459 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:38] "GET /api/belediye/content HTTP/1.1" 200 -
+2025-08-07 09:02:38,462 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:38] "GET /api/belediye/display/status HTTP/1.1" 200 -
+2025-08-07 09:02:38,650 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:38] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:02:39,464 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:39] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:02:40,642 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Sending packet OPEN data {'sid': '6wwTPuEo_WZA4ZM-AAAA', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000, 'maxPayload': 1000000}
+2025-08-07 09:02:40,643 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Received request to upgrade to websocket
+2025-08-07 09:02:40,645 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Upgrade to websocket successful
+2025-08-07 09:02:40,648 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Received packet MESSAGE data 0
+2025-08-07 09:02:40,649 - INFO - Client bağlandı: ZA4of45MxUjbYxK-AAAB
+2025-08-07 09:02:40,650 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Sending packet MESSAGE data 0{"sid":"ZA4of45MxUjbYxK-AAAB"}
+2025-08-07 09:02:40,651 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Received packet MESSAGE data 2["join_location",{"location":"belediye"}]
+2025-08-07 09:02:40,652 - INFO - received event "join_location" from ZA4of45MxUjbYxK-AAAB [/]
+2025-08-07 09:02:40,653 - INFO - emitting event "content_updated" to ZA4of45MxUjbYxK-AAAB [/]
+2025-08-07 09:02:40,653 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Sending packet MESSAGE data 2["content_updated",{"action":"sync","location":"belediye","content_list":[{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":0,"duration":5},{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":1,"duration":7},{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":2,"duration":7},{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":3,"duration":26}]}]
+2025-08-07 09:02:40,654 - INFO - emitting event "display_status" to ZA4of45MxUjbYxK-AAAB [/]
+2025-08-07 09:02:40,655 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Sending packet MESSAGE data 2["display_status",{"status":"stopped","location":"belediye","current_item":null}]
+2025-08-07 09:02:42,291 - INFO - 5MPI73kC7Oul6pd_AAAC: Sending packet OPEN data {'sid': '5MPI73kC7Oul6pd_AAAC', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000, 'maxPayload': 1000000}
+2025-08-07 09:02:42,293 - INFO - 5MPI73kC7Oul6pd_AAAC: Received request to upgrade to websocket
+2025-08-07 09:02:42,295 - INFO - 5MPI73kC7Oul6pd_AAAC: Upgrade to websocket successful
+2025-08-07 09:02:42,298 - INFO - 5MPI73kC7Oul6pd_AAAC: Received packet MESSAGE data 0
+2025-08-07 09:02:42,302 - INFO - Client bağlandı: O0fyvby3RExYSJegAAAD
+2025-08-07 09:02:42,303 - INFO - 5MPI73kC7Oul6pd_AAAC: Sending packet MESSAGE data 0{"sid":"O0fyvby3RExYSJegAAAD"}
+2025-08-07 09:02:42,305 - INFO - 5MPI73kC7Oul6pd_AAAC: Received packet MESSAGE data 2["join_location",{"location":"belediye"}]
+2025-08-07 09:02:42,306 - INFO - received event "join_location" from O0fyvby3RExYSJegAAAD [/]
+2025-08-07 09:02:42,309 - INFO - emitting event "content_updated" to O0fyvby3RExYSJegAAAD [/]
+2025-08-07 09:02:42,310 - INFO - 5MPI73kC7Oul6pd_AAAC: Sending packet MESSAGE data 2["content_updated",{"action":"sync","location":"belediye","content_list":[{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":0,"duration":5},{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":1,"duration":7},{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":2,"duration":7},{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":3,"duration":26}]}]
+2025-08-07 09:02:42,310 - INFO - emitting event "display_status" to O0fyvby3RExYSJegAAAD [/]
+2025-08-07 09:02:42,311 - INFO - 5MPI73kC7Oul6pd_AAAC: Sending packet MESSAGE data 2["display_status",{"status":"stopped","location":"belediye","current_item":null}]
+2025-08-07 09:02:44,065 - INFO - Belediye Binası LED Ekran yayın döngüsü başlatıldı
+2025-08-07 09:02:44,065 - INFO - Belediye Binası LED Ekran yayın thread'i başlatıldı
+2025-08-07 09:02:44,066 - INFO - Belediye Binası LED Ekran gösterim başlatıldı
+2025-08-07 09:02:44,066 - INFO - Belediye Binası LED Ekran yayında: kah1.jpg (image)
+2025-08-07 09:02:44,066 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:44] "POST /api/belediye/display/start HTTP/1.1" 200 -
+2025-08-07 09:02:44,067 - INFO - emitting event "display_status" to all [/]
+2025-08-07 09:02:44,067 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":0,"duration":5}}]
+2025-08-07 09:02:44,068 - INFO - 5MPI73kC7Oul6pd_AAAC: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":0,"duration":5}}]
+2025-08-07 09:02:44,080 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:44] "[36mGET /uploads/belediye/kah1.jpg HTTP/1.1[0m" 304 -
+2025-08-07 09:02:44,084 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:44] "[36mGET /uploads/belediye/kah1.jpg HTTP/1.1[0m" 304 -
+2025-08-07 09:02:49,069 - INFO - Belediye Binası LED Ekran yayında: kah2 (1).jpg (image)
+2025-08-07 09:02:49,070 - INFO - emitting event "display_status" to all [/]
+2025-08-07 09:02:49,070 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":1,"duration":7}}]
+2025-08-07 09:02:49,071 - INFO - 5MPI73kC7Oul6pd_AAAC: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":1,"duration":7}}]
+2025-08-07 09:02:49,081 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:49] "[36mGET /uploads/belediye/kah2%20(1).jpg HTTP/1.1[0m" 304 -
+2025-08-07 09:02:49,085 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:49] "[36mGET /uploads/belediye/kah2%20(1).jpg HTTP/1.1[0m" 304 -
+2025-08-07 09:02:49,466 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:49] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:02:56,073 - INFO - Belediye Binası LED Ekran yayında: kah5.jpg (image)
+2025-08-07 09:02:56,073 - INFO - emitting event "display_status" to all [/]
+2025-08-07 09:02:56,074 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":2,"duration":7}}]
+2025-08-07 09:02:56,074 - INFO - 5MPI73kC7Oul6pd_AAAC: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":2,"duration":7}}]
+2025-08-07 09:02:56,081 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:56] "[36mGET /uploads/belediye/kah5.jpg HTTP/1.1[0m" 304 -
+2025-08-07 09:02:56,086 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:56] "[36mGET /uploads/belediye/kah5.jpg HTTP/1.1[0m" 304 -
+2025-08-07 09:02:59,455 - INFO - 192.168.250.122 - - [07/Aug/2025 09:02:59] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:03:03,075 - INFO - Belediye Binası LED Ekran yayında: yakutiye.mp4 (video)
+2025-08-07 09:03:03,076 - INFO - emitting event "display_status" to all [/]
+2025-08-07 09:03:03,076 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":3,"duration":26}}]
+2025-08-07 09:03:03,077 - INFO - 5MPI73kC7Oul6pd_AAAC: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":3,"duration":26}}]
+2025-08-07 09:03:03,098 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:03] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:03:03,106 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:03] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:03:03,116 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:03] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:03:03,127 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:03] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:03:03,130 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:03] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:03:03,150 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:03] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:03:03,157 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:03] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:03:03,171 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:03] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:03:03,180 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:03] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:03:03,267 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:03] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:03:05,643 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Sending packet PING data None
+2025-08-07 09:03:05,645 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Received packet PONG data 
+2025-08-07 09:03:07,293 - INFO - 5MPI73kC7Oul6pd_AAAC: Sending packet PING data None
+2025-08-07 09:03:07,295 - INFO - 5MPI73kC7Oul6pd_AAAC: Received packet PONG data 
+2025-08-07 09:03:07,640 - INFO - Client ayrıldı: O0fyvby3RExYSJegAAAD
+2025-08-07 09:03:07,664 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:07] "[35m[1mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 500 -
+2025-08-07 09:03:07,672 - ERROR - Error on request:
+Traceback (most recent call last):
+  File "C:\Users\aaaom\AppData\Local\Programs\Python\Python313\Lib\site-packages\werkzeug\serving.py", line 364, in run_wsgi
+    execute(self.server.app)
+    ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaaom\AppData\Local\Programs\Python\Python313\Lib\site-packages\werkzeug\serving.py", line 330, in execute
+    write(b"")
+    ~~~~~^^^^^
+  File "C:\Users\aaaom\AppData\Local\Programs\Python\Python313\Lib\site-packages\werkzeug\serving.py", line 255, in write
+    assert status_set is not None, "write() before start_response"
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: write() before start_response
+2025-08-07 09:03:09,458 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:09] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:03:17,898 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:17] "GET /api/belediye/debug/state HTTP/1.1" 200 -
+2025-08-07 09:03:23,431 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:23] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:03:25,098 - INFO - Belediye Binası LED Ekran yayın thread'i durduruldu
+2025-08-07 09:03:25,098 - INFO - emitting event "display_status" to all [/]
+2025-08-07 09:03:25,098 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Sending packet MESSAGE data 2["display_status",{"status":"stopped","location":"belediye","current_item":null}]
+2025-08-07 09:03:25,099 - INFO - Belediye Binası LED Ekran gösterim durduruldu
+2025-08-07 09:03:25,099 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:25] "POST /api/belediye/display/stop HTTP/1.1" 200 -
+2025-08-07 09:03:28,953 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-07 09:03:29,467 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:29] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:03:30,647 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Sending packet PING data None
+2025-08-07 09:03:30,659 - INFO - 6wwTPuEo_WZA4ZM-AAAA: Received packet PONG data 
+2025-08-07 09:03:40,312 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:40] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:03:50,318 - INFO - 192.168.250.122 - - [07/Aug/2025 09:03:50] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:04:40,932 - INFO - Belediye Binası LED Ekran içerik listesi yüklendi: 4 öğe
+2025-08-07 09:04:40,934 - INFO - Havuzbaşı Kent Meydanı LED Ekran içerik listesi yüklendi: 4 öğe
+2025-08-07 09:04:40,936 - INFO - Yenişehir LED Ekran içerik listesi yüklendi: 2 öğe
+2025-08-07 09:04:40,937 - INFO - Gürcükapı LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-07 09:04:42,274 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.122:5000
+2025-08-07 09:04:42,275 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 09:04:42,322 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:42] "GET /belediye HTTP/1.1" 200 -
+2025-08-07 09:04:42,499 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-07 09:04:42,519 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:42] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-07 09:04:42,571 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:42] "GET /static/script_location.js HTTP/1.1" 200 -
+2025-08-07 09:04:42,645 - INFO - aCSUjtdChQkmkZDGAAAA: Sending packet OPEN data {'sid': 'aCSUjtdChQkmkZDGAAAA', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000, 'maxPayload': 1000000}
+2025-08-07 09:04:42,649 - INFO - aCSUjtdChQkmkZDGAAAA: Received request to upgrade to websocket
+2025-08-07 09:04:42,663 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:42] "GET /api/belediye/content HTTP/1.1" 200 -
+2025-08-07 09:04:42,671 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:42] "GET /api/belediye/display/status HTTP/1.1" 200 -
+2025-08-07 09:04:42,669 - INFO - aCSUjtdChQkmkZDGAAAA: Upgrade to websocket successful
+2025-08-07 09:04:42,709 - INFO - aCSUjtdChQkmkZDGAAAA: Received packet MESSAGE data 0
+2025-08-07 09:04:42,718 - INFO - Client bağlandı: -fK2zFxi4ZMcJBjoAAAB
+2025-08-07 09:04:42,721 - INFO - aCSUjtdChQkmkZDGAAAA: Sending packet MESSAGE data 0{"sid":"-fK2zFxi4ZMcJBjoAAAB"}
+2025-08-07 09:04:42,747 - INFO - aCSUjtdChQkmkZDGAAAA: Received packet MESSAGE data 2["join_location",{"location":"belediye"}]
+2025-08-07 09:04:42,749 - INFO - received event "join_location" from -fK2zFxi4ZMcJBjoAAAB [/]
+2025-08-07 09:04:42,755 - INFO - emitting event "content_updated" to -fK2zFxi4ZMcJBjoAAAB [/]
+2025-08-07 09:04:42,760 - INFO - aCSUjtdChQkmkZDGAAAA: Sending packet MESSAGE data 2["content_updated",{"action":"sync","location":"belediye","content_list":[{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":0,"duration":5},{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":1,"duration":7},{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":2,"duration":7},{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":3,"duration":26}]}]
+2025-08-07 09:04:42,767 - INFO - emitting event "display_status" to -fK2zFxi4ZMcJBjoAAAB [/]
+2025-08-07 09:04:42,769 - INFO - aCSUjtdChQkmkZDGAAAA: Sending packet MESSAGE data 2["display_status",{"status":"stopped","location":"belediye","current_item":null}]
+2025-08-07 09:04:43,545 - INFO - Client ayrıldı: -fK2zFxi4ZMcJBjoAAAB
+2025-08-07 09:04:43,552 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:43] "GET /belediye HTTP/1.1" 200 -
+2025-08-07 09:04:43,559 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:43] "[35m[1mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 500 -
+2025-08-07 09:04:43,565 - ERROR - Error on request:
+Traceback (most recent call last):
+  File "C:\Users\aaaom\AppData\Local\Programs\Python\Python313\Lib\site-packages\werkzeug\serving.py", line 364, in run_wsgi
+    execute(self.server.app)
+    ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaaom\AppData\Local\Programs\Python\Python313\Lib\site-packages\werkzeug\serving.py", line 330, in execute
+    write(b"")
+    ~~~~~^^^^^
+  File "C:\Users\aaaom\AppData\Local\Programs\Python\Python313\Lib\site-packages\werkzeug\serving.py", line 255, in write
+    assert status_set is not None, "write() before start_response"
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: write() before start_response
+2025-08-07 09:04:43,588 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-07 09:04:43,603 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:43] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-07 09:04:43,605 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:43] "[36mGET /static/script_location.js HTTP/1.1[0m" 304 -
+2025-08-07 09:04:43,621 - INFO - zETtXklUcUL0QNY9AAAC: Sending packet OPEN data {'sid': 'zETtXklUcUL0QNY9AAAC', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000, 'maxPayload': 1000000}
+2025-08-07 09:04:43,622 - INFO - zETtXklUcUL0QNY9AAAC: Received request to upgrade to websocket
+2025-08-07 09:04:43,631 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:43] "GET /api/belediye/content HTTP/1.1" 200 -
+2025-08-07 09:04:43,628 - INFO - zETtXklUcUL0QNY9AAAC: Upgrade to websocket successful
+2025-08-07 09:04:43,635 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:43] "GET /api/belediye/display/status HTTP/1.1" 200 -
+2025-08-07 09:04:43,669 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:43] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:04:43,807 - INFO - zETtXklUcUL0QNY9AAAC: Received packet MESSAGE data 0
+2025-08-07 09:04:43,808 - INFO - Client bağlandı: bxOkjUhbQ28iaZTcAAAD
+2025-08-07 09:04:43,808 - INFO - zETtXklUcUL0QNY9AAAC: Sending packet MESSAGE data 0{"sid":"bxOkjUhbQ28iaZTcAAAD"}
+2025-08-07 09:04:43,848 - INFO - zETtXklUcUL0QNY9AAAC: Received packet MESSAGE data 2["join_location",{"location":"belediye"}]
+2025-08-07 09:04:43,849 - INFO - received event "join_location" from bxOkjUhbQ28iaZTcAAAD [/]
+2025-08-07 09:04:43,851 - INFO - emitting event "content_updated" to bxOkjUhbQ28iaZTcAAAD [/]
+2025-08-07 09:04:43,852 - INFO - zETtXklUcUL0QNY9AAAC: Sending packet MESSAGE data 2["content_updated",{"action":"sync","location":"belediye","content_list":[{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":0,"duration":5},{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":1,"duration":7},{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":2,"duration":7},{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":3,"duration":26}]}]
+2025-08-07 09:04:43,852 - INFO - emitting event "display_status" to bxOkjUhbQ28iaZTcAAAD [/]
+2025-08-07 09:04:43,853 - INFO - zETtXklUcUL0QNY9AAAC: Sending packet MESSAGE data 2["display_status",{"status":"stopped","location":"belediye","current_item":null}]
+2025-08-07 09:04:44,633 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:44] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:04:45,558 - INFO - Belediye Binası LED Ekran yayın döngüsü başlatıldı
+2025-08-07 09:04:45,558 - INFO - Belediye Binası LED Ekran yayın thread'i başlatıldı
+2025-08-07 09:04:45,558 - INFO - Belediye Binası LED Ekran gösterim başlatıldı
+2025-08-07 09:04:45,558 - INFO - Belediye Binası LED Ekran yayında: kah1.jpg (image)
+2025-08-07 09:04:45,559 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:45] "POST /api/belediye/display/start HTTP/1.1" 200 -
+2025-08-07 09:04:45,560 - INFO - emitting event "display_status" to all [/]
+2025-08-07 09:04:45,561 - INFO - zETtXklUcUL0QNY9AAAC: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":0,"duration":5}}]
+2025-08-07 09:04:45,567 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:45] "[36mGET /uploads/belediye/kah1.jpg HTTP/1.1[0m" 304 -
+2025-08-07 09:04:49,117 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:49] "GET /screenbelediye HTTP/1.1" 200 -
+2025-08-07 09:04:49,155 - INFO - mC50dVSRLGZ-oF-3AAAE: Sending packet OPEN data {'sid': 'mC50dVSRLGZ-oF-3AAAE', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000, 'maxPayload': 1000000}
+2025-08-07 09:04:49,157 - INFO - mC50dVSRLGZ-oF-3AAAE: Received request to upgrade to websocket
+2025-08-07 09:04:49,160 - INFO - mC50dVSRLGZ-oF-3AAAE: Upgrade to websocket successful
+2025-08-07 09:04:49,167 - INFO - mC50dVSRLGZ-oF-3AAAE: Received packet MESSAGE data 0
+2025-08-07 09:04:49,168 - INFO - Client bağlandı: RVOOk_jKT2fYlbeqAAAF
+2025-08-07 09:04:49,169 - INFO - mC50dVSRLGZ-oF-3AAAE: Sending packet MESSAGE data 0{"sid":"RVOOk_jKT2fYlbeqAAAF"}
+2025-08-07 09:04:49,171 - INFO - mC50dVSRLGZ-oF-3AAAE: Received packet MESSAGE data 2["join_location",{"location":"belediye"}]
+2025-08-07 09:04:49,172 - INFO - received event "join_location" from RVOOk_jKT2fYlbeqAAAF [/]
+2025-08-07 09:04:49,175 - INFO - emitting event "content_updated" to RVOOk_jKT2fYlbeqAAAF [/]
+2025-08-07 09:04:49,177 - INFO - mC50dVSRLGZ-oF-3AAAE: Sending packet MESSAGE data 2["content_updated",{"action":"sync","location":"belediye","content_list":[{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":0,"duration":5},{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":1,"duration":7},{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":2,"duration":7},{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":3,"duration":26}]}]
+2025-08-07 09:04:49,178 - INFO - emitting event "display_status" to RVOOk_jKT2fYlbeqAAAF [/]
+2025-08-07 09:04:49,180 - INFO - mC50dVSRLGZ-oF-3AAAE: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":0,"duration":5}}]
+2025-08-07 09:04:49,189 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:49] "[36mGET /uploads/belediye/kah1.jpg HTTP/1.1[0m" 304 -
+2025-08-07 09:04:50,562 - INFO - Belediye Binası LED Ekran yayında: kah2 (1).jpg (image)
+2025-08-07 09:04:50,562 - INFO - emitting event "display_status" to all [/]
+2025-08-07 09:04:50,563 - INFO - zETtXklUcUL0QNY9AAAC: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":1,"duration":7}}]
+2025-08-07 09:04:50,563 - INFO - mC50dVSRLGZ-oF-3AAAE: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":1,"duration":7}}]
+2025-08-07 09:04:50,568 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:50] "[36mGET /uploads/belediye/kah2%20(1).jpg HTTP/1.1[0m" 304 -
+2025-08-07 09:04:50,575 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:50] "[36mGET /uploads/belediye/kah2%20(1).jpg HTTP/1.1[0m" 304 -
+2025-08-07 09:04:54,638 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:54] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:04:57,564 - INFO - Belediye Binası LED Ekran yayında: kah5.jpg (image)
+2025-08-07 09:04:57,565 - INFO - emitting event "display_status" to all [/]
+2025-08-07 09:04:57,565 - INFO - zETtXklUcUL0QNY9AAAC: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":2,"duration":7}}]
+2025-08-07 09:04:57,565 - INFO - mC50dVSRLGZ-oF-3AAAE: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":2,"duration":7}}]
+2025-08-07 09:04:57,571 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:57] "[36mGET /uploads/belediye/kah5.jpg HTTP/1.1[0m" 304 -
+2025-08-07 09:04:57,579 - INFO - 192.168.250.122 - - [07/Aug/2025 09:04:57] "[36mGET /uploads/belediye/kah5.jpg HTTP/1.1[0m" 304 -
+2025-08-07 09:05:04,566 - INFO - Belediye Binası LED Ekran yayında: yakutiye.mp4 (video)
+2025-08-07 09:05:04,567 - INFO - emitting event "display_status" to all [/]
+2025-08-07 09:05:04,567 - INFO - zETtXklUcUL0QNY9AAAC: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":3,"duration":26}}]
+2025-08-07 09:05:04,568 - INFO - mC50dVSRLGZ-oF-3AAAE: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":3,"duration":26}}]
+2025-08-07 09:05:04,574 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:04] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:04,599 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:04] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:04,606 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:04] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:04,811 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:04] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:05:05,321 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:05] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:05,345 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:05] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:05,362 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:05] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:05,370 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:05] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:06,485 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:06] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:08,354 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:08] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:08,623 - INFO - zETtXklUcUL0QNY9AAAC: Sending packet PING data None
+2025-08-07 09:05:08,625 - INFO - zETtXklUcUL0QNY9AAAC: Received packet PONG data 
+2025-08-07 09:05:11,040 - INFO - Belediye Binası LED Ekran içerik sırası güncellendi
+2025-08-07 09:05:11,041 - INFO - emitting event "content_updated" to all [/]
+2025-08-07 09:05:11,041 - INFO - zETtXklUcUL0QNY9AAAC: Sending packet MESSAGE data 2["content_updated",{"action":"reorder","location":"belediye","content_list":[{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":0,"duration":5},{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":1,"duration":7},{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":2,"duration":26},{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":3,"duration":7}]}]
+2025-08-07 09:05:11,042 - INFO - mC50dVSRLGZ-oF-3AAAE: Sending packet MESSAGE data 2["content_updated",{"action":"reorder","location":"belediye","content_list":[{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":0,"duration":5},{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":1,"duration":7},{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":2,"duration":26},{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":3,"duration":7}]}]
+2025-08-07 09:05:11,043 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:11] "POST /api/belediye/content/order HTTP/1.1" 200 -
+2025-08-07 09:05:14,007 - INFO - Belediye Binası LED Ekran içerik sırası güncellendi
+2025-08-07 09:05:14,008 - INFO - emitting event "content_updated" to all [/]
+2025-08-07 09:05:14,008 - INFO - zETtXklUcUL0QNY9AAAC: Sending packet MESSAGE data 2["content_updated",{"action":"reorder","location":"belediye","content_list":[{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":0,"duration":5},{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":1,"duration":26},{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":2,"duration":7},{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":3,"duration":7}]}]
+2025-08-07 09:05:14,008 - INFO - mC50dVSRLGZ-oF-3AAAE: Sending packet MESSAGE data 2["content_updated",{"action":"reorder","location":"belediye","content_list":[{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":0,"duration":5},{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":1,"duration":26},{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":2,"duration":7},{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":3,"duration":7}]}]
+2025-08-07 09:05:14,009 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:14] "POST /api/belediye/content/order HTTP/1.1" 200 -
+2025-08-07 09:05:14,158 - INFO - mC50dVSRLGZ-oF-3AAAE: Sending packet PING data None
+2025-08-07 09:05:14,159 - INFO - mC50dVSRLGZ-oF-3AAAE: Received packet PONG data 
+2025-08-07 09:05:14,632 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:14] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:05:16,386 - INFO - Belediye Binası LED Ekran içerik sırası güncellendi
+2025-08-07 09:05:16,386 - INFO - emitting event "content_updated" to all [/]
+2025-08-07 09:05:16,386 - INFO - zETtXklUcUL0QNY9AAAC: Sending packet MESSAGE data 2["content_updated",{"action":"reorder","location":"belediye","content_list":[{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":0,"duration":26},{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":1,"duration":5},{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":2,"duration":7},{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":3,"duration":7}]}]
+2025-08-07 09:05:16,387 - INFO - mC50dVSRLGZ-oF-3AAAE: Sending packet MESSAGE data 2["content_updated",{"action":"reorder","location":"belediye","content_list":[{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":0,"duration":26},{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":1,"duration":5},{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":2,"duration":7},{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":3,"duration":7}]}]
+2025-08-07 09:05:16,388 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:16] "POST /api/belediye/content/order HTTP/1.1" 200 -
+2025-08-07 09:05:24,632 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:24] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:05:30,569 - INFO - Belediye Binası LED Ekran yayında: yakutiye.mp4 (video)
+2025-08-07 09:05:30,570 - INFO - emitting event "display_status" to all [/]
+2025-08-07 09:05:30,570 - INFO - zETtXklUcUL0QNY9AAAC: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":0,"duration":26}}]
+2025-08-07 09:05:30,571 - INFO - mC50dVSRLGZ-oF-3AAAE: Sending packet MESSAGE data 2["display_status",{"status":"playing","location":"belediye","current_item":{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":0,"duration":26}}]
+2025-08-07 09:05:30,581 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:30] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:30,591 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:30] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:30,621 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:30] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:30,632 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:30] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:30,638 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:30] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:30,648 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:30] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:30,948 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:30] "[35m[1mGET /uploads/belediye/yakutiye.mp4 HTTP/1.1[0m" 206 -
+2025-08-07 09:05:33,626 - INFO - zETtXklUcUL0QNY9AAAC: Sending packet PING data None
+2025-08-07 09:05:33,628 - INFO - zETtXklUcUL0QNY9AAAC: Received packet PONG data 
+2025-08-07 09:05:34,631 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:34] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 09:05:39,161 - INFO - mC50dVSRLGZ-oF-3AAAE: Sending packet PING data None
+2025-08-07 09:05:39,165 - INFO - mC50dVSRLGZ-oF-3AAAE: Received packet PONG data 
+2025-08-07 09:05:39,454 - INFO - Belediye Binası LED Ekran yayın thread'i durduruldu
+2025-08-07 09:05:39,454 - INFO - emitting event "display_status" to all [/]
+2025-08-07 09:05:39,455 - INFO - zETtXklUcUL0QNY9AAAC: Sending packet MESSAGE data 2["display_status",{"status":"stopped","location":"belediye","current_item":null}]
+2025-08-07 09:05:39,456 - INFO - mC50dVSRLGZ-oF-3AAAE: Sending packet MESSAGE data 2["display_status",{"status":"stopped","location":"belediye","current_item":null}]
+2025-08-07 09:05:39,456 - INFO - Belediye Binası LED Ekran gösterim durduruldu
+2025-08-07 09:05:39,457 - INFO - 192.168.250.122 - - [07/Aug/2025 09:05:39] "POST /api/belediye/display/stop HTTP/1.1" 200 -

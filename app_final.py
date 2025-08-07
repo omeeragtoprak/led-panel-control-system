@@ -524,6 +524,24 @@ def api_fix_video_durations(location):
         'fixed_count': fixed_count
     })
 
+@app.route('/api/<location>/debug/state')
+@login_required
+def api_debug_state(location):
+    """Debug: State bilgilerini göster"""
+    if location not in LOCATIONS:
+        abort(404)
+    
+    st = state[location]
+    return jsonify({
+        'success': True,
+        'location': location,
+        'is_running': st['is_running'],
+        'current_index': st['current_index'],
+        'content_count': len(st['content']),
+        'current_item': st['content'][st['current_index']] if st['content'] and st['is_running'] else None,
+        'all_content': st['content']
+    })
+
 @app.route('/api/<location>/content/order', methods=['POST'])
 @login_required
 def api_update_order(location):
@@ -603,7 +621,12 @@ def api_display_status(location):
     current_item = None
     
     if st['is_running'] and st['content']:
-        current_item = st['content'][st['current_index']]
+        # current_index zaten sonraki öğeyi gösteriyor, bu yüzden bir önceki öğeyi al
+        # Eğer current_index 0 ise, son öğeyi al
+        if st['current_index'] == 0:
+            current_item = st['content'][-1]
+        else:
+            current_item = st['content'][st['current_index'] - 1]
     
     return jsonify({
         'success': True,
@@ -680,7 +703,11 @@ def handle_join_location(data):
             # Gösterim durumunu gönder
             current_item = None
             if st['is_running'] and st['content']:
-                current_item = st['content'][st['current_index']]
+                # current_index zaten sonraki öğeyi gösteriyor, bu yüzden bir önceki öğeyi al
+                if st['current_index'] == 0:
+                    current_item = st['content'][-1]
+                else:
+                    current_item = st['content'][st['current_index'] - 1]
             
             emit('display_status', {
                 'status': 'playing' if st['is_running'] else 'stopped',

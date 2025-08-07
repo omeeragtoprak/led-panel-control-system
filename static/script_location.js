@@ -100,6 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(`${currentLocation} display_status aldı:`, data);
         if (data && data.location === currentLocation) {
             handleDisplayStatus(data);
+            // Yönetim panelindeki gösterimi güncelle
+            updatePlaybackUI(data.status, data.current_item);
         }
     });
 
