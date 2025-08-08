@@ -12421,3 +12421,179 @@ AssertionError: write() before start_response
 2025-08-07 13:19:08,261 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:08] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
 2025-08-07 13:19:08,264 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:08] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
 2025-08-07 13:19:09,289 - INFO - 192.168.250.122 - - [07/Aug/2025 13:19:09] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 15:47:32,289 - INFO - Belediye Binası LED Ekran içerik listesi yüklendi: 4 öğe
+2025-08-07 15:47:32,299 - INFO - Havuzbaşı Kent Meydanı LED Ekran içerik listesi yüklendi: 5 öğe
+2025-08-07 15:47:32,309 - INFO - Yenişehir LED Ekran içerik listesi yüklendi: 2 öğe
+2025-08-07 15:47:32,319 - INFO - Gürcükapı LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-07 15:47:32,342 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.122:5000
+2025-08-07 15:47:32,343 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 15:47:40,986 - INFO - 192.168.250.122 - - [07/Aug/2025 15:47:40] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-07 15:47:41,033 - INFO - 192.168.250.122 - - [07/Aug/2025 15:47:41] "GET /login?next=/ HTTP/1.1" 200 -
+2025-08-07 15:47:41,259 - INFO - 192.168.250.122 - - [07/Aug/2025 15:47:41] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-07 15:47:41,286 - INFO - 192.168.250.122 - - [07/Aug/2025 15:47:41] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-07 15:47:41,572 - INFO - 192.168.250.122 - - [07/Aug/2025 15:47:41] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-08-07 15:47:41,605 - INFO - 192.168.250.122 - - [07/Aug/2025 15:47:41] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2025-08-07 15:47:43,664 - INFO - 192.168.250.122 - - [07/Aug/2025 15:47:43] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-07 15:47:43,672 - INFO - 192.168.250.122 - - [07/Aug/2025 15:47:43] "GET / HTTP/1.1" 200 -
+2025-08-07 15:47:43,714 - INFO - 192.168.250.122 - - [07/Aug/2025 15:47:43] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-07 15:47:43,716 - INFO - 192.168.250.122 - - [07/Aug/2025 15:47:43] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-07 15:47:43,925 - INFO - 192.168.250.122 - - [07/Aug/2025 15:47:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-07 15:47:44,740 - INFO - 192.168.250.122 - - [07/Aug/2025 15:47:44] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 15:47:54,903 - INFO - 192.168.250.122 - - [07/Aug/2025 15:47:54] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 15:48:04,901 - INFO - 192.168.250.122 - - [07/Aug/2025 15:48:04] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 15:48:14,898 - INFO - 192.168.250.122 - - [07/Aug/2025 15:48:14] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 15:48:24,903 - INFO - 192.168.250.122 - - [07/Aug/2025 15:48:24] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 15:48:34,905 - INFO - 192.168.250.122 - - [07/Aug/2025 15:48:34] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 15:48:44,899 - INFO - 192.168.250.122 - - [07/Aug/2025 15:48:44] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:47:27,163 - INFO - Belediye Binası LED Ekran içerik listesi yüklendi: 4 öğe
+2025-08-07 16:47:27,165 - INFO - Havuzbaşı Kent Meydanı LED Ekran içerik listesi yüklendi: 5 öğe
+2025-08-07 16:47:27,166 - INFO - Yenişehir LED Ekran içerik listesi yüklendi: 2 öğe
+2025-08-07 16:47:27,167 - INFO - Gürcükapı LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-07 16:47:27,190 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.122:5000
+2025-08-07 16:47:27,190 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 16:47:28,409 - INFO - 192.168.250.122 - - [07/Aug/2025 16:47:28] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:47:43,224 - INFO - 192.168.250.122 - - [07/Aug/2025 16:47:43] "GET / HTTP/1.1" 200 -
+2025-08-07 16:47:43,550 - INFO - 192.168.250.122 - - [07/Aug/2025 16:47:43] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-07 16:47:43,590 - INFO - 192.168.250.122 - - [07/Aug/2025 16:47:43] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-07 16:47:44,826 - INFO - 192.168.250.122 - - [07/Aug/2025 16:47:44] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:47:45,826 - INFO - 192.168.250.122 - - [07/Aug/2025 16:47:45] "GET /belediye HTTP/1.1" 200 -
+2025-08-07 16:47:45,869 - INFO - 192.168.250.122 - - [07/Aug/2025 16:47:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-07 16:47:45,882 - INFO - 192.168.250.122 - - [07/Aug/2025 16:47:45] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-07 16:47:45,884 - INFO - 192.168.250.122 - - [07/Aug/2025 16:47:45] "[36mGET /static/script_location.js HTTP/1.1[0m" 304 -
+2025-08-07 16:47:46,078 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet OPEN data {'sid': 'bNyskQzFqTjsqj1qAAAA', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000, 'maxPayload': 1000000}
+2025-08-07 16:47:46,081 - INFO - bNyskQzFqTjsqj1qAAAA: Received request to upgrade to websocket
+2025-08-07 16:47:46,086 - INFO - bNyskQzFqTjsqj1qAAAA: Upgrade to websocket successful
+2025-08-07 16:47:46,093 - INFO - 192.168.250.122 - - [07/Aug/2025 16:47:46] "GET /api/belediye/content HTTP/1.1" 200 -
+2025-08-07 16:47:46,097 - INFO - 192.168.250.122 - - [07/Aug/2025 16:47:46] "GET /api/belediye/display/status HTTP/1.1" 200 -
+2025-08-07 16:47:46,319 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet MESSAGE data 0
+2025-08-07 16:47:46,322 - INFO - Client bağlandı: vp2TuqP4PkUQSI48AAAB
+2025-08-07 16:47:46,322 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet MESSAGE data 0{"sid":"vp2TuqP4PkUQSI48AAAB"}
+2025-08-07 16:47:46,333 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet MESSAGE data 2["join_location",{"location":"belediye"}]
+2025-08-07 16:47:46,334 - INFO - received event "join_location" from vp2TuqP4PkUQSI48AAAB [/]
+2025-08-07 16:47:46,337 - INFO - emitting event "content_updated" to vp2TuqP4PkUQSI48AAAB [/]
+2025-08-07 16:47:46,338 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet MESSAGE data 2["content_updated",{"action":"sync","location":"belediye","content_list":[{"id":1754546063405,"filename":"yakutiye.mp4","type":"video","order":0,"duration":5},{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":1,"duration":5,"is_active":true},{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":2,"duration":5,"is_active":true},{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":3,"duration":5}]}]
+2025-08-07 16:47:46,339 - INFO - emitting event "display_status" to vp2TuqP4PkUQSI48AAAB [/]
+2025-08-07 16:47:46,340 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet MESSAGE data 2["display_status",{"status":"stopped","location":"belediye","current_item":null}]
+2025-08-07 16:47:47,085 - INFO - 192.168.250.122 - - [07/Aug/2025 16:47:47] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:47:57,092 - INFO - 192.168.250.122 - - [07/Aug/2025 16:47:57] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:47:59,035 - INFO - Belediye Binası LED Ekran içerik silindi: yakutiye.mp4
+2025-08-07 16:47:59,036 - INFO - emitting event "content_updated" to all [/]
+2025-08-07 16:47:59,036 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet MESSAGE data 2["content_updated",{"action":"delete","location":"belediye","content_list":[{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":0,"duration":5,"is_active":true},{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":1,"duration":5,"is_active":true},{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":2,"duration":5}]}]
+2025-08-07 16:47:59,037 - INFO - 192.168.250.122 - - [07/Aug/2025 16:47:59] "DELETE /api/belediye/content/1754546063405 HTTP/1.1" 200 -
+2025-08-07 16:47:59,051 - INFO - 192.168.250.122 - - [07/Aug/2025 16:47:59] "GET /api/belediye/content HTTP/1.1" 200 -
+2025-08-07 16:48:07,897 - INFO - 192.168.250.122 - - [07/Aug/2025 16:48:07] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:48:11,082 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet PING data None
+2025-08-07 16:48:11,083 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet PONG data 
+2025-08-07 16:48:17,905 - INFO - 192.168.250.122 - - [07/Aug/2025 16:48:17] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:48:27,905 - INFO - 192.168.250.122 - - [07/Aug/2025 16:48:27] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:48:28,914 - INFO - 192.168.250.122 - - [07/Aug/2025 16:48:28] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:48:36,084 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet PING data None
+2025-08-07 16:48:36,086 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet PONG data 
+2025-08-07 16:48:37,902 - INFO - 192.168.250.122 - - [07/Aug/2025 16:48:37] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:48:47,898 - INFO - 192.168.250.122 - - [07/Aug/2025 16:48:47] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:48:57,906 - INFO - 192.168.250.122 - - [07/Aug/2025 16:48:57] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:49:01,087 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet PING data None
+2025-08-07 16:49:01,088 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet PONG data 
+2025-08-07 16:49:07,906 - INFO - 192.168.250.122 - - [07/Aug/2025 16:49:07] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:49:17,086 - INFO - 192.168.250.122 - - [07/Aug/2025 16:49:17] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:49:26,090 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet PING data None
+2025-08-07 16:49:26,092 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet PONG data 
+2025-08-07 16:49:27,094 - INFO - 192.168.250.122 - - [07/Aug/2025 16:49:27] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:49:28,105 - INFO - 192.168.250.122 - - [07/Aug/2025 16:49:28] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:49:37,901 - INFO - 192.168.250.122 - - [07/Aug/2025 16:49:37] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:49:47,898 - INFO - 192.168.250.122 - - [07/Aug/2025 16:49:47] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:49:51,094 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet PING data None
+2025-08-07 16:49:51,096 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet PONG data 
+2025-08-07 16:49:57,903 - INFO - 192.168.250.122 - - [07/Aug/2025 16:49:57] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:50:07,909 - INFO - 192.168.250.122 - - [07/Aug/2025 16:50:07] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:50:16,097 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet PING data None
+2025-08-07 16:50:16,099 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet PONG data 
+2025-08-07 16:50:17,912 - INFO - 192.168.250.122 - - [07/Aug/2025 16:50:17] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:50:27,899 - INFO - 192.168.250.122 - - [07/Aug/2025 16:50:27] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:50:28,909 - INFO - 192.168.250.122 - - [07/Aug/2025 16:50:28] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:50:37,898 - INFO - 192.168.250.122 - - [07/Aug/2025 16:50:37] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:50:41,100 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet PING data None
+2025-08-07 16:50:41,102 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet PONG data 
+2025-08-07 16:50:47,907 - INFO - 192.168.250.122 - - [07/Aug/2025 16:50:47] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:50:57,900 - INFO - 192.168.250.122 - - [07/Aug/2025 16:50:57] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:51:06,103 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet PING data None
+2025-08-07 16:51:06,104 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet PONG data 
+2025-08-07 16:51:07,899 - INFO - 192.168.250.122 - - [07/Aug/2025 16:51:07] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:51:17,897 - INFO - 192.168.250.122 - - [07/Aug/2025 16:51:17] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:51:27,898 - INFO - 192.168.250.122 - - [07/Aug/2025 16:51:27] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:51:28,906 - INFO - 192.168.250.122 - - [07/Aug/2025 16:51:28] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:51:31,106 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet PING data None
+2025-08-07 16:51:31,107 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet PONG data 
+2025-08-07 16:51:37,908 - INFO - 192.168.250.122 - - [07/Aug/2025 16:51:37] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:51:47,905 - INFO - 192.168.250.122 - - [07/Aug/2025 16:51:47] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:51:56,108 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet PING data None
+2025-08-07 16:51:56,109 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet PONG data 
+2025-08-07 16:51:57,902 - INFO - 192.168.250.122 - - [07/Aug/2025 16:51:57] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:52:07,905 - INFO - 192.168.250.122 - - [07/Aug/2025 16:52:07] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:52:16,505 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:16] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-07 16:52:16,575 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:16] "GET /login?next=/ HTTP/1.1" 200 -
+2025-08-07 16:52:16,758 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:16] "GET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1" 200 -
+2025-08-07 16:52:16,758 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:16] "GET /static/style_selector.css HTTP/1.1" 200 -
+2025-08-07 16:52:17,194 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:17] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-08-07 16:52:17,238 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:17] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2025-08-07 16:52:17,901 - INFO - 192.168.250.122 - - [07/Aug/2025 16:52:17] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:52:21,110 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet PING data None
+2025-08-07 16:52:21,112 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet PONG data 
+2025-08-07 16:52:21,599 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:21] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-07 16:52:21,703 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:21] "GET / HTTP/1.1" 200 -
+2025-08-07 16:52:21,857 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:21] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-07 16:52:21,858 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:21] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-07 16:52:23,276 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:23] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:52:24,388 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:24] "GET /belediye HTTP/1.1" 200 -
+2025-08-07 16:52:24,812 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:24] "GET /static/style.css HTTP/1.1" 200 -
+2025-08-07 16:52:25,441 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:25] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-07 16:52:25,442 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:25] "GET /static/script_location.js HTTP/1.1" 200 -
+2025-08-07 16:52:27,609 - INFO - KfZRnhFwNrvU294WAAAC: Sending packet OPEN data {'sid': 'KfZRnhFwNrvU294WAAAC', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000, 'maxPayload': 1000000}
+2025-08-07 16:52:27,610 - INFO - KfZRnhFwNrvU294WAAAC: Received request to upgrade to websocket
+2025-08-07 16:52:27,612 - INFO - KfZRnhFwNrvU294WAAAC: Upgrade to websocket successful
+2025-08-07 16:52:27,910 - INFO - 192.168.250.122 - - [07/Aug/2025 16:52:27] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:52:28,614 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:28] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:52:28,918 - INFO - 192.168.250.122 - - [07/Aug/2025 16:52:28] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:52:29,025 - INFO - KfZRnhFwNrvU294WAAAC: Received packet MESSAGE data 0
+2025-08-07 16:52:29,026 - INFO - Client bağlandı: dx-jTcLPQJqEWPAyAAAD
+2025-08-07 16:52:29,027 - INFO - KfZRnhFwNrvU294WAAAC: Sending packet MESSAGE data 0{"sid":"dx-jTcLPQJqEWPAyAAAD"}
+2025-08-07 16:52:31,225 - INFO - KfZRnhFwNrvU294WAAAC: Received packet MESSAGE data 2["join_location",{"location":"belediye"}]
+2025-08-07 16:52:31,226 - INFO - received event "join_location" from dx-jTcLPQJqEWPAyAAAD [/]
+2025-08-07 16:52:31,227 - INFO - emitting event "content_updated" to dx-jTcLPQJqEWPAyAAAD [/]
+2025-08-07 16:52:31,227 - INFO - KfZRnhFwNrvU294WAAAC: Sending packet MESSAGE data 2["content_updated",{"action":"sync","location":"belediye","content_list":[{"id":1754399151223,"filename":"kah1.jpg","type":"image","order":0,"duration":5,"is_active":true},{"id":1754399124431,"filename":"kah2 (1).jpg","type":"image","order":1,"duration":5,"is_active":true},{"id":1754399141209,"filename":"kah5.jpg","type":"image","order":2,"duration":5}]}]
+2025-08-07 16:52:31,228 - INFO - emitting event "display_status" to dx-jTcLPQJqEWPAyAAAD [/]
+2025-08-07 16:52:31,228 - INFO - KfZRnhFwNrvU294WAAAC: Sending packet MESSAGE data 2["display_status",{"status":"stopped","location":"belediye","current_item":null}]
+2025-08-07 16:52:31,407 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:31] "GET /api/belediye/display/status HTTP/1.1" 200 -
+2025-08-07 16:52:31,409 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:31] "GET /api/belediye/content HTTP/1.1" 200 -
+2025-08-07 16:52:40,781 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:40] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:52:46,113 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet PING data None
+2025-08-07 16:52:46,114 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet PONG data 
+2025-08-07 16:52:48,228 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:48] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:52:52,610 - INFO - KfZRnhFwNrvU294WAAAC: Sending packet PING data None
+2025-08-07 16:52:53,523 - INFO - KfZRnhFwNrvU294WAAAC: Received packet PONG data 
+2025-08-07 16:52:53,678 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-07 16:52:58,318 - INFO - 192.168.250.73 - - [07/Aug/2025 16:52:58] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:53:08,227 - INFO - 192.168.250.73 - - [07/Aug/2025 16:53:08] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:53:11,115 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet PING data None
+2025-08-07 16:53:11,117 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet PONG data 
+2025-08-07 16:53:18,524 - INFO - KfZRnhFwNrvU294WAAAC: Sending packet PING data None
+2025-08-07 16:53:18,554 - INFO - KfZRnhFwNrvU294WAAAC: Received packet PONG data 
+2025-08-07 16:53:18,992 - INFO - 192.168.250.73 - - [07/Aug/2025 16:53:18] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:53:27,898 - INFO - 192.168.250.122 - - [07/Aug/2025 16:53:27] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:53:28,360 - INFO - 192.168.250.73 - - [07/Aug/2025 16:53:28] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:53:28,906 - INFO - 192.168.250.122 - - [07/Aug/2025 16:53:28] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:53:36,118 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet PING data None
+2025-08-07 16:53:36,120 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet PONG data 
+2025-08-07 16:53:38,365 - INFO - 192.168.250.73 - - [07/Aug/2025 16:53:38] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:53:43,556 - INFO - KfZRnhFwNrvU294WAAAC: Sending packet PING data None
+2025-08-07 16:53:43,588 - INFO - KfZRnhFwNrvU294WAAAC: Received packet PONG data 
+2025-08-07 16:53:48,612 - INFO - 192.168.250.73 - - [07/Aug/2025 16:53:48] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:53:59,195 - INFO - 192.168.250.73 - - [07/Aug/2025 16:53:59] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-07 16:54:01,121 - INFO - bNyskQzFqTjsqj1qAAAA: Sending packet PING data None
+2025-08-07 16:54:01,122 - INFO - bNyskQzFqTjsqj1qAAAA: Received packet PONG data 

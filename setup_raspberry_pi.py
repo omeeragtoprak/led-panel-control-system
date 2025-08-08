@@ -51,6 +51,11 @@ static domain_name_servers=8.8.8.8 8.8.4.4
 """.format(ip)
     
     try:
+        # Önce dosyanın var olup olmadığını kontrol et
+        if not os.path.exists('/etc/dhcpcd.conf'):
+            print("❌ /etc/dhcpcd.conf dosyası bulunamadı!")
+            return False
+            
         with open('/etc/dhcpcd.conf', 'a') as f:
             f.write(dhcpcd_conf)
         print(f"✅ Static IP ayarlandı: {ip}")
@@ -59,56 +64,30 @@ static domain_name_servers=8.8.8.8 8.8.4.4
         print(f"❌ Static IP ayarlama hatası: {e}")
         return False
 
-def install_dependencies():
-    """Gerekli paketleri yükle"""
-    packages = [
-        'python3-pip',
-        'python3-opencv',
-        'ffmpeg',
-        'python3-venv',
-        'git'
-    ]
-    
-    for package in packages:
-        if not run_command(f"sudo apt-get install -y {package}", f"{package} yükleniyor..."):
-            return False
-    return True
-
-def setup_python_environment():
-    """Python sanal ortam kur"""
-    if not run_command("python3 -m venv led_env", "Python sanal ortam oluşturuluyor..."):
-        return False
-    
-    if not run_command("source led_env/bin/activate && pip install --upgrade pip", "Pip güncelleniyor..."):
-        return False
-    
-    requirements = [
-        'flask',
-        'flask-socketio',
-        'flask-login',
-        'werkzeug',
-        'opencv-python',
-        'psutil',
-        'python-socketio'
-    ]
-    
-    for req in requirements:
-        if not run_command(f"source led_env/bin/activate && pip install {req}", f"{req} yükleniyor..."):
-            return False
-    
-    return True
-
 def create_startup_script(location):
     """Otomatik başlatma scripti oluştur"""
+    # Mevcut çalışma dizinini al
+    current_dir = os.getcwd()
+    print(f"📁 Mevcut dizin: {current_dir}")
+    
     script_content = f"""#!/bin/bash
-cd /home/pi/ledkontrol
+cd {current_dir}
 source led_env/bin/activate
+
+# Senkronizasyon sistemini başlat (arka planda)
+python3 sync_system.py {location} &
+SYNC_PID=$!
+
+# Ana uygulamayı başlat
 export LED_LOCATION={location}
 export STANDALONE_MODE=true
 python3 app_final.py
+
+# Uygulama kapandığında senkronizasyonu da durdur
+kill $SYNC_PID
 """
     
-    script_path = f"/home/pi/ledkontrol/start_{location}.sh"
+    script_path = os.path.join(current_dir, f"start_{location}.sh")
     try:
         with open(script_path, 'w') as f:
             f.write(script_content)
@@ -121,13 +100,16 @@ python3 app_final.py
 
 def setup_autostart(location):
     """Otomatik başlatma ayarla"""
+    # Mevcut çalışma dizinini al
+    current_dir = os.getcwd()
+    
     autostart_dir = "/home/pi/.config/autostart"
     os.makedirs(autostart_dir, exist_ok=True)
     
     desktop_file = f"""[Desktop Entry]
 Type=Application
 Name=LED Panel {location}
-Exec=/home/pi/ledkontrol/start_{location}.sh
+Exec={current_dir}/start_{location}.sh
 Terminal=false
 X-GNOME-Autostart-enabled=true
 """
@@ -154,22 +136,27 @@ def main():
         sys.exit(1)
     
     print(f"=== Raspberry Pi LED Panel Kurulumu - {location.upper()} ===")
+    print("Not: Sanal ortam ve paketler zaten kurulmuş varsayılıyor.")
     
-    # Sistem güncellemesi
-    if not run_command("sudo apt-get update", "Sistem güncelleniyor..."):
+    # Mevcut dizini kontrol et
+    current_dir = os.getcwd()
+    print(f"📁 Çalışma dizini: {current_dir}")
+    
+    # Gerekli dosyaların varlığını kontrol et
+    if not os.path.exists('app_final.py'):
+        print("❌ app_final.py dosyası bulunamadı!")
+        print("   Script'i proje klasöründe çalıştırdığınızdan emin olun.")
         sys.exit(1)
     
-    # Paket yükleme
-    if not install_dependencies():
+    if not os.path.exists('led_env'):
+        print("❌ led_env klasörü bulunamadı!")
+        print("   Sanal ortamın kurulu olduğundan emin olun.")
         sys.exit(1)
     
-    # Python ortamı
-    if not setup_python_environment():
-        sys.exit(1)
-    
-    # Static IP
+    # Static IP (sudo gerekli)
+    print("\n⚠️  Static IP ayarlanıyor... (sudo gerekli)")
     if not setup_static_ip(location):
-        sys.exit(1)
+        print("⚠️  Static IP ayarlanamadı, manuel olarak ayarlayabilirsiniz.")
     
     # Başlatma scripti
     if not create_startup_script(location):
@@ -184,7 +171,8 @@ def main():
     print(f"Static IP: 192.168.1.{10 + ['belediye', 'havuzbasi', 'yenisehir', 'gurcukapi'].index(location)}")
     print(f"Web arayüzü: http://192.168.1.{10 + ['belediye', 'havuzbasi', 'yenisehir', 'gurcukapi'].index(location)}:5000")
     print(f"Tam ekran: http://192.168.1.{10 + ['belediye', 'havuzbasi', 'yenisehir', 'gurcukapi'].index(location)}:5000/screen{location}")
-    print(f"\nSistemi yeniden başlatmak için: sudo reboot")
+    print(f"\nManuel başlatmak için: ./start_{location}.sh")
+    print(f"Sistemi yeniden başlatmak için: sudo reboot")
 
 if __name__ == "__main__":
     main()
