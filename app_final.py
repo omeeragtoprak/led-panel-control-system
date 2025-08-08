@@ -29,12 +29,12 @@ class Config:
     CURRENT_LOCATION = os.environ.get('LED_LOCATION', 'belediye')  # Varsayılan: belediye
     STANDALONE_MODE = os.environ.get('STANDALONE_MODE', 'false').lower() == 'true'
     
-    # Her lokasyon için static IP'ler
+    # Her lokasyon için Raspberry Pi IP'leri
     LOCATION_IPS = {
-        'belediye': '192.168.1.10',
-        'havuzbasi': '192.168.1.11', 
-        'yenisehir': '192.168.1.12',
-        'gurcukapi': '192.168.1.13'
+        'belediye': '192.168.251.174',
+        'havuzbasi': '192.168.251.175', 
+        'yenisehir': '192.168.251.176',
+        'gurcukapi': '192.168.251.177'
     }
 
 LOCATIONS = ['belediye', 'havuzbasi', 'yenisehir', 'gurcukapi']
@@ -321,7 +321,8 @@ def index():
         return render_template('index_selector.html', 
                              title=Config.PAGE_TITLE,
                              locations=LOCATIONS,
-                             location_names=LOCATION_NAMES)
+                             location_names=LOCATION_NAMES,
+                             location_ips=Config.LOCATION_IPS)
 
 # ---------------------------------------------------------------------------
 # ROUTES - LOKASYON SAYFALARI
@@ -329,10 +330,16 @@ def index():
 @app.route('/<location>')
 @login_required
 def location_page(location):
-    """Lokasyona özel tam özellikli sayfa"""
+    """Lokasyona özel tam özellikli sayfa - Raspberry Pi'ya yönlendirme"""
     if location not in LOCATIONS:
         abort(404)
     
+    # Eğer standalone modda değilse, Raspberry Pi'ya yönlendir
+    if not Config.STANDALONE_MODE:
+        raspberry_pi_url = f"http://{Config.LOCATION_IPS[location]}:5000/{location}"
+        return redirect(raspberry_pi_url)
+    
+    # Standalone modda local sayfa göster
     return render_template('index_location.html',
                          title=f"{Config.PAGE_TITLE} - {LOCATION_NAMES[location]}",
                          location=location,
@@ -364,70 +371,87 @@ def api_get_content(location):
 @app.route('/api/<location>/content/upload', methods=['POST'])
 @login_required
 def api_upload_content(location):
-    """Lokasyona dosya yükleme"""
+    """Lokasyona dosya yükleme (çoklu dosya desteği)"""
     if location not in LOCATIONS:
         abort(404)
     
     if 'file' not in request.files:
         return jsonify({'success': False, 'error': 'Dosya seçilmedi'}), 400
     
-    file = request.files['file']
-    if file.filename == '':
+    # Çoklu dosya desteği - request.files.getlist('file') kullan
+    files = request.files.getlist('file')
+    if not files or all(file.filename == '' for file in files):
         return jsonify({'success': False, 'error': 'Dosya seçilmedi'}), 400
     
-    is_valid, file_type = allowed_file(file.filename)
-    if not is_valid:
-        return jsonify({'success': False, 'error': 'Desteklenmeyen dosya formatı'}), 400
-    
     st = state[location]
+    uploaded_items = []
     
     with st['lock']:
-        # Dosyayı kaydet
-        filepath = os.path.join(st['upload_dir'], file.filename)
-        file.save(filepath)
+        for file in files:
+            if file.filename == '':
+                continue
+                
+            is_valid, file_type = allowed_file(file.filename)
+            if not is_valid:
+                logger.warning(f"Desteklenmeyen dosya formatı: {file.filename}")
+                continue
+            
+            # Dosyayı kaydet
+            filepath = os.path.join(st['upload_dir'], file.filename)
+            file.save(filepath)
+            
+            # Süre bilgisini al (form verisi veya varsayılan)
+            duration = request.form.get('duration', type=int)
+            if not duration or duration <= 0:
+                # Varsayılan süreler
+                if file_type == 'image':
+                    duration = 7
+                elif file_type == 'video':
+                    # Video süresini dosyadan al
+                    try:
+                        video_duration = get_video_duration(filepath)
+                        logger.info(f"Video dosyası {file.filename} için süre hesaplandı: {video_duration}s")
+                        duration = int(video_duration) if video_duration > 0 else 15
+                        logger.info(f"Video süresi {duration}s olarak ayarlandı")
+                    except Exception as e:
+                        logger.error(f"Video süresi alınırken hata: {e}")
+                        duration = 15
+                else:
+                    duration = 7
+            
+            # İçerik listesine ekle
+            new_item = {
+                'id': int(time.time() * 1000) + len(uploaded_items),  # Benzersiz ID için offset ekle
+                'filename': file.filename,
+                'type': file_type,
+                'order': len(st['content']),
+                'duration': duration,
+                'is_active': True
+            }
+            
+            st['content'].append(new_item)
+            uploaded_items.append(new_item)
+            
+            logger.info(f"{LOCATION_NAMES[location]} yeni içerik: {file.filename} (süre: {duration}s)")
         
-        # Süre bilgisini al (form verisi veya varsayılan)
-        duration = request.form.get('duration', type=int)
-        if not duration or duration <= 0:
-            # Varsayılan süreler
-            if file_type == 'image':
-                duration = 7
-            elif file_type == 'video':
-                # Video süresini dosyadan al
-                try:
-                    video_duration = get_video_duration(filepath)
-                    logger.info(f"Video dosyası {file.filename} için süre hesaplandı: {video_duration}s")
-                    duration = int(video_duration) if video_duration > 0 else 15
-                    logger.info(f"Video süresi {duration}s olarak ayarlandı")
-                except Exception as e:
-                    logger.error(f"Video süresi alınırken hata: {e}")
-                    duration = 15
-            else:
-                duration = 7
-        
-        # İçerik listesine ekle
-        new_item = {
-            'id': int(time.time() * 1000),
-            'filename': file.filename,
-            'type': file_type,
-            'order': len(st['content']),
-            'duration': duration,
-            'is_active': True
-        }
-        
-        st['content'].append(new_item)
-        save_content_list(location)
-        
-        logger.info(f"{LOCATION_NAMES[location]} yeni içerik: {file.filename} (süre: {duration}s)")
-        
-        # Socket event
-        socketio.emit('content_updated', {
-            'action': 'upload',
-            'location': location,
-            'content_list': st['content']
-        })
+        if uploaded_items:
+            save_content_list(location)
+            
+            # Socket event
+            socketio.emit('content_updated', {
+                'action': 'upload',
+                'location': location,
+                'content_list': st['content']
+            })
     
-    return jsonify({'success': True, 'content': new_item, 'message': 'Dosya yüklendi'})
+    if uploaded_items:
+        return jsonify({
+            'success': True, 
+            'content': uploaded_items, 
+            'message': f'{len(uploaded_items)} dosya başarıyla yüklendi'
+        })
+    else:
+        return jsonify({'success': False, 'error': 'Hiçbir geçerli dosya yüklenemedi'}), 400
 
 @app.route('/api/<location>/content/<int:content_id>', methods=['DELETE'])
 @login_required
@@ -466,6 +490,45 @@ def api_delete_content(location, content_id):
         })
     
     return jsonify({'success': True, 'message': 'İçerik silindi'})
+
+@app.route('/api/<location>/content/clear', methods=['DELETE'])
+@login_required
+def api_clear_content(location):
+    """Tüm içerikleri temizle"""
+    if location not in LOCATIONS:
+        abort(404)
+    
+    st = state[location]
+    
+    with st['lock']:
+        # Tüm dosyaları sil
+        for item in st['content']:
+            filepath = os.path.join(st['upload_dir'], item['filename'])
+            if os.path.exists(filepath):
+                try:
+                    os.remove(filepath)
+                    logger.info(f"Dosya silindi: {item['filename']}")
+                except Exception as e:
+                    logger.error(f"Dosya silinirken hata: {item['filename']} - {e}")
+        
+        # İçerik listesini temizle
+        st['content'].clear()
+        save_content_list(location)
+        
+        # Gösterimi durdur
+        if st['is_running']:
+            stop_display_thread(location)
+        
+        logger.info(f"{LOCATION_NAMES[location]} tüm içerikler temizlendi")
+        
+        # Socket event
+        socketio.emit('content_updated', {
+            'action': 'clear',
+            'location': location,
+            'content_list': []
+        })
+    
+    return jsonify({'success': True, 'message': 'Tüm içerikler temizlendi'})
 
 @app.route('/api/<location>/content/<int:content_id>/duration', methods=['PUT'])
 @login_required
@@ -684,17 +747,39 @@ def api_display_status(location):
 @app.route('/api/system/info')
 @login_required
 def api_system_info():
-    """Sistem bilgileri"""
+    """Sistem bilgileri - SD kart ve hafıza durumu"""
     try:
         cpu_percent = psutil.cpu_percent(interval=1)
         memory = psutil.virtual_memory()
         disk = psutil.disk_usage('/')
         
+        # Hafıza hesaplamaları (GB cinsinden)
+        total_gb = round(disk.total / (1024**3), 2)
+        used_gb = round(disk.used / (1024**3), 2)
+        free_gb = round(disk.free / (1024**3), 2)
+        used_percent = round(disk.percent, 1)
+        
+        # RAM bilgileri (GB cinsinden)
+        ram_total_gb = round(memory.total / (1024**3), 2)
+        ram_used_gb = round((memory.total - memory.available) / (1024**3), 2)
+        ram_free_gb = round(memory.available / (1024**3), 2)
+        
         return jsonify({
             'success': True,
             'cpu': round(cpu_percent, 1),
-            'memory': round(memory.percent, 1),
-            'disk': round(disk.percent, 1),
+            'memory': {
+                'percent': round(memory.percent, 1),
+                'total_gb': ram_total_gb,
+                'used_gb': ram_used_gb,
+                'free_gb': ram_free_gb
+            },
+            'disk': {
+                'percent': used_percent,
+                'total_gb': total_gb,
+                'used_gb': used_gb,
+                'free_gb': free_gb,
+                'sd_card_size': f"{total_gb} GB SD Kart"
+            },
             'timestamp': datetime.now().strftime('%H:%M:%S')
         })
     except Exception as e:

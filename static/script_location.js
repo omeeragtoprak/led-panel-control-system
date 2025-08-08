@@ -166,9 +166,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function confirmClearPanel() {
+        console.log('Panel temizleme başlatılıyor...');
         fetch(`/api/${currentLocation}/content/clear`, { method: 'DELETE' })
-            .then(response => response.json())
+            .then(response => {
+                console.log('Response status:', response.status);
+                return response.json();
+            })
             .then(data => {
+                console.log('API Response:', data);
                 if (data.success) {
                     showToast('Panel temizlendi', 'success');
                     fetchContentList();
@@ -264,11 +269,21 @@ document.addEventListener('DOMContentLoaded', function() {
                             uploadProgress.style.display = 'none';
                             uploadBtn.disabled = false;
                             progressText.classList.remove('completed');
-                            showToast('Dosya(lar) başarıyla yüklendi', 'success');
+                            
+                            // Çoklu dosya yükleme mesajı
+                            if (data.content && Array.isArray(data.content) && data.content.length > 1) {
+                                showToast(`${data.content.length} dosya başarıyla yüklendi`, 'success');
+                            } else {
+                                showToast(data.message || 'Dosya(lar) başarıyla yüklendi', 'success');
+                            }
+                            
                             fileInput.value = '';
                             uploadBtn.textContent = 'Yükle';
                             uploadBtn.disabled = true;
                             durationSettings.style.display = 'none';
+                            
+                            // İçerik listesini güncelle
+                            fetchContentList();
                         }, 1000);
                     } else {
                         uploadProgress.style.display = 'none';
@@ -717,16 +732,58 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateSystemInfo() {
+        console.log('🔄 Sistem bilgisi güncelleniyor...');
         fetch('/api/system/info')
             .then(response => response.json())
             .then(data => {
+                console.log('📊 API Yanıtı:', data);
                 if (data.success) {
+                    // CPU
                     cpuUsageEl.textContent = data.cpu + '%';
-                    memoryUsageEl.textContent = data.memory + '%';
-                    diskUsageEl.textContent = data.disk + '%';
+                    console.log('💻 CPU:', data.cpu + '%');
+                    
+                    // Memory (RAM)
+                    if (data.memory && typeof data.memory === 'object') {
+                        memoryUsageEl.textContent = data.memory.percent + '%';
+                        const memoryDetail = document.getElementById('memory-detail');
+                        if (memoryDetail) {
+                            memoryDetail.textContent = `${data.memory.used_gb} GB / ${data.memory.total_gb} GB`;
+                            console.log('🧠 RAM Detail:', memoryDetail.textContent);
+                        }
+                    } else {
+                        memoryUsageEl.textContent = data.memory + '%';
+                    }
+                    
+                    // Disk (SD Card)
+                    if (data.disk && typeof data.disk === 'object') {
+                        diskUsageEl.textContent = data.disk.percent + '%';
+                        const diskDetail = document.getElementById('disk-detail');
+                        const diskFree = document.getElementById('disk-free');
+                        const sdCardInfo = document.getElementById('sd-card-info');
+                        
+                        console.log('💾 Disk Data:', data.disk);
+                        console.log('🔍 Disk Elements:', { diskDetail, diskFree, sdCardInfo });
+                        
+                        if (diskDetail) {
+                            diskDetail.textContent = `${data.disk.used_gb} GB / ${data.disk.total_gb} GB`;
+                            console.log('💾 Disk Detail Updated:', diskDetail.textContent);
+                        }
+                        if (diskFree) {
+                            diskFree.textContent = `${data.disk.free_gb} GB`;
+                            console.log('💾 Disk Free Updated:', diskFree.textContent);
+                        }
+                        if (sdCardInfo) {
+                            sdCardInfo.textContent = data.disk.sd_card_size || `${data.disk.total_gb} GB SD Kart`;
+                            console.log('💾 SD Card Info Updated:', sdCardInfo.textContent);
+                        }
+                    } else {
+                        diskUsageEl.textContent = data.disk + '%';
+                    }
+                } else {
+                    console.error('❌ API Başarısız:', data.error);
                 }
             })
-            .catch(error => console.error('Sistem bilgisi alınamadı:', error));
+            .catch(error => console.error('❌ Sistem bilgisi alınamadı:', error));
     }
 
     function updateTime() {

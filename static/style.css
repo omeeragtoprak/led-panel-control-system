@@ -762,12 +762,78 @@ body {
     backdrop-filter: blur(5px);
     padding: 25px;
     border-radius: var(--border-radius);
+}
+
+/* Sistem bilgileri için özel stiller */
+.system-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    min-width: 50px;
+    text-align: center;
+}
+
+.stat-info {
+    flex: 1;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-value.stat-free {
+    color: var(--success-color);
+}
+
+.stat-detail {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 3px;
+    font-weight: 400;
+}
+
+.info-box {
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    overflow: hidden;   
 }
 
 .info-box::before {
@@ -1287,8 +1353,6 @@ body.fullscreen .current-display-preview,body.fullscreen .current-display-previe
 }
 
 
-/* Hide System Info Section */
-#system-info-section { display: none !important; }
 
 /* Responsive Tasarım */
 @media (max-width: 992px) {

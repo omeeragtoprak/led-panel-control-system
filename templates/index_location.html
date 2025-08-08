@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ range(1, 9999) | random }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="header-controls">
-                <a href="/" class="back-home-btn">
+                <a href="http://10.10.0.150:5000/" class="back-home-btn">
                     <i class="fas fa-home"></i> Ana Sayfa
                 </a>
                 <a href="{{ url_for('logout') }}" class="logout-btn">
@@ -149,13 +149,23 @@
                         <div class="stat-info">
                             <span class="stat-label">RAM Kullanımı</span>
                             <span id="memory-usage" class="stat-value">--%</span>
+                            <div class="stat-detail" id="memory-detail">-- GB / -- GB</div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-sd-card"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label">SD Kart Kullanımı</span>
+                            <span id="disk-usage" class="stat-value">--%</span>
+                            <div class="stat-detail" id="disk-detail">-- GB / -- GB</div>
                         </div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-icon"><i class="fas fa-hdd"></i></div>
                         <div class="stat-info">
-                            <span class="stat-label">Disk Kullanımı</span>
-                            <span id="disk-usage" class="stat-value">--%</span>
+                            <span class="stat-label">Kullanılabilir Alan</span>
+                            <span id="disk-free" class="stat-value stat-free">-- GB</span>
+                            <div class="stat-detail" id="sd-card-info">256 GB SD Kart</div>
                         </div>
                     </div>
                 </div>

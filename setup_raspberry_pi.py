@@ -72,7 +72,15 @@ def create_startup_script(location):
     
     script_content = f"""#!/bin/bash
 cd {current_dir}
-source led_env/bin/activate
+
+# Sanal ortamı aktif et (daha güvenli yöntem)
+if [ -f "led_env/bin/activate" ]; then
+    source led_env/bin/activate
+    echo "✅ Sanal ortam aktif edildi"
+else
+    echo "❌ Sanal ortam bulunamadı!"
+    exit 1
+fi
 
 # Senkronizasyon sistemini başlat (arka planda)
 python3 sync_system.py {location} &
