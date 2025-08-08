@@ -73,9 +73,18 @@ def create_startup_script(location):
     script_content = f"""#!/bin/bash
 cd {current_dir}
 source led_env/bin/activate
+
+# Senkronizasyon sistemini başlat (arka planda)
+python3 sync_system.py {location} &
+SYNC_PID=$!
+
+# Ana uygulamayı başlat
 export LED_LOCATION={location}
 export STANDALONE_MODE=true
 python3 app_final.py
+
+# Uygulama kapandığında senkronizasyonu da durdur
+kill $SYNC_PID
 """
     
     script_path = os.path.join(current_dir, f"start_{location}.sh")
