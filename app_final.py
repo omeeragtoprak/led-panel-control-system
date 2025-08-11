@@ -10,6 +10,8 @@ from flask import Flask, render_template, request, jsonify, send_from_directory,
 from flask_socketio import SocketIO, emit
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
+from itsdangerous import URLSafeTimedSerializer, BadSignature, SignatureExpired
+from urllib.parse import urlparse, urlunparse, parse_qsl, urlencode
 import cv2, psutil
 
 # ---------------------------------------------------------------------------
@@ -28,6 +30,9 @@ class Config:
     # Lokasyon bazlı çalışma için
     CURRENT_LOCATION = os.environ.get('LED_LOCATION', 'belediye')  # Varsayılan: belediye
     STANDALONE_MODE = os.environ.get('STANDALONE_MODE', 'false').lower() == 'true'
+    # SSO için shared secret (tüm cihazlarda aynı olmalı)
+    SSO_SECRET = os.environ.get('SSO_SECRET', 'ebb-ledpanel-sso-shared-secret')
+    SSO_TOKEN_MAX_AGE = int(os.environ.get('SSO_TOKEN_MAX_AGE', '300'))  # saniye
     
     # Her lokasyon için Raspberry Pi IP'leri
     LOCATION_IPS = {
@@ -204,6 +209,55 @@ def allowed_file(filename):
     return False, None
 
 # ---------------------------------------------------------------------------
+# SSO HELPERS
+# ---------------------------------------------------------------------------
+def _get_sso_serializer() -> URLSafeTimedSerializer:
+    return URLSafeTimedSerializer(Config.SSO_SECRET, salt='led-panel-sso')
+
+def generate_sso_token(username: str) -> str:
+    serializer = _get_sso_serializer()
+    return serializer.dumps({'u': username})
+
+def verify_sso_token(token: str):
+    try:
+        serializer = _get_sso_serializer()
+        data = serializer.loads(token, max_age=Config.SSO_TOKEN_MAX_AGE)
+        return data.get('u')
+    except (BadSignature, SignatureExpired):
+        return None
+
+def _remove_query_param(url: str, param: str) -> str:
+    parts = urlparse(url)
+    query_items = parse_qsl(parts.query, keep_blank_values=True)
+    filtered = [(k, v) for (k, v) in query_items if k != param]
+    new_query = urlencode(filtered, doseq=True)
+    return urlunparse(parts._replace(query=new_query))
+
+# ---------------------------------------------------------------------------
+# BEFORE REQUEST: SSO TOKEN HANDLE
+# ---------------------------------------------------------------------------
+@app.before_request
+def handle_sso_auto_login():
+    token = request.args.get('sso')
+    if not token:
+        return None
+    username = verify_sso_token(token)
+    if not username:
+        return None
+    # Zaten girişliyse ve aynı kullanıcıysa tekrar işlem yapma
+    if current_user.is_authenticated and getattr(current_user, 'id', None) == username:
+        # URL'den token'ı temizle
+        clean_url = _remove_query_param(request.url, 'sso')
+        if clean_url != request.url:
+            return redirect(clean_url)
+        return None
+    # Otomatik giriş
+    user = User(username)
+    login_user(user)
+    clean_url = _remove_query_param(request.url, 'sso')
+    return redirect(clean_url)
+
+# ---------------------------------------------------------------------------
 # DISPLAY LOOP (per location)
 # ---------------------------------------------------------------------------
 def display_loop(location):
@@ -336,7 +390,9 @@ def location_page(location):
     
     # Eğer standalone modda değilse, Raspberry Pi'ya yönlendir
     if not Config.STANDALONE_MODE:
-        raspberry_pi_url = f"http://{Config.LOCATION_IPS[location]}:5000/{location}"
+        # Merkezi sunucudan lokasyon cihazına yönlendirirken SSO belirteci ekle
+        sso_token = generate_sso_token(current_user.id)
+        raspberry_pi_url = f"http://{Config.LOCATION_IPS[location]}:5000/{location}?sso={sso_token}"
         return redirect(raspberry_pi_url)
     
     # Standalone modda local sayfa göster

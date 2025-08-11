@@ -1,3 +1,15 @@
+// Disable all console output for production
+(function(){
+    try{
+        const noop=function(){};
+        ['log','debug','info','warn','error','time','timeEnd','trace'].forEach(function(m){
+            if (typeof console!== 'undefined' && console[m]) {
+                try { console[m] = noop; } catch(e) {}
+            }
+        });
+    }catch(e){}
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Location page DOM loaded, initializing SocketIO...');
     
