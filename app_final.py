@@ -58,7 +58,8 @@ LOCATION_NAMES = {
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'led_panel_secret_key_2025'
 app.config['UPLOAD_FOLDER'] = Config.BASE_UPLOAD
-app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024  # 100MB
+# Upload boyutu limiti kaldırıldı (sınırsız)
+app.config['MAX_CONTENT_LENGTH'] = None
 
 # SocketIO with threading mode (safer for Windows)
 socketio = SocketIO(app, 
@@ -159,9 +160,20 @@ def get_video_duration(path):
         logger.info(f"ffprobe ile video süresi alındı: {duration}s")
         return duration
     except FileNotFoundError:
-        logger.warning("ffprobe bulunamadı, OpenCV ile deneniyor...")
+        logger.warning("ffprobe bulunamadı, MoviePy ile deneniyor...")
     except Exception as e:
-        logger.warning(f"ffprobe hatası: {e}, OpenCV ile deneniyor...")
+        logger.warning(f"ffprobe hatası: {e}, MoviePy ile deneniyor...")
+    
+    try:
+        # MoviePy ile dene (ffmpeg tabanlı, genelde daha doğru)
+        from moviepy.editor import VideoFileClip
+        clip = VideoFileClip(path)
+        duration = float(clip.duration)
+        clip.close()
+        logger.info(f"MoviePy ile video süresi alındı: {duration}s")
+        return duration
+    except Exception as e:
+        logger.error(f"MoviePy ile video süresi alınırken hata: {e}")
     
     try:
         # OpenCV ile dene
@@ -186,17 +198,7 @@ def get_video_duration(path):
     except Exception as e:
         logger.error(f"OpenCV ile video süresi alınırken hata: {e}")
     
-    try:
-        # MoviePy ile dene
-        from moviepy.editor import VideoFileClip
-        clip = VideoFileClip(path)
-        duration = clip.duration
-        clip.close()
-        logger.info(f"MoviePy ile video süresi alındı: {duration}s")
-        return duration
-    except Exception as e:
-        logger.error(f"MoviePy ile video süresi alınırken hata: {e}")
-        return 15
+    return 15
 
 def allowed_file(filename):
     """Dosya uzantısı kontrolü"""
@@ -304,6 +306,25 @@ def start_display_thread(location):
     """Lokasyona özel gösterim thread'i başlat"""
     st = state[location]
     with st['lock']:
+        # Video sürelerini başlatmadan önce doğrula/güncelle
+        try:
+            updated_any_duration = False
+            for item in st['content']:
+                if item.get('type') == 'video':
+                    filepath = os.path.join(st['upload_dir'], item['filename'])
+                    if os.path.exists(filepath):
+                        try:
+                            actual_duration = int(get_video_duration(filepath))
+                            if actual_duration > 0 and abs(actual_duration - int(item.get('duration', 0))) > 1:
+                                item['duration'] = actual_duration
+                                updated_any_duration = True
+                        except Exception as _e:
+                            pass
+            if updated_any_duration:
+                save_content_list(location)
+        except Exception:
+            pass
+
         if st['display_thread'] is not None:
             logger.warning(f"{location} gösterim zaten çalışıyor")
             return False
