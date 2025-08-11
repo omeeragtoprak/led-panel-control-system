@@ -6,7 +6,7 @@ Her lokasyon: /belediye, /havuzbasi, /yenisehir, /gurcukapi - tam özellikli say
 
 import os, time, json, logging, threading, subprocess
 from datetime import datetime
-from flask import Flask, render_template, request, jsonify, send_from_directory, abort, redirect, url_for
+from flask import Flask, render_template, request, jsonify, send_from_directory, abort, redirect, url_for, session
 from flask_socketio import SocketIO, emit
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -60,6 +60,9 @@ app.config['SECRET_KEY'] = 'led_panel_secret_key_2025'
 app.config['UPLOAD_FOLDER'] = Config.BASE_UPLOAD
 # Upload boyutu limiti kaldırıldı (sınırsız)
 app.config['MAX_CONTENT_LENGTH'] = None
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+app.config['SESSION_COOKIE_SECURE'] = False
+app.config['SESSION_PERMANENT'] = True
 
 # SocketIO with threading mode (safer for Windows)
 socketio = SocketIO(app, 
@@ -255,7 +258,8 @@ def handle_sso_auto_login():
         return None
     # Otomatik giriş
     user = User(username)
-    login_user(user)
+    session.permanent = True
+    login_user(user, remember=True, duration=None)
     clean_url = _remove_query_param(request.url, 'sso')
     return redirect(clean_url)
 
@@ -369,7 +373,8 @@ def login():
         password = request.form.get('password')
         if username in USERS and check_password_hash(USERS[username], password):
             user = User(username)
-            login_user(user)
+            session.permanent = True
+            login_user(user, remember=True, duration=None)
             return redirect(url_for('index'))
         else:
             return render_template('login.html', error='Geçersiz kullanıcı adı veya şifre')

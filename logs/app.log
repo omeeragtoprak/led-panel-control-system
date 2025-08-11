@@ -14382,3 +14382,26 @@ AssertionError: write() before start_response
 2025-08-11 10:59:34,337 - INFO - 192.168.250.171 - - [11/Aug/2025 10:59:34] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
 2025-08-11 10:59:35,568 - INFO - 192.168.250.171 - - [11/Aug/2025 10:59:35] "GET /api/system/info HTTP/1.1" 200 -
 2025-08-11 10:59:37,439 - INFO - 192.168.250.171 - - [11/Aug/2025 10:59:37] "[32mGET /belediye HTTP/1.1[0m" 302 -
+2025-08-11 11:21:01,660 - INFO - Belediye Binası LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-11 11:21:01,661 - INFO - Havuzbaşı Kent Meydanı LED Ekran içerik listesi yüklendi: 5 öğe
+2025-08-11 11:21:01,662 - INFO - Yenişehir LED Ekran içerik listesi yüklendi: 2 öğe
+2025-08-11 11:21:01,663 - INFO - Gürcükapı LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-11 11:21:01,677 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.171:5000
+2025-08-11 11:21:01,678 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 11:21:08,566 - INFO - 192.168.250.171 - - [11/Aug/2025 11:21:08] "GET / HTTP/1.1" 200 -
+2025-08-11 11:21:08,781 - INFO - 192.168.250.171 - - [11/Aug/2025 11:21:08] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-11 11:21:08,784 - INFO - 192.168.250.171 - - [11/Aug/2025 11:21:08] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-11 11:21:10,145 - INFO - 192.168.250.171 - - [11/Aug/2025 11:21:10] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-11 11:21:11,684 - INFO - 192.168.250.171 - - [11/Aug/2025 11:21:11] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-11 11:21:11,692 - INFO - 192.168.250.171 - - [11/Aug/2025 11:21:11] "GET /login HTTP/1.1" 200 -
+2025-08-11 11:21:11,734 - INFO - 192.168.250.171 - - [11/Aug/2025 11:21:11] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-11 11:21:11,744 - INFO - 192.168.250.171 - - [11/Aug/2025 11:21:11] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-11 11:21:16,456 - INFO - 192.168.250.171 - - [11/Aug/2025 11:21:16] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-11 11:21:16,462 - INFO - 192.168.250.171 - - [11/Aug/2025 11:21:16] "GET / HTTP/1.1" 200 -
+2025-08-11 11:21:16,502 - INFO - 192.168.250.171 - - [11/Aug/2025 11:21:16] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-11 11:21:16,505 - INFO - 192.168.250.171 - - [11/Aug/2025 11:21:16] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-11 11:21:17,756 - INFO - 192.168.250.171 - - [11/Aug/2025 11:21:17] "GET /api/system/info HTTP/1.1" 200 -
+2025-08-11 11:21:19,909 - INFO - 192.168.250.171 - - [11/Aug/2025 11:21:19] "[32mGET /belediye HTTP/1.1[0m" 302 -
