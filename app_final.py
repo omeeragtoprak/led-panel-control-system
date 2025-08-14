@@ -326,6 +326,12 @@ def start_display_thread(location):
                             pass
             if updated_any_duration:
                 save_content_list(location)
+                # Güncellenen süreleri istemcilere duyur
+                socketio.emit('content_updated', {
+                    'action': 'duration_fix',
+                    'location': location,
+                    'content_list': st['content']
+                })
         except Exception:
             pass
 

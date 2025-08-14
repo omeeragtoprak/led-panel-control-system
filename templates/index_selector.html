@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style_selector.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='erzurum-buyuksehir-belediyesi-logo.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -54,33 +55,13 @@
 
             <div class="info-section">
                 <div class="info-card">
-                    <h3><i class="fas fa-info-circle"></i> Sistem Bilgileri</h3>
+                    <h3><i class="fas fa-info-circle"></i> Bilgi</h3>
                     <ul>
                         <li>Her lokasyon bağımsız yayın akışına sahiptir</li>
                         <li>Resimler 7 saniye, videolar tam süre oynar</li>
                         <li>Desteklenen formatlar: JPG, PNG, MP4, AVI, MOV</li>
                         <li>Dosya boyutu sınırı bulunmuyor</li>
                     </ul>
-                </div>
-                
-                <div class="system-status" id="system-status">
-                    <h3><i class="fas fa-server"></i> Sistem Durumu</h3>
-                    <div class="status-item">
-                        <span>CPU Kullanımı:</span>
-                        <span id="cpu-usage">--%</span>
-                    </div>
-                    <div class="status-item">
-                        <span>RAM Kullanımı:</span>
-                        <span id="memory-usage">--%</span>
-                    </div>
-                    <div class="status-item">
-                        <span>Disk Kullanımı:</span>
-                        <span id="disk-usage">--%</span>
-                    </div>
-                    <div class="status-item">
-                        <span>Son Güncelleme:</span>
-                        <span id="last-update">--:--:--</span>
-                    </div>
                 </div>
             </div>
         </main>
@@ -90,25 +71,6 @@
         </footer>
     </div>
 
-    <script>
-        // Sistem bilgilerini güncelle
-        function updateSystemInfo() {
-            fetch('/api/system/info')
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        document.getElementById('cpu-usage').textContent = data.cpu + '%';
-                        document.getElementById('memory-usage').textContent = data.memory + '%';
-                        document.getElementById('disk-usage').textContent = data.disk + '%';
-                        document.getElementById('last-update').textContent = data.timestamp;
-                    }
-                })
-                .catch(error => console.error('Sistem bilgisi alınamadı:', error));
-        }
-
-        // Sayfa yüklendiğinde ve her 10 saniyede bir güncelle
-        updateSystemInfo();
-        setInterval(updateSystemInfo, 10000);
-    </script>
+    
 </body>
 </html>
