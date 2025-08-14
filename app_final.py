@@ -82,9 +82,9 @@ class User(UserMixin):
     def __init__(self, id):
         self.id = id
 
-# Hardcoded admin credentials (username: admin, password: admin123)
+# Hardcoded admin credentials (username: admin, password: EbbLed-2025!)
 USERS = {
-    'admin': generate_password_hash('admin123')
+    'admin': generate_password_hash('Ebbled-2025!')
 }
 
 @login_manager.user_loader

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LED Pano Kontrol Sistemi - Giriş</title>
+    <title>Erzurum Büyükşehir Belediyesi - LED Panel Kontrol Sistemi | Giriş</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style_selector.css') }}">
     <style>
         body {
@@ -57,10 +57,16 @@
         .login-card input:focus {
             border-color: var(--primary-color);
         }
+        .login-card .subtitle {
+            text-align: center;
+            margin: -10px 0 25px 0;
+            color: var(--text-muted);
+            font-size: .95rem;
+        }
         .login-card button {
             width: 100%;
             padding: 12px 20px;
-            background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+            background: var(--primary-color);
             color: #fff;
             font-size: 1rem;
             font-weight: 600;
@@ -71,7 +77,7 @@
         }
         .login-card button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3);
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.25);
         }
         .error-message {
             color: var(--danger-color);
@@ -102,6 +108,7 @@
             <img src="{{ url_for('static', filename='erzurum-buyuksehir-belediyesi-logo.png') }}" alt="EBB Logo">
             Yönetici Girişi
         </h2>
+        <div class="subtitle">Erzurum Büyükşehir Belediyesi - LED Panel Kontrol Sistemi</div>
         {% if error %}
         <div class="error-message">{{ error }}</div>
         {% endif %}
