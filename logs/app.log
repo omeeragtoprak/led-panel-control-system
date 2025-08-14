@@ -1,0 +1,9 @@
+2025-08-12 09:29:33,600 - INFO - Belediye Binası LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-12 09:29:33,613 - INFO - Havuzbaşı Kent Meydanı LED Ekran içerik listesi yüklendi: 5 öğe
+2025-08-12 09:29:33,627 - INFO - Yenişehir LED Ekran içerik listesi yüklendi: 2 öğe
+2025-08-12 09:29:33,642 - INFO - Gürcükapı LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-12 09:29:33,677 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.171:5000
+2025-08-12 09:29:33,677 - INFO - [33mPress CTRL+C to quit[0m

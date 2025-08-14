@@ -51,7 +51,14 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const socket = io({ transports: ['websocket', 'polling'], timeout: 20000 });
+            const socket = io({
+                transports: ['websocket', 'polling'],
+                timeout: 20000,
+                reconnection: true,
+                reconnectionAttempts: Infinity,
+                reconnectionDelay: 1000,
+                reconnectionDelayMax: 5000
+            });
             const screenContent = document.getElementById('screen-content');
             const currentLocation = '{{ location }}';
             let activeContentList = [];
@@ -71,10 +78,26 @@
                     return;
                 }
                 const item = activeContentList[currentIndex % activeContentList.length];
+                screenContent.innerHTML = '';
                 if (item.type === 'image') {
-                    screenContent.innerHTML = `<img src="/uploads/${currentLocation}/${item.filename}" alt="${item.filename}">`;
+                    const img = document.createElement('img');
+                    img.src = `/uploads/${currentLocation}/${item.filename}`;
+                    img.alt = item.filename;
+                    img.onerror = () => showNoContent('İçerik yüklenemedi');
+                    screenContent.appendChild(img);
                 } else if (item.type === 'video') {
-                    screenContent.innerHTML = `<video src="/uploads/${currentLocation}/${item.filename}" autoplay loop muted style="width:100%;height:100%;object-fit:cover;object-position:center;"></video>`;
+                    const video = document.createElement('video');
+                    video.src = `/uploads/${currentLocation}/${item.filename}`;
+                    video.autoplay = true;
+                    video.loop = true;
+                    video.muted = true;
+                    video.playsInline = true;
+                    video.style.width = '100%';
+                    video.style.height = '100%';
+                    video.style.objectFit = 'cover';
+                    video.style.objectPosition = 'center';
+                    video.onerror = () => showNoContent('Video yüklenemedi');
+                    screenContent.appendChild(video);
                 }
                 // Sonraki içeriğe geçiş
                 clearTimeout(playTimer);

@@ -239,8 +239,32 @@ def _remove_query_param(url: str, param: str) -> str:
     return urlunparse(parts._replace(query=new_query))
 
 # ---------------------------------------------------------------------------
-# BEFORE REQUEST: SSO TOKEN HANDLE
+# BEFORE REQUEST: AUTH HELPERS (STANDALONE AUTO-LOGIN, SSO TOKEN)
 # ---------------------------------------------------------------------------
+@app.before_request
+def ensure_standalone_auto_login():
+    """Standalone modda tüm isteklerde otomatik admin girişi yap.
+
+    Böylece Raspberry Pi üzerindeki lokasyon IP'lerinde hiçbir sayfa/API için
+    manuel giriş gerekmez. Merkezi sunucuda (standalone değilken) çalışmaz.
+    """
+    try:
+        if not Config.STANDALONE_MODE:
+            return None
+        # Login ve statik dosyalar için atla
+        if request.endpoint in {'login', 'static'}:
+            return None
+        # Zaten girişliyse geç
+        if current_user.is_authenticated:
+            return None
+        # Otomatik giriş
+        user = User('admin')
+        session.permanent = True
+        login_user(user, remember=True, duration=None)
+    except Exception:
+        # Her durumda akışı bozma
+        return None
+
 @app.before_request
 def handle_sso_auto_login():
     token = request.args.get('sso')
@@ -290,8 +314,18 @@ def display_loop(location):
             
             logger.info(f"{LOCATION_NAMES[location]} yayında: {current_item['filename']} ({current_item['type']})")
             
-            # Süre hesapla - kullanıcı tanımlı veya varsayılan
-            duration = current_item.get('duration', 7 if current_item['type'] == 'image' else 15)
+            # Süre hesapla - görüntü için kullanıcı/varsayılan, video için her oynatışta dosyadan ölç
+            if current_item['type'] == 'video':
+                measured = None
+                try:
+                    measured = int(get_video_duration(filepath))
+                except Exception:
+                    measured = None
+                duration = measured if measured and measured > 0 else int(current_item.get('duration', 15))
+                # küçük bir tampon ekle (ağ/gecikme payı)
+                duration = max(1, duration)
+            else:
+                duration = int(current_item.get('duration', 7))
             
             # Socket event gönder (current_item ile birlikte)
             socketio.emit('display_status', {
@@ -414,7 +448,6 @@ def index():
 # ROUTES - LOKASYON SAYFALARI
 # ---------------------------------------------------------------------------
 @app.route('/<location>')
-@login_required
 def location_page(location):
     """Lokasyona özel tam özellikli sayfa - Raspberry Pi'ya yönlendirme"""
     if location not in LOCATIONS:
@@ -422,8 +455,8 @@ def location_page(location):
     
     # Eğer standalone modda değilse, Raspberry Pi'ya yönlendir
     if not Config.STANDALONE_MODE:
-        # Merkezi sunucudan lokasyon cihazına yönlendirirken SSO belirteci ekle
-        sso_token = generate_sso_token(current_user.id)
+        # Merkezi sunucudan lokasyon cihazına yönlendirirken SSO belirteci ekle (oturumdan bağımsız)
+        sso_token = generate_sso_token('admin')
         raspberry_pi_url = f"http://{Config.LOCATION_IPS[location]}:5000/{location}?sso={sso_token}"
         return redirect(raspberry_pi_url)
     
@@ -878,7 +911,6 @@ def api_system_info():
 # STATIC FILE ROUTES
 # ---------------------------------------------------------------------------
 @app.route('/uploads/<location>/<filename>')
-@login_required
 def uploaded_file(location, filename):
     """Lokasyona özel dosya servisi"""
     if location not in LOCATIONS:
