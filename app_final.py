@@ -4,14 +4,14 @@ Ana sayfa: lokasyon seçimi
 Her lokasyon: /belediye, /havuzbasi, /yenisehir, /gurcukapi - tam özellikli sayfalar
 """
 
-import os, time, json, logging, threading, subprocess
+import os, time, json, logging, threading, subprocess, uuid
 from datetime import datetime
 from flask import Flask, render_template, request, jsonify, send_from_directory, abort, redirect, url_for, session
 from flask_socketio import SocketIO, emit
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
-from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import URLSafeTimedSerializer, BadSignature, SignatureExpired
 from urllib.parse import urlparse, urlunparse, parse_qsl, urlencode
+from urllib.request import Request, urlopen
 import cv2, psutil
 
 # ---------------------------------------------------------------------------
@@ -33,6 +33,14 @@ class Config:
     # SSO için shared secret (tüm cihazlarda aynı olmalı)
     SSO_SECRET = os.environ.get('SSO_SECRET', 'ebb-ledpanel-sso-shared-secret')
     SSO_TOKEN_MAX_AGE = int(os.environ.get('SSO_TOKEN_MAX_AGE', '300'))  # saniye
+    
+    # CRM Token servisi
+    CRM_TOKEN_URL = os.environ.get('CRM_TOKEN_URL', 'https://myps.erzurum.bel.tr/token')
+    CRM_SCOPE = os.environ.get('CRM_SCOPE', 'TEST')
+    CRM_USERNAME = os.environ.get('CRM_USERNAME', '')
+    CRM_PASSWORD = os.environ.get('CRM_PASSWORD', '')
+    CRM_VERIFY_URL = os.environ.get('CRM_VERIFY_URL', 'https://myps.erzurum.bel.tr/api/User/LedEkran')
+    ENABLE_CRM_LOGIN = os.environ.get('ENABLE_CRM_LOGIN', 'true').lower() == 'true'
     
     # Her lokasyon için Raspberry Pi IP'leri
     LOCATION_IPS = {
@@ -77,19 +85,14 @@ socketio = SocketIO(app,
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
-# In-memory user store (single admin user)
 class User(UserMixin):
     def __init__(self, id):
         self.id = id
 
-# Hardcoded admin credentials (username: admin, password: EbbLed-2025!)
-USERS = {
-    'admin': generate_password_hash('Ebbled-2025!')
-}
-
 @login_manager.user_loader
 def load_user(user_id):
-    if user_id in USERS:
+    # CRM ile giriş yapıldıysa session'daki id yeterlidir
+    if user_id:
         return User(user_id)
     return None
 
@@ -239,6 +242,81 @@ def _remove_query_param(url: str, param: str) -> str:
     return urlunparse(parts._replace(query=new_query))
 
 # ---------------------------------------------------------------------------
+# EXTERNAL: CRM TOKEN HELPER
+# ---------------------------------------------------------------------------
+def request_crm_token(username: str | None = None,
+                      password: str | None = None,
+                      scope: str | None = None,
+                      timeout_seconds: int = 20):
+    """CRM token endpoint'ine x-www-form-urlencoded POST atar ve JSON döner.
+
+    Parametre verilmezse Config'deki değerler kullanılır.
+    Hata durumunda {'success': False, 'error': '...'} döner.
+    """
+    try:
+        form_data = {
+            'scope': scope or Config.CRM_SCOPE,
+            'grant_type': 'password',
+            'username': username or Config.CRM_USERNAME,
+            'password': password or Config.CRM_PASSWORD,
+        }
+        # Zorunlu alan kontrolü
+        if not form_data['username'] or not form_data['password']:
+            return {'success': False, 'error': 'CRM kullanıcı adı/şifre eksik'}
+
+        encoded = urlencode(form_data).encode('utf-8')
+        req = Request(
+            url=Config.CRM_TOKEN_URL,
+            data=encoded,
+            headers={'Content-Type': 'application/x-www-form-urlencoded'}
+        )
+        with urlopen(req, timeout=timeout_seconds) as resp:
+            raw = resp.read().decode('utf-8', errors='ignore')
+        try:
+            data = json.loads(raw)
+        except Exception:
+            data = {'raw': raw}
+        return {'success': True, 'data': data}
+    except Exception as e:
+        logger.error(f"CRM token isteği hatası: {e}")
+        return {'success': False, 'error': str(e)}
+
+def verify_crm_led_permission(access_token: str, timeout_seconds: int = 15) -> bool:
+    """Bearer token ile CRM doğrulama servisini çağırır; True dönerse yetkili kabul eder."""
+    try:
+        if not access_token:
+            return False
+        req = Request(
+            url=Config.CRM_VERIFY_URL,
+            headers={
+                'Authorization': f'Bearer {access_token}',
+                'Accept': 'application/json'
+            }
+        )
+        with urlopen(req, timeout=timeout_seconds) as resp:
+            raw = resp.read().decode('utf-8', errors='ignore').strip()
+        logger.info(f"CRM verify raw response: {raw}")
+        # Cevap plain "true" olabilir ya da JSON boolean true
+        if raw.lower() == 'true':
+            return True
+        try:
+            data = json.loads(raw)
+            logger.info(f"CRM verify JSON parsed: {data}")
+            # data True ya da {"value": true} gibi durumlar
+            if data is True:
+                return True
+            if isinstance(data, dict):
+                for v in data.values():
+                    if isinstance(v, bool) and v is True:
+                        return True
+        except Exception:
+            pass
+        return False
+    except Exception as _e:
+        logger.error(f"CRM verify hatası: {_e}")
+        return False
+
+# ---------------------------------------------------------------------------
 # BEFORE REQUEST: AUTH HELPERS (STANDALONE AUTO-LOGIN, SSO TOKEN)
 # ---------------------------------------------------------------------------
 @app.before_request
@@ -286,6 +364,15 @@ def handle_sso_auto_login():
     login_user(user, remember=True, duration=None)
     clean_url = _remove_query_param(request.url, 'sso')
     return redirect(clean_url)
+
+# Her istekte client-side için bir session kimliği üret ve koru
+@app.before_request
+def ensure_client_session_id():
+    try:
+        if 'client_session_id' not in session:
+            session['client_session_id'] = uuid.uuid4().hex
+    except Exception:
+        pass
 
 # ---------------------------------------------------------------------------
 # DISPLAY LOOP (per location)
@@ -411,13 +498,25 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        if username in USERS and check_password_hash(USERS[username], password):
-            user = User(username)
-            session.permanent = True
-            login_user(user, remember=True, duration=None)
-            return redirect(url_for('index'))
-        else:
+        # 1) CRM token al
+        crm_result = request_crm_token(username=username, password=password, scope=Config.CRM_SCOPE)
+        if not crm_result.get('success'):
             return render_template('login.html', error='Geçersiz kullanıcı adı veya şifre')
+
+        token_payload = crm_result.get('data') or {}
+        access_token = None
+        if isinstance(token_payload, dict):
+            access_token = token_payload.get('access_token') or token_payload.get('token') or None
+        # 2) Token ile LEDEkran yetkisini doğrula
+        if not verify_crm_led_permission(access_token):
+            return render_template('login.html', error='Yetkiniz bulunmuyor')
+
+        # 3) Başarılı giriş
+        user = User(username)
+        session.permanent = True
+        session['crm_token'] = token_payload
+        login_user(user, remember=True, duration=None)
+        return redirect(url_for('index'))
     return render_template('login.html')
 
 @app.route('/logout')
@@ -456,7 +555,7 @@ def location_page(location):
     # Eğer standalone modda değilse, Raspberry Pi'ya yönlendir
     if not Config.STANDALONE_MODE:
         # Merkezi sunucudan lokasyon cihazına yönlendirirken SSO belirteci ekle (oturumdan bağımsız)
-        sso_token = generate_sso_token('admin')
+        sso_token = generate_sso_token('crm-user')
         raspberry_pi_url = f"http://{Config.LOCATION_IPS[location]}:5000/{location}?sso={sso_token}"
         return redirect(raspberry_pi_url)
     
@@ -813,6 +912,27 @@ def api_update_active(location, content_id):
             'content_list': st['content']
         })
     return jsonify({'success': True, 'message': 'Durum güncellendi'})
+
+# ---------------------------------------------------------------------------
+# API: CRM TOKEN
+# ---------------------------------------------------------------------------
+@app.route('/api/crm/token', methods=['POST'])
+@login_required
+def api_crm_token():
+    """CRM token proxy endpoint.
+
+    İstek gövdesi JSON veya form olabilir. Gönderilmezse Config'deki değerler
+    kullanılır. Sonucu aynen JSON olarak döndürür.
+    """
+    # Hem JSON hem form desteği
+    payload = request.get_json(silent=True) or {}
+    username = request.form.get('username') or payload.get('username')
+    password = request.form.get('password') or payload.get('password')
+    scope = request.form.get('scope') or payload.get('scope')
+
+    result = request_crm_token(username=username, password=password, scope=scope)
+    status = 200 if result.get('success') else 502
+    return jsonify(result), status
 
 @app.route('/api/<location>/display/start', methods=['POST'])
 @login_required

@@ -103,7 +103,7 @@
     </style>
 </head>
 <body>
-    <form class="login-card" method="POST" action="{{ url_for('login') }}">
+    <form class="login-card" method="POST" action="{{ url_for('login') }}" onsubmit="try{localStorage.removeItem('ebb_crm_token');}catch(e){}">
         <h2>
             <img src="{{ url_for('static', filename='erzurum-buyuksehir-belediyesi-logo.png') }}" alt="EBB Logo">
             Yönetici Girişi
@@ -118,5 +118,15 @@
         <input type="password" id="password" name="password" required>
         <button type="submit">Giriş Yap</button>
     </form>
+    <script>
+        (function(){
+            try{
+                var sid = '{{ session.get("client_session_id") }}';
+                if (sid && sid !== 'None') {
+                    localStorage.setItem('ebb_client_session_id', sid);
+                }
+            }catch(e){}
+        })();
+    </script>
 </body>
 </html>

@@ -10,6 +10,27 @@
 </head>
 <body>
     <div class="container">
+        <script id="crm_token_json" type="application/json">{{ session.get('crm_token')|tojson|safe }}</script>
+        <script>
+            (function(){
+                try{
+                    // Sunucunun oturum kimliğini localStorage'a yansıt
+                    var sid = '{{ session.get("client_session_id") }}';
+                    if (sid && sid !== 'None') {
+                        localStorage.setItem('ebb_client_session_id', sid);
+                    }
+                    // CRM token varsa sakla (sadece access_token içeren JSON ise)
+                    var el = document.getElementById('crm_token_json');
+                    var raw = null;
+                    if (el && el.textContent) {
+                        try { raw = JSON.parse(el.textContent); } catch(e){}
+                    }
+                    if (raw && raw.access_token) {
+                        localStorage.setItem('ebb_crm_token', raw.access_token);
+                    }
+                }catch(e){}
+            })();
+        </script>
         <header>
             <div class="header-content">
                 <div class="logo">

@@ -7,3 +7,245 @@
  * Running on http://127.0.0.1:5000
  * Running on http://192.168.250.171:5000
 2025-08-12 09:29:33,677 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-15 08:51:28,456 - INFO - Belediye Binası LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 08:51:28,466 - INFO - Havuzbaşı Kent Meydanı LED Ekran içerik listesi yüklendi: 5 öğe
+2025-08-15 08:51:28,475 - INFO - Yenişehir LED Ekran içerik listesi yüklendi: 2 öğe
+2025-08-15 08:51:28,483 - INFO - Gürcükapı LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 08:51:29,891 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.171:5000
+2025-08-15 08:51:29,891 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-15 08:51:43,931 - INFO - 192.168.250.171 - - [15/Aug/2025 08:51:43] "GET / HTTP/1.1" 200 -
+2025-08-15 08:51:44,196 - INFO - 192.168.250.171 - - [15/Aug/2025 08:51:44] "GET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1" 200 -
+2025-08-15 08:51:44,214 - INFO - 192.168.250.171 - - [15/Aug/2025 08:51:44] "GET /static/style_selector.css HTTP/1.1" 200 -
+2025-08-15 08:51:44,776 - INFO - 192.168.250.171 - - [15/Aug/2025 08:51:44] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 08:51:49,127 - INFO - 192.168.250.171 - - [15/Aug/2025 08:51:49] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-15 08:51:49,144 - INFO - 192.168.250.171 - - [15/Aug/2025 08:51:49] "GET /login HTTP/1.1" 200 -
+2025-08-15 08:51:49,208 - INFO - 192.168.250.171 - - [15/Aug/2025 08:51:49] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 08:51:49,210 - INFO - 192.168.250.171 - - [15/Aug/2025 08:51:49] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 08:51:49,252 - INFO - 192.168.250.171 - - [15/Aug/2025 08:51:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-15 08:51:54,225 - INFO - 192.168.250.171 - - [15/Aug/2025 08:51:54] "POST /login HTTP/1.1" 200 -
+2025-08-15 08:51:54,246 - INFO - 192.168.250.171 - - [15/Aug/2025 08:51:54] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 08:51:54,257 - INFO - 192.168.250.171 - - [15/Aug/2025 08:51:54] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 08:52:11,135 - INFO - 192.168.250.171 - - [15/Aug/2025 08:52:11] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-15 08:52:11,141 - INFO - 192.168.250.171 - - [15/Aug/2025 08:52:11] "GET / HTTP/1.1" 200 -
+2025-08-15 08:52:11,178 - INFO - 192.168.250.171 - - [15/Aug/2025 08:52:11] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 08:52:11,189 - INFO - 192.168.250.171 - - [15/Aug/2025 08:52:11] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 08:52:15,057 - INFO - 192.168.250.171 - - [15/Aug/2025 08:52:15] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-15 08:52:15,066 - INFO - 192.168.250.171 - - [15/Aug/2025 08:52:15] "GET /login HTTP/1.1" 200 -
+2025-08-15 08:52:15,120 - INFO - 192.168.250.171 - - [15/Aug/2025 08:52:15] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 08:52:15,122 - INFO - 192.168.250.171 - - [15/Aug/2025 08:52:15] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 08:58:34,042 - INFO - Belediye Binası LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 08:58:34,043 - INFO - Havuzbaşı Kent Meydanı LED Ekran içerik listesi yüklendi: 5 öğe
+2025-08-15 08:58:34,044 - INFO - Yenişehir LED Ekran içerik listesi yüklendi: 2 öğe
+2025-08-15 08:58:34,045 - INFO - Gürcükapı LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 08:58:35,332 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.171:5000
+2025-08-15 08:58:35,332 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-15 08:58:38,353 - INFO - 192.168.250.171 - - [15/Aug/2025 08:58:38] "GET /login HTTP/1.1" 200 -
+2025-08-15 08:58:38,471 - INFO - 192.168.250.171 - - [15/Aug/2025 08:58:38] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 08:58:38,484 - INFO - 192.168.250.171 - - [15/Aug/2025 08:58:38] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 08:58:40,217 - INFO - 192.168.250.171 - - [15/Aug/2025 08:58:40] "GET /login HTTP/1.1" 200 -
+2025-08-15 08:58:40,242 - INFO - 192.168.250.171 - - [15/Aug/2025 08:58:40] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 08:58:40,247 - INFO - 192.168.250.171 - - [15/Aug/2025 08:58:40] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 08:58:40,453 - INFO - 192.168.250.171 - - [15/Aug/2025 08:58:40] "GET /login HTTP/1.1" 200 -
+2025-08-15 08:58:40,479 - INFO - 192.168.250.171 - - [15/Aug/2025 08:58:40] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 08:58:40,500 - INFO - 192.168.250.171 - - [15/Aug/2025 08:58:40] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 08:58:40,693 - INFO - 192.168.250.171 - - [15/Aug/2025 08:58:40] "GET /login HTTP/1.1" 200 -
+2025-08-15 08:58:40,724 - INFO - 192.168.250.171 - - [15/Aug/2025 08:58:40] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 08:58:40,728 - INFO - 192.168.250.171 - - [15/Aug/2025 08:58:40] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 08:58:40,757 - INFO - 192.168.250.171 - - [15/Aug/2025 08:58:40] "GET /login HTTP/1.1" 200 -
+2025-08-15 08:58:40,942 - INFO - 192.168.250.171 - - [15/Aug/2025 08:58:40] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 08:58:40,945 - INFO - 192.168.250.171 - - [15/Aug/2025 08:58:40] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 08:59:25,622 - INFO - 192.168.250.171 - - [15/Aug/2025 08:59:25] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-15 08:59:25,629 - INFO - 192.168.250.171 - - [15/Aug/2025 08:59:25] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-15 08:59:25,635 - INFO - 192.168.250.171 - - [15/Aug/2025 08:59:25] "GET /login?next=/ HTTP/1.1" 200 -
+2025-08-15 08:59:25,707 - INFO - 192.168.250.171 - - [15/Aug/2025 08:59:25] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 08:59:25,773 - INFO - 192.168.250.171 - - [15/Aug/2025 08:59:25] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 09:00:24,812 - INFO - 192.168.250.171 - - [15/Aug/2025 09:00:24] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-15 09:00:24,818 - INFO - 192.168.250.171 - - [15/Aug/2025 09:00:24] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-15 09:00:24,826 - INFO - 192.168.250.171 - - [15/Aug/2025 09:00:24] "GET /login?next=/ HTTP/1.1" 200 -
+2025-08-15 09:00:24,892 - INFO - 192.168.250.171 - - [15/Aug/2025 09:00:24] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 09:00:24,895 - INFO - 192.168.250.171 - - [15/Aug/2025 09:00:24] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 09:06:56,562 - INFO - Belediye Binası LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 09:06:56,563 - INFO - Havuzbaşı Kent Meydanı LED Ekran içerik listesi yüklendi: 5 öğe
+2025-08-15 09:06:56,564 - INFO - Yenişehir LED Ekran içerik listesi yüklendi: 2 öğe
+2025-08-15 09:06:56,565 - INFO - Gürcükapı LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 09:06:57,910 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.171:5000
+2025-08-15 09:06:57,910 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-15 09:07:00,408 - INFO - 192.168.250.171 - - [15/Aug/2025 09:07:00] "GET /login?next=/ HTTP/1.1" 200 -
+2025-08-15 09:07:00,526 - INFO - 192.168.250.171 - - [15/Aug/2025 09:07:00] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 09:07:00,530 - INFO - 192.168.250.171 - - [15/Aug/2025 09:07:00] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 09:07:06,947 - INFO - 192.168.250.171 - - [15/Aug/2025 09:07:06] "GET / HTTP/1.1" 200 -
+2025-08-15 09:07:07,013 - INFO - 192.168.250.171 - - [15/Aug/2025 09:07:07] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 09:07:07,082 - INFO - 192.168.250.171 - - [15/Aug/2025 09:07:07] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 09:07:09,002 - INFO - 192.168.250.171 - - [15/Aug/2025 09:07:09] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-15 09:07:09,010 - INFO - 192.168.250.171 - - [15/Aug/2025 09:07:09] "GET /login HTTP/1.1" 200 -
+2025-08-15 09:07:09,063 - INFO - 192.168.250.171 - - [15/Aug/2025 09:07:09] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 09:07:09,066 - INFO - 192.168.250.171 - - [15/Aug/2025 09:07:09] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 09:07:29,018 - INFO - 192.168.250.171 - - [15/Aug/2025 09:07:29] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-15 09:07:29,024 - INFO - 192.168.250.171 - - [15/Aug/2025 09:07:29] "GET / HTTP/1.1" 200 -
+2025-08-15 09:07:29,071 - INFO - 192.168.250.171 - - [15/Aug/2025 09:07:29] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 09:07:29,081 - INFO - 192.168.250.171 - - [15/Aug/2025 09:07:29] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 09:07:43,369 - INFO - 192.168.250.171 - - [15/Aug/2025 09:07:43] "[32mGET /belediye HTTP/1.1[0m" 302 -
+2025-08-15 09:08:06,972 - INFO - 192.168.250.171 - - [15/Aug/2025 09:08:06] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 09:20:23,829 - INFO - Belediye Binası LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 09:20:23,830 - INFO - Havuzbaşı Kent Meydanı LED Ekran içerik listesi yüklendi: 5 öğe
+2025-08-15 09:20:23,832 - INFO - Yenişehir LED Ekran içerik listesi yüklendi: 2 öğe
+2025-08-15 09:20:23,832 - INFO - Gürcükapı LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 09:20:25,132 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.171:5000
+2025-08-15 09:20:25,132 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-15 09:20:28,319 - INFO - 192.168.250.171 - - [15/Aug/2025 09:20:28] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-15 09:20:28,334 - INFO - 192.168.250.171 - - [15/Aug/2025 09:20:28] "GET /login HTTP/1.1" 200 -
+2025-08-15 09:20:28,543 - INFO - 192.168.250.171 - - [15/Aug/2025 09:20:28] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 09:20:28,549 - INFO - 192.168.250.171 - - [15/Aug/2025 09:20:28] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 09:20:42,079 - INFO - 192.168.250.171 - - [15/Aug/2025 09:20:42] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 09:20:48,390 - INFO - 192.168.250.171 - - [15/Aug/2025 09:20:48] "GET /login HTTP/1.1" 200 -
+2025-08-15 09:20:48,432 - INFO - 192.168.250.171 - - [15/Aug/2025 09:20:48] "GET /static/style_selector.css HTTP/1.1" 200 -
+2025-08-15 09:20:48,443 - INFO - 192.168.250.171 - - [15/Aug/2025 09:20:48] "GET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1" 200 -
+2025-08-15 09:20:48,587 - INFO - 192.168.250.171 - - [15/Aug/2025 09:20:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-15 09:21:00,139 - INFO - 192.168.250.171 - - [15/Aug/2025 09:21:00] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-15 09:21:00,149 - INFO - 192.168.250.171 - - [15/Aug/2025 09:21:00] "GET / HTTP/1.1" 200 -
+2025-08-15 09:21:00,215 - INFO - 192.168.250.171 - - [15/Aug/2025 09:21:00] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 09:21:00,232 - INFO - 192.168.250.171 - - [15/Aug/2025 09:21:00] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 09:21:01,189 - INFO - 192.168.250.171 - - [15/Aug/2025 09:21:01] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 09:22:04,791 - INFO - 192.168.250.171 - - [15/Aug/2025 09:22:04] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-15 09:22:04,803 - INFO - 192.168.250.171 - - [15/Aug/2025 09:22:04] "GET /login HTTP/1.1" 200 -
+2025-08-15 09:22:04,941 - INFO - 192.168.250.171 - - [15/Aug/2025 09:22:04] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 09:22:04,945 - INFO - 192.168.250.171 - - [15/Aug/2025 09:22:04] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:02:08,352 - INFO - Belediye Binası LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 10:02:08,354 - INFO - Havuzbaşı Kent Meydanı LED Ekran içerik listesi yüklendi: 5 öğe
+2025-08-15 10:02:08,355 - INFO - Yenişehir LED Ekran içerik listesi yüklendi: 2 öğe
+2025-08-15 10:02:08,355 - INFO - Gürcükapı LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 10:02:09,738 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.171:5000
+2025-08-15 10:02:09,738 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-15 10:02:42,031 - INFO - 192.168.250.171 - - [15/Aug/2025 10:02:42] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-15 10:02:42,078 - INFO - 192.168.250.171 - - [15/Aug/2025 10:02:42] "GET /login?next=/ HTTP/1.1" 200 -
+2025-08-15 10:02:42,275 - INFO - 192.168.250.171 - - [15/Aug/2025 10:02:42] "GET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1" 200 -
+2025-08-15 10:02:42,278 - INFO - 192.168.250.171 - - [15/Aug/2025 10:02:42] "GET /static/style_selector.css HTTP/1.1" 200 -
+2025-08-15 10:02:42,403 - INFO - 192.168.250.171 - - [15/Aug/2025 10:02:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-15 10:03:04,449 - INFO - 192.168.250.171 - - [15/Aug/2025 10:03:04] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-15 10:03:04,461 - INFO - 192.168.250.171 - - [15/Aug/2025 10:03:04] "GET / HTTP/1.1" 200 -
+2025-08-15 10:03:04,505 - INFO - 192.168.250.171 - - [15/Aug/2025 10:03:04] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:03:04,519 - INFO - 192.168.250.171 - - [15/Aug/2025 10:03:04] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:03:05,471 - INFO - 192.168.250.171 - - [15/Aug/2025 10:03:05] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:03:11,948 - INFO - 192.168.250.171 - - [15/Aug/2025 10:03:11] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:07:59,522 - INFO - Belediye Binası LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 10:07:59,523 - INFO - Havuzbaşı Kent Meydanı LED Ekran içerik listesi yüklendi: 5 öğe
+2025-08-15 10:07:59,524 - INFO - Yenişehir LED Ekran içerik listesi yüklendi: 2 öğe
+2025-08-15 10:07:59,525 - INFO - Gürcükapı LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 10:08:00,801 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.171:5000
+2025-08-15 10:08:00,802 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-15 10:08:13,590 - INFO - 192.168.250.171 - - [15/Aug/2025 10:08:13] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-15 10:08:13,604 - INFO - 192.168.250.171 - - [15/Aug/2025 10:08:13] "GET /login HTTP/1.1" 200 -
+2025-08-15 10:08:13,794 - INFO - 192.168.250.171 - - [15/Aug/2025 10:08:13] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:08:13,798 - INFO - 192.168.250.171 - - [15/Aug/2025 10:08:13] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:08:22,490 - INFO - 192.168.250.171 - - [15/Aug/2025 10:08:22] "GET /login HTTP/1.1" 200 -
+2025-08-15 10:08:22,519 - INFO - 192.168.250.171 - - [15/Aug/2025 10:08:22] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:08:22,526 - INFO - 192.168.250.171 - - [15/Aug/2025 10:08:22] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:08:45,935 - INFO - CRM verify raw response: true
+2025-08-15 10:08:45,936 - INFO - 192.168.250.171 - - [15/Aug/2025 10:08:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-15 10:08:45,949 - INFO - 192.168.250.171 - - [15/Aug/2025 10:08:45] "GET / HTTP/1.1" 200 -
+2025-08-15 10:08:46,003 - INFO - 192.168.250.171 - - [15/Aug/2025 10:08:46] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:08:46,019 - INFO - 192.168.250.171 - - [15/Aug/2025 10:08:46] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:09:07,206 - INFO - 192.168.250.171 - - [15/Aug/2025 10:09:07] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:09:24,950 - INFO - 192.168.250.171 - - [15/Aug/2025 10:09:24] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-15 10:09:24,957 - INFO - 192.168.250.171 - - [15/Aug/2025 10:09:24] "GET /login HTTP/1.1" 200 -
+2025-08-15 10:09:25,014 - INFO - 192.168.250.171 - - [15/Aug/2025 10:09:25] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:09:25,022 - INFO - 192.168.250.171 - - [15/Aug/2025 10:09:25] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:09:40,840 - INFO - CRM verify raw response: true
+2025-08-15 10:09:40,841 - INFO - 192.168.250.171 - - [15/Aug/2025 10:09:40] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-15 10:09:40,848 - INFO - 192.168.250.171 - - [15/Aug/2025 10:09:40] "GET / HTTP/1.1" 200 -
+2025-08-15 10:09:40,908 - INFO - 192.168.250.171 - - [15/Aug/2025 10:09:40] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:09:40,916 - INFO - 192.168.250.171 - - [15/Aug/2025 10:09:40] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:11:34,875 - INFO - 192.168.250.171 - - [15/Aug/2025 10:11:34] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-15 10:11:34,885 - INFO - 192.168.250.171 - - [15/Aug/2025 10:11:34] "GET /login HTTP/1.1" 200 -
+2025-08-15 10:11:34,975 - INFO - 192.168.250.171 - - [15/Aug/2025 10:11:34] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:11:34,980 - INFO - 192.168.250.171 - - [15/Aug/2025 10:11:34] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:11:47,222 - INFO - CRM verify raw response: true
+2025-08-15 10:11:47,224 - INFO - 192.168.250.171 - - [15/Aug/2025 10:11:47] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-15 10:11:47,230 - INFO - 192.168.250.171 - - [15/Aug/2025 10:11:47] "GET / HTTP/1.1" 200 -
+2025-08-15 10:11:47,276 - INFO - 192.168.250.171 - - [15/Aug/2025 10:11:47] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:11:47,288 - INFO - 192.168.250.171 - - [15/Aug/2025 10:11:47] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:12:32,625 - INFO - Belediye Binası LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 10:12:32,626 - INFO - Havuzbaşı Kent Meydanı LED Ekran içerik listesi yüklendi: 5 öğe
+2025-08-15 10:12:32,628 - INFO - Yenişehir LED Ekran içerik listesi yüklendi: 2 öğe
+2025-08-15 10:12:32,628 - INFO - Gürcükapı LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 10:12:33,909 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.171:5000
+2025-08-15 10:12:33,910 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-15 10:12:38,496 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:38] "GET / HTTP/1.1" 200 -
+2025-08-15 10:12:38,675 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:38] "GET /static/style_selector.css HTTP/1.1" 200 -
+2025-08-15 10:12:38,676 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:38] "GET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1" 200 -
+2025-08-15 10:12:39,630 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:39] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:12:40,577 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:40] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-15 10:12:40,642 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:40] "GET /login HTTP/1.1" 200 -
+2025-08-15 10:12:40,732 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:40] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:12:40,732 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:40] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:12:40,774 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-15 10:12:41,755 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:41] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:12:44,035 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:44] "GET /login HTTP/1.1" 200 -
+2025-08-15 10:12:44,142 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:44] "GET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1" 200 -
+2025-08-15 10:12:44,143 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:44] "GET /static/style_selector.css HTTP/1.1" 200 -
+2025-08-15 10:12:44,319 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-15 10:12:57,046 - INFO - CRM verify raw response: true
+2025-08-15 10:12:57,047 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:57] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-15 10:12:57,125 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:57] "GET / HTTP/1.1" 200 -
+2025-08-15 10:12:57,235 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:57] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:12:57,236 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:57] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:12:58,184 - INFO - 192.168.251.238 - - [15/Aug/2025 10:12:58] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:13:28,960 - INFO - 192.168.251.238 - - [15/Aug/2025 10:13:28] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-15 10:13:29,066 - INFO - 192.168.251.238 - - [15/Aug/2025 10:13:29] "GET /login HTTP/1.1" 200 -
+2025-08-15 10:13:29,175 - INFO - 192.168.251.238 - - [15/Aug/2025 10:13:29] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:13:29,177 - INFO - 192.168.251.238 - - [15/Aug/2025 10:13:29] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:14:57,072 - INFO - 192.168.250.171 - - [15/Aug/2025 10:14:57] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-15 10:14:57,081 - INFO - 192.168.250.171 - - [15/Aug/2025 10:14:57] "GET /login HTTP/1.1" 200 -
+2025-08-15 10:14:57,131 - INFO - 192.168.250.171 - - [15/Aug/2025 10:14:57] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:14:57,133 - INFO - 192.168.250.171 - - [15/Aug/2025 10:14:57] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:15:31,536 - INFO - 192.168.251.1 - - [15/Aug/2025 10:15:31] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-15 10:15:35,625 - INFO - 192.168.251.1 - - [15/Aug/2025 10:15:35] "GET /login?next=/ HTTP/1.1" 200 -
+2025-08-15 10:15:35,643 - INFO - 192.168.251.1 - - [15/Aug/2025 10:15:35] "GET /static/style_selector.css HTTP/1.1" 200 -
+2025-08-15 10:15:35,644 - INFO - 192.168.251.1 - - [15/Aug/2025 10:15:35] "GET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1" 200 -
+2025-08-15 10:15:35,677 - INFO - 192.168.251.1 - - [15/Aug/2025 10:15:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-15 10:15:43,560 - INFO - CRM verify raw response: false
+2025-08-15 10:15:43,561 - INFO - CRM verify JSON parsed: False
+2025-08-15 10:15:43,562 - INFO - 192.168.251.1 - - [15/Aug/2025 10:15:43] "POST /login HTTP/1.1" 200 -
+2025-08-15 10:15:43,615 - INFO - 192.168.251.1 - - [15/Aug/2025 10:15:43] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:15:43,617 - INFO - 192.168.251.1 - - [15/Aug/2025 10:15:43] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:22:20,594 - INFO - Belediye Binası LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 10:22:20,596 - INFO - Havuzbaşı Kent Meydanı LED Ekran içerik listesi yüklendi: 5 öğe
+2025-08-15 10:22:20,596 - INFO - Yenişehir LED Ekran içerik listesi yüklendi: 2 öğe
+2025-08-15 10:22:20,597 - INFO - Gürcükapı LED Ekran içerik listesi yüklendi: 3 öğe
+2025-08-15 10:22:21,987 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.250.171:5000
+2025-08-15 10:22:21,988 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-15 10:22:27,095 - INFO - 192.168.250.171 - - [15/Aug/2025 10:22:27] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-15 10:22:27,147 - INFO - 192.168.250.171 - - [15/Aug/2025 10:22:27] "GET /login?next=/ HTTP/1.1" 200 -
+2025-08-15 10:22:27,426 - INFO - 192.168.250.171 - - [15/Aug/2025 10:22:27] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:22:27,430 - INFO - 192.168.250.171 - - [15/Aug/2025 10:22:27] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:22:46,888 - INFO - CRM verify raw response: true
+2025-08-15 10:22:46,889 - INFO - 192.168.250.171 - - [15/Aug/2025 10:22:46] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-15 10:22:46,899 - INFO - 192.168.250.171 - - [15/Aug/2025 10:22:46] "GET / HTTP/1.1" 200 -
+2025-08-15 10:22:46,940 - INFO - 192.168.250.171 - - [15/Aug/2025 10:22:46] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
+2025-08-15 10:22:46,948 - INFO - 192.168.250.171 - - [15/Aug/2025 10:22:46] "[36mGET /static/erzurum-buyuksehir-belediyesi-logo.png HTTP/1.1[0m" 304 -
+2025-08-15 10:22:48,506 - INFO - 192.168.250.171 - - [15/Aug/2025 10:22:48] "[32mGET /belediye HTTP/1.1[0m" 302 -
+2025-08-15 10:22:54,564 - INFO - 192.168.250.171 - - [15/Aug/2025 10:22:54] "[36mGET /static/style_selector.css HTTP/1.1[0m" 304 -
