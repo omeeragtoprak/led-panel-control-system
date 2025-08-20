@@ -17,15 +17,15 @@ def run_command(command, description=""):
     try:
         result = subprocess.run(command, shell=True, capture_output=True, text=True)
         if result.returncode == 0:
-            print("✅ Başarılı")
+            print("[OK] Başarılı")
             if result.stdout:
                 print(result.stdout)
         else:
-            print("❌ Hata")
+            print("[ERROR] Hata")
             print(result.stderr)
         return result.returncode == 0
     except Exception as e:
-        print(f"❌ Hata: {e}")
+        print(f"[ERROR] Hata: {e}")
         return False
 
 def setup_static_ip(location):
@@ -39,7 +39,7 @@ def setup_static_ip(location):
     
     ip = location_ips.get(location)
     if not ip:
-        print(f"❌ Geçersiz lokasyon: {location}")
+        print(f"[ERROR] Geçersiz lokasyon: {location}")
         return False
     
     # dhcpcd.conf dosyasını düzenle
@@ -53,22 +53,22 @@ static domain_name_servers=8.8.8.8 8.8.4.4
     try:
         # Önce dosyanın var olup olmadığını kontrol et
         if not os.path.exists('/etc/dhcpcd.conf'):
-            print("❌ /etc/dhcpcd.conf dosyası bulunamadı!")
+            print("[WARN] /etc/dhcpcd.conf dosyası bulunamadı!")
             return False
             
         with open('/etc/dhcpcd.conf', 'a') as f:
             f.write(dhcpcd_conf)
-        print(f"✅ Static IP ayarlandı: {ip}")
+        print(f"[OK] Static IP ayarlandı: {ip}")
         return True
     except Exception as e:
-        print(f"❌ Static IP ayarlama hatası: {e}")
+        print(f"[ERROR] Static IP ayarlama hatası: {e}")
         return False
 
 def create_startup_script(location):
     """Otomatik başlatma scripti oluştur"""
     # Mevcut çalışma dizinini al
     current_dir = os.getcwd()
-    print(f"📁 Mevcut dizin: {current_dir}")
+    print(f"[INFO] Mevcut dizin: {current_dir}")
     
     script_content = f"""#!/bin/bash
 cd {current_dir}
@@ -76,9 +76,9 @@ cd {current_dir}
 # Sanal ortamı aktif et (daha güvenli yöntem)
 if [ -f "led_env/bin/activate" ]; then
     source led_env/bin/activate
-    echo "✅ Sanal ortam aktif edildi"
+    echo "[OK] Sanal ortam aktif edildi"
 else
-    echo "❌ Sanal ortam bulunamadı!"
+    echo "[ERROR] Sanal ortam bulunamadı!"
     exit 1
 fi
 
@@ -100,10 +100,10 @@ kill $SYNC_PID
         with open(script_path, 'w') as f:
             f.write(script_content)
         os.chmod(script_path, 0o755)
-        print(f"✅ Başlatma scripti oluşturuldu: {script_path}")
+        print(f"[OK] Başlatma scripti oluşturuldu: {script_path}")
         return True
     except Exception as e:
-        print(f"❌ Script oluşturma hatası: {e}")
+        print(f"[ERROR] Script oluşturma hatası: {e}")
         return False
 
 def setup_autostart(location):
@@ -111,7 +111,7 @@ def setup_autostart(location):
     # Mevcut çalışma dizinini al
     current_dir = os.getcwd()
     
-    autostart_dir = "/home/pi/.config/autostart"
+    autostart_dir = str(Path.home() / ".config" / "autostart")
     os.makedirs(autostart_dir, exist_ok=True)
     
     desktop_file = f"""[Desktop Entry]
@@ -126,10 +126,10 @@ X-GNOME-Autostart-enabled=true
     try:
         with open(desktop_path, 'w') as f:
             f.write(desktop_file)
-        print(f"✅ Otomatik başlatma ayarlandı: {desktop_path}")
+        print(f"[OK] Otomatik başlatma ayarlandı: {desktop_path}")
         return True
     except Exception as e:
-        print(f"❌ Otomatik başlatma hatası: {e}")
+        print(f"[ERROR] Otomatik başlatma hatası: {e}")
         return False
 
 def main():
@@ -140,7 +140,7 @@ def main():
     
     location = sys.argv[1]
     if location not in ['belediye', 'havuzbasi', 'yenisehir', 'gurcukapi']:
-        print("❌ Geçersiz lokasyon!")
+        print("[ERROR] Geçersiz lokasyon!")
         sys.exit(1)
     
     print(f"=== Raspberry Pi LED Panel Kurulumu - {location.upper()} ===")
@@ -148,7 +148,7 @@ def main():
     
     # Mevcut dizini kontrol et
     current_dir = os.getcwd()
-    print(f"📁 Çalışma dizini: {current_dir}")
+    print(f"[INFO] Çalışma dizini: {current_dir}")
     
     # Gerekli dosyaların varlığını kontrol et
     if not os.path.exists('app_final.py'):
@@ -162,9 +162,9 @@ def main():
         sys.exit(1)
     
     # Static IP (sudo gerekli)
-    print("\n⚠️  Static IP ayarlanıyor... (sudo gerekli)")
+    print("\n[WARN] Static IP ayarlanıyor... (sudo gerekli)")
     if not setup_static_ip(location):
-        print("⚠️  Static IP ayarlanamadı, manuel olarak ayarlayabilirsiniz.")
+        print("[WARN] Static IP ayarlanamadı, manuel olarak ayarlayabilirsiniz.")
     
     # Başlatma scripti
     if not create_startup_script(location):
@@ -174,7 +174,7 @@ def main():
     if not setup_autostart(location):
         sys.exit(1)
     
-    print(f"\n🎉 Kurulum tamamlandı!")
+    print(f"\n[DONE] Kurulum tamamlandı!")
     print(f"Lokasyon: {location}")
     print(f"Static IP: 192.168.1.{10 + ['belediye', 'havuzbasi', 'yenisehir', 'gurcukapi'].index(location)}")
     print(f"Web arayüzü: http://192.168.1.{10 + ['belediye', 'havuzbasi', 'yenisehir', 'gurcukapi'].index(location)}:5000")

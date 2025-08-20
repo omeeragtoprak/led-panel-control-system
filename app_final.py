@@ -44,9 +44,9 @@ class Config:
     
     # Her lokasyon için Raspberry Pi IP'leri
     LOCATION_IPS = {
-        'belediye': '192.168.251.174',
-        'havuzbasi': '192.168.251.175', 
-        'yenisehir': '192.168.251.176',
+        'belediye': '192.168.250.31',
+        'havuzbasi': '192.168.251.174', 
+        'yenisehir': '192.168.251.106',
         'gurcukapi': '192.168.251.177'
     }
 
@@ -73,13 +73,13 @@ app.config['SESSION_COOKIE_SECURE'] = False
 app.config['SESSION_PERMANENT'] = True
 
 # SocketIO with threading mode (safer for Windows)
-socketio = SocketIO(app, 
-                   cors_allowed_origins="*", 
-                   async_mode='threading',
-                   logger=True,
-                   engineio_logger=True,
-                   ping_timeout=60,
-                   ping_interval=25)
+socketio = SocketIO(app,
+                    cors_allowed_origins="*",
+                    async_mode='threading',
+                    logger=False,
+                    engineio_logger=False,
+                    ping_timeout=60,
+                    ping_interval=25)
 
 # Flask-Login setup
 login_manager = LoginManager(app)
@@ -100,7 +100,7 @@ def load_user(user_id):
 # LOGGING SETUP
 # ---------------------------------------------------------------------------
 logging.basicConfig(
-    level=logging.INFO,
+    level=getattr(logging, os.environ.get('LOG_LEVEL', 'WARNING').upper(), logging.WARNING),
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler('logs/app.log', encoding='utf-8'),
@@ -541,7 +541,7 @@ def index():
                              title=Config.PAGE_TITLE,
                              locations=LOCATIONS,
                              location_names=LOCATION_NAMES,
-                             location_ips=Config.LOCATION_IPS)
+                             Config=Config)
 
 # ---------------------------------------------------------------------------
 # ROUTES - LOKASYON SAYFALARI
@@ -1108,6 +1108,15 @@ if __name__ == '__main__':
             print(f"Static IP: {Config.LOCATION_IPS[Config.CURRENT_LOCATION]}")
             print(f"Web arayüzü: http://{Config.LOCATION_IPS[Config.CURRENT_LOCATION]}:{Config.PORT}/")
             print(f"Tam ekran: http://{Config.LOCATION_IPS[Config.CURRENT_LOCATION]}:{Config.PORT}/screen{Config.CURRENT_LOCATION}")
+            # Sunucu başlarken standalone modda gösterimi otomatik başlat
+            try:
+                started = start_display_thread(Config.CURRENT_LOCATION)
+                if started:
+                    logger.info(f"{LOCATION_NAMES[Config.CURRENT_LOCATION]} için otomatik gösterim başlatıldı")
+                else:
+                    logger.warning(f"{LOCATION_NAMES[Config.CURRENT_LOCATION]} otomatik başlatılamadı (içerik boş olabilir veya zaten çalışıyor)")
+            except Exception as _e:
+                logger.error(f"Otomatik gösterim başlatma hatası: {_e}")
         else:
             print(f"\nMulti-Location LED Panel Control System başlatılıyor...")
             print(f"Ana sayfa: http://{Config.HOST}:{Config.PORT}/")

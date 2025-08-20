@@ -61,10 +61,17 @@
                         </div>
                         <h3>{{ location_names[location] }}</h3>
                         <p>{{ location_names[location] }} Yönetimi</p>
+                        {% if location == 'yenisehir' %}
+                        <a href="http://192.168.251.106:5000/yenisehir" class="btn-primary">
+                            <i class="fas fa-arrow-right"></i>
+                            Yönetim Paneli
+                        </a>
+                        {% else %}
                         <a href="/{{ location }}" class="btn-primary">
                             <i class="fas fa-arrow-right"></i>
                             Yönetim Paneli
                         </a>
+                        {% endif %}
                         
                     </div>
                     {% endfor %}

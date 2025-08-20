@@ -838,10 +838,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Periyodik sistem bilgisi güncelleme
+    // Periyodik sistem bilgisi güncelleme (10 dakika)
     setInterval(() => {
         socket.emit('get_system_info');
-    }, 5000);
+    }, 600000);
 
     // Başlangıçta içerik listesini yükle
     console.log('Initializing application...');

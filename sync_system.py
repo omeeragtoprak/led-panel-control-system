@@ -19,7 +19,11 @@ class ContentSync:
         self.central_server_url = central_server_url
         self.local_content_file = f"uploads/{location}/content_list.json"
         self.last_sync_time = 0
-        self.sync_interval = 30  # 30 saniyede bir kontrol
+        # Senkronizasyon sıklığı: varsayılan 10 dakika (600 sn)
+        try:
+            self.sync_interval = int(os.environ.get('SYNC_INTERVAL_SECONDS', '600'))
+        except Exception:
+            self.sync_interval = 600
         
     def check_internet_connection(self):
         """İnternet bağlantısını kontrol et"""
@@ -54,20 +58,20 @@ class ContentSync:
                     for chunk in response.iter_content(chunk_size=8192):
                         f.write(chunk)
                 
-                print(f"✅ {filename} indirildi")
+                print(f"[OK] {filename} indirildi")
                 return True
             return False
         except Exception as e:
-            print(f"❌ {filename} indirilemedi: {e}")
+            print(f"[ERROR] {filename} indirilemedi: {e}")
             return False
     
     def sync_content(self):
         """İçerik senkronizasyonu yap"""
         if not self.check_internet_connection():
-            print("🌐 İnternet bağlantısı yok, local modda çalışıyor...")
+            print("[INFO] İnternet bağlantısı yok, local modda çalışıyor...")
             return False
         
-        print("🔄 Merkezi sunucudan senkronizasyon yapılıyor...")
+        print("[INFO] Merkezi sunucudan senkronizasyon yapılıyor...")
         
         # Merkezi sunucudan içerik listesini al
         central_content = self.get_central_content()
@@ -90,7 +94,7 @@ class ContentSync:
         # Yeni dosyaları indir
         for filename, content_info in central_files.items():
             if filename not in local_files:
-                print(f"📥 Yeni dosya: {filename}")
+                print(f"[NEW] Yeni dosya: {filename}")
                 if self.download_file(filename):
                     local_content.append(content_info)
         
@@ -101,25 +105,25 @@ class ContentSync:
         try:
             with open(self.local_content_file, 'w', encoding='utf-8') as f:
                 json.dump(local_content, f, ensure_ascii=False, indent=2)
-            print(f"✅ {len(local_content)} içerik senkronize edildi")
+            print(f"[OK] {len(local_content)} içerik senkronize edildi")
             return True
         except Exception as e:
-            print(f"❌ İçerik listesi güncellenemedi: {e}")
+            print(f"[ERROR] İçerik listesi güncellenemedi: {e}")
             return False
     
     def start_sync_loop(self):
         """Sürekli senkronizasyon döngüsü"""
-        print(f"🔄 {self.location} için senkronizasyon başlatıldı")
+        print(f"[INFO] {self.location} için senkronizasyon başlatıldı")
         
         while True:
             try:
                 self.sync_content()
                 time.sleep(self.sync_interval)
             except KeyboardInterrupt:
-                print("🛑 Senkronizasyon durduruldu")
+                print("[STOP] Senkronizasyon durduruldu")
                 break
             except Exception as e:
-                print(f"❌ Senkronizasyon hatası: {e}")
+                print(f"[ERROR] Senkronizasyon hatası: {e}")
                 time.sleep(self.sync_interval)
 
 def main():
@@ -132,14 +136,14 @@ def main():
     
     location = sys.argv[1]
     if location not in ['belediye', 'havuzbasi', 'yenisehir', 'gurcukapi']:
-        print("❌ Geçersiz lokasyon!")
+        print("[ERROR] Geçersiz lokasyon!")
         sys.exit(1)
     
     # Senkronizasyon sistemini başlat
     sync_system = ContentSync(location)
     
     # İlk senkronizasyonu yap
-    print(f"🚀 {location} için ilk senkronizasyon yapılıyor...")
+    print(f"[INFO] {location} için ilk senkronizasyon yapılıyor...")
     sync_system.sync_content()
     
     # Sürekli senkronizasyon döngüsünü başlat

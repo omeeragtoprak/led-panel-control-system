@@ -65,6 +65,7 @@
             let currentIndex = 0;
             let isPlaying = false;
             let playTimer = null;
+            let statusPollTimer = null;
 
             // Aktif içerikleri filtrele
             function filterActive(contentList) {
@@ -114,6 +115,19 @@
             // SocketIO events
             socket.on('connect', () => {
                 socket.emit('join_location', { location: currentLocation });
+                // Otomatik gösterimi başlat (bağlanır bağlanmaz)
+                fetch(`/api/${currentLocation}/display/start`, { method: 'POST', credentials: 'same-origin' })
+                    .then(r => r.json()).then(d => {
+                        if (d && d.success) {
+                            isPlaying = true;
+                            if (activeContentList.length > 0) {
+                                clearTimeout(playTimer);
+                                playLoop();
+                            }
+                        }
+                    })
+                    .catch(()=>{});
+                // Durum anketleri ve ekstra kontrol KALDIRILDI
             });
 
             socket.on('content_updated', (data) => {
@@ -137,8 +151,26 @@
                         const idx = activeContentList.findIndex(x => x.id === data.current_item.id);
                         if (idx !== -1) currentIndex = idx;
                     }
-                    if (isPlaying && activeContentList.length > 0) {
-                        playLoop();
+                    if (isPlaying) {
+                        if (activeContentList.length === 0) {
+                            // İçerik henüz yüklenmemişse hemen çekip başlat
+                            fetch(`/api/${currentLocation}/content`, { cache: 'no-store' })
+                                .then(r=>r.json()).then(d=>{
+                                    if (d && d.success && Array.isArray(d.content)) {
+                                        activeContentList = filterActive(d.content);
+                                        currentIndex = 0;
+                                        if (activeContentList.length > 0) {
+                                            playLoop();
+                                        } else {
+                                            showNoContent('Gösterim durduruldu veya içerik yok');
+                                        }
+                                    }
+                                }).catch(()=>{
+                                    showNoContent('İçerik alınamadı');
+                                });
+                        } else {
+                            playLoop();
+                        }
                     } else {
                         showNoContent('Gösterim durduruldu veya içerik yok');
                     }
@@ -150,14 +182,25 @@
             });
 
             // İlk yüklemede aktif içerikleri çek
-            fetch(`/api/${currentLocation}/content`)
+            fetch(`/api/${currentLocation}/content`, { cache: 'no-store', credentials: 'same-origin' })
                 .then(response => response.json())
                 .then(data => {
                     if (data.success && Array.isArray(data.content)) {
                         activeContentList = filterActive(data.content);
                         currentIndex = 0;
+                        // İçerik geldikten sonra, beklemeden oynatmayı başlat
+                        if (activeContentList.length > 0) {
+                            isPlaying = true;
+                            clearTimeout(playTimer);
+                            playLoop();
+                        } else {
+                            // İçerik yoksa yine de backend'i başlatmayı dene
+                            fetch(`/api/${currentLocation}/display/start`, { method: 'POST', credentials: 'same-origin' }).catch(()=>{});
+                        }
                     }
                 });
+
+            // Watchdog (kaldırıldı): otomatik sayfa yenileme yok
         });
     </script>
 </body>
